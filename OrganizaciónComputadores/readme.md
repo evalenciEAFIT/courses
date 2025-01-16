@@ -1,1 +1,0 @@
-Organización de Computadores
