@@ -13,12 +13,18 @@ Edison Valencia Díaz es un reconocido profesor de la Universidad EAFIT, especia
 #### **Descripción General**
 Este curso ofrece una comprensión integral de cómo funcionan los computadores a nivel interno. Se centra en los principios fundamentales de hardware, arquitectura y diseño, basándose en la metodología del curso **Nand2Tetris**. A lo largo de las sesiones, los estudiantes construirán una computadora funcional desde sus componentes básicos hasta niveles más complejos.
 
+#### **Más información**  
+Consulta el [README del curso de Organización de Computadores](./OrganizaciónComputadores/README.md).
+
 ---
 
 ### **Curso: Sistemas Operativos**
 
 #### **Descripción General**
 Este curso se centra en los principios y conceptos fundamentales de los sistemas operativos, tales como la gestión de memoria, planificación de procesos, y sistemas de archivos. Utiliza como base el libro **"Operating Systems: Three Easy Pieces"** de Remzi H. Arpaci-Dusseau, junto con aplicaciones prácticas en **C++ y Rust**.
+
+#### **Más información**  
+Consulta el [README del curso de Sistemas Operativos](./SistemasOperativos/README.md).
 
 ---
 
@@ -28,3 +34,4 @@ Este curso se centra en los principios y conceptos fundamentales de los sistemas
 ---
 
 Para más información, consulta el programa académico en la [Universidad EAFIT](https://www.eafit.edu.co).  
+
