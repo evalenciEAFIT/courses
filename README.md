@@ -1,5 +1,5 @@
-#### **Profesor:** Edison Valencia Díaz  
-**Institución:** Universidad EAFIT
+#### ** Edison Valencia Díaz  
+Universidad EAFIT
 
 ---
 
