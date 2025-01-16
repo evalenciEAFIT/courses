@@ -30,14 +30,15 @@ Para comprender mejor este concepto, revisa los siguientes videos:
    Este video explica el funcionamiento básico de un transistor bipolar de unión (BJT) y cómo actúa como interruptor y amplificador.  
 
 2. **Transistores de Efecto de Campo (FET):**  
-   [![Ver en YouTube](https://img.youtube.com/vi/JeFx7oXkDg8/0.jpg)](https://www.youtube.com/watch?v=JeFx7oXkDg8)  
+   [![Ver en YouTube](https://img.youtube.com/vi/JeFx7oXkDg8/0.jpg)](https://www.youtube.com/watch?v=JeFx7oXkDg8)
+   [![Ver en youtube](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y/0.jpg)](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y) 
    En este video se describe cómo funciona un transistor de efecto de campo (FET) y su aplicación en circuitos digitales y analógicos.
 
-3. **Historia de los Transistores:**  
+4. **Historia de los Transistores:**  
    [![Ver en YouTube](https://img.youtube.com/vi/7ukDKVHnac4/0.jpg)](https://www.youtube.com/watch?v=7ukDKVHnac4)  
    Este video da un contexto histórico sobre la invención de los transistores y cómo revolucionaron la tecnología.
 
-4. **Cómo se construye un transistor:**  
+5. **Cómo se construye un transistor:**  
    [![Ver en YouTube](https://img.youtube.com/vi/IcrBqCFLHIY/0.jpg)](https://www.youtube.com/watch?v=IcrBqCFLHIY)  
    Un recorrido técnico sobre la fabricación de transistores y su integración en circuitos modernos.
 
