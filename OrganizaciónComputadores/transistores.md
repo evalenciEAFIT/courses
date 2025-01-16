@@ -35,11 +35,12 @@ Para comprender mejor este concepto, revisa los siguientes videos:
    [![Ver en youtube](https://img.youtube.com/vi/Mdx0kRz-IFo/0.jpg)](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y) 
    En este video se describe cómo funciona un transistor de efecto de campo (FET) y su aplicación en circuitos digitales y analógicos.
 
-4. **Historia de los Transistores:**  
+4. **Historia de los Transistores:**
+   [![Ver en YouTube](https://img.youtube.com/vi/ljSdrYmdF44/0.jpg)](https://youtu.be/ljSdrYmdF44?si=JoVddOg8ooxOgP8l)   
    [![Ver en YouTube](https://img.youtube.com/vi/7ukDKVHnac4/0.jpg)](https://www.youtube.com/watch?v=7ukDKVHnac4)  
    Este video da un contexto histórico sobre la invención de los transistores y cómo revolucionaron la tecnología.
 
-5. **Cómo se construye un transistor:**  
+6. **Cómo se construye un transistor:**  
    [![Ver en YouTube](https://img.youtube.com/vi/IcrBqCFLHIY/0.jpg)](https://www.youtube.com/watch?v=IcrBqCFLHIY)  
    Un recorrido técnico sobre la fabricación de transistores y su integración en circuitos modernos.
 
