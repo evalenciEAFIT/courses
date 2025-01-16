@@ -1,0 +1,55 @@
+# Introducción a los Transistores
+
+## **¿Qué es un transistor?**
+Un transistor es un dispositivo semiconductor que se utiliza para amplificar o conmutar señales electrónicas. Es uno de los componentes fundamentales de la electrónica moderna, ya que permite el desarrollo de circuitos integrados y computadores.
+
+Los transistores funcionan como **interruptores electrónicos** o **amplificadores**, controlando el flujo de corriente a través de sus terminales: el emisor, la base y el colector.
+
+---
+
+## **Tipos de Transistores**
+1. **Transistores Bipolares (BJT):**  
+   Funcionan mediante el control de una pequeña corriente en la base para amplificar una corriente más grande entre el colector y el emisor.
+   
+2. **Transistores de Efecto de Campo (FET):**  
+   Funcionan mediante el control de un voltaje en la puerta (gate) para regular el flujo de corriente entre el drenaje (drain) y la fuente (source).
+
+---
+
+## **¿Cómo funciona un transistor?**
+El principio básico del transistor es que una señal pequeña aplicada a uno de sus terminales (base o puerta) puede controlar una señal mucho mayor que fluye entre otros dos terminales (colector-emisor o drenaje-fuente). Esto lo hace ideal para amplificar señales y conmutar corrientes en circuitos electrónicos.
+
+Para comprender mejor este concepto, revisa los siguientes videos:
+
+---
+
+### **Videos Recomendados**
+
+1. **Introducción a los Transistores Bipolares (BJT):**  
+   [![Ver en YouTube](https://img.youtube.com/vi/6vKQAUQOU9I/0.jpg)](https://www.youtube.com/watch?v=6vKQAUQOU9I)  
+   Este video explica el funcionamiento básico de un transistor bipolar de unión (BJT) y cómo actúa como interruptor y amplificador.  
+
+2. **Transistores de Efecto de Campo (FET):**  
+   [![Ver en YouTube](https://img.youtube.com/vi/JeFx7oXkDg8/0.jpg)](https://www.youtube.com/watch?v=JeFx7oXkDg8)  
+   En este video se describe cómo funciona un transistor de efecto de campo (FET) y su aplicación en circuitos digitales y analógicos.
+
+3. **Historia de los Transistores:**  
+   [![Ver en YouTube](https://img.youtube.com/vi/7ukDKVHnac4/0.jpg)](https://www.youtube.com/watch?v=7ukDKVHnac4)  
+   Este video da un contexto histórico sobre la invención de los transistores y cómo revolucionaron la tecnología.
+
+4. **Cómo se construye un transistor:**  
+   [![Ver en YouTube](https://img.youtube.com/vi/IcrBqCFLHIY/0.jpg)](https://www.youtube.com/watch?v=IcrBqCFLHIY)  
+   Un recorrido técnico sobre la fabricación de transistores y su integración en circuitos modernos.
+
+---
+
+## **Aplicaciones de los Transistores**
+- Amplificación de señales en audio y video.
+- Construcción de circuitos lógicos en computadoras.
+- Regulación de corriente en fuentes de alimentación.
+- Creación de dispositivos electrónicos como radios, televisores y teléfonos móviles.
+
+---
+
+Para profundizar más en el tema, consulta los recursos de [Electrónica Básica](https://www.allaboutcircuits.com/) o los videos recomendados en este documento.
+
