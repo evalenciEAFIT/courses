@@ -31,7 +31,7 @@ Para comprender mejor este concepto, revisa los siguientes videos:
 
 2. **Transistores de Efecto de Campo (FET):**  
    [![Ver en YouTube](https://img.youtube.com/vi/JeFx7oXkDg8/0.jpg)](https://www.youtube.com/watch?v=JeFx7oXkDg8)
-   [![Ver en youtube](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y/0.jpg)](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y) 
+   [![Ver en youtube](https://img.youtube.com/vi/Mdx0kRz-IFo/0.jpg)](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y) 
    En este video se describe cómo funciona un transistor de efecto de campo (FET) y su aplicación en circuitos digitales y analógicos.
 
 4. **Historia de los Transistores:**  
