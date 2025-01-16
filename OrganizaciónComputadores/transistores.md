@@ -26,7 +26,7 @@ Para comprender mejor este concepto, revisa los siguientes videos:
 ### **Videos Recomendados**
 
 1. **Introducción a los Transistores Bipolares (BJT):**  
-   [![Ver en YouTube](https://img.youtube.com/vi/6vKQAUQOU9I/0.jpg)](https://www.youtube.com/watch?v=6vKQAUQOU9I)  
+   [![Ver en YouTube](https://img.youtube.com/vi/w14cvydBC8g/0.jpg)](https://youtu.be/w14cvydBC8g?si=nIxofZrwBecijwMV)  
    Este video explica el funcionamiento básico de un transistor bipolar de unión (BJT) y cómo actúa como interruptor y amplificador.  
 
 2. **Transistores de Efecto de Campo (FET):**  
