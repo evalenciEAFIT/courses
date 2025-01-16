@@ -30,7 +30,6 @@ Para comprender mejor este concepto, revisa los siguientes videos:
    Este video explica el funcionamiento básico de un transistor bipolar de unión (BJT) y cómo actúa como interruptor y amplificador.  
 
 2. **Transistores de Efecto de Campo (FET):**  
-   [![Ver en YouTube](https://img.youtube.com/vi/JeFx7oXkDg8/0.jpg)](https://www.youtube.com/watch?v=JeFx7oXkDg8)
    [![Ver en youtube](https://img.youtube.com/vi/Mdx0kRz-IFo/0.jpg)](https://youtu.be/Mdx0kRz-IFo?si=erloTNEKr4UfGk7y) 
    En este video se describe cómo funciona un transistor de efecto de campo (FET) y su aplicación en circuitos digitales y analógicos.
 
