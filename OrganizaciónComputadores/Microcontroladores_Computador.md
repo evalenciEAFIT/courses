@@ -36,10 +36,6 @@ La fabricación de una computadora moderna es un proceso complejo que implica el
 
 Para entender mejor cómo se desarrollan los microcontroladores y los componentes esenciales de las computadoras, te invitamos a ver los siguientes videos:
 
-- [Historia del transistor](https://youtu.be/f3IUVvJ2XgI?si=_xqln561r1Dmeyr4): Este video explica la historia del transistor, uno de los inventos más revolucionarios que permitió el desarrollo de la electrónica moderna.
-
-- [Compuertas lógicas](https://youtu.be/zGV-6e_tVDI?si=p6vwsopZcJ3RK13n): Aquí se aborda el funcionamiento de las compuertas lógicas, fundamentales para el procesamiento de datos en los circuitos electrónicos.
-
 - [Microchips](https://youtu.be/2VxdciZsA80?si=hPYENJ46VH-kKkks): Este video te introduce al mundo de los microchips, los pequeños circuitos integrados que forman la base de los microcontroladores y otros dispositivos electrónicos.
 
 - [ASML](https://youtu.be/zAYCfw_syFc?si=PAS35npz_pNOJnrv): ASML es una de las compañías clave en la fabricación de equipos para la producción de chips a través de la litografía extrema ultravioleta (EUV). Este video explica su importancia en la industria de los semiconductores.
