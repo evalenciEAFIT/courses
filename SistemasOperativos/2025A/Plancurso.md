@@ -48,18 +48,48 @@ La evaluación del curso se distribuye de la siguiente manera:
 
 Cada parcial incluirá una parte teórica para evaluar los conocimientos conceptuales del estudiante y una práctica sustentada que permitirá demostrar habilidades técnicas en la resolución de problemas relacionados con los temas del curso.
 
-## Plan Detallado Semana a Semana
+# Plan Detallado Semana a Semana
 
-| Semana | Fecha               | Actividad                | Tema / Actividad                               | Detalles                                    | Práctica o Evaluación | Lenguaje          |
-|--------|---------------------|--------------------------|-----------------------------------------------|---------------------------------------------|-------------------------|------------------|
-| 1      | 21/01/2025 (Martes) | Clase                   | Introducción al curso                        | Presentación del programa y objetivos      | N/A                     | N/A              |
-|        | 23/01/2025 (Jueves) | Clase                   | Introducción a sistemas operativos           | Conceptos básicos y funciones             | N/A                     | N/A              |
-| 2      | 28/01/2025 (Martes) | Clase + Práctica       | Instalación de máquinas virtuales           | Configuración de VirtualBox y VM         | Configurar VM con Debian 12 | N/A              |
-|        | 30/01/2025 (Jueves) | Clase + Práctica       | Instalación de Linux                         | Instalación de Debian y navegación      | Practicar comandos en terminal Linux | Bash             |
-| 3      | 04/02/2025 (Martes) | Clase + Práctica       | Comandos básicos de Linux                   | Introducción a terminal y estructura     | Crear y eliminar archivos/directorios | Bash             |
-|        | 06/02/2025 (Jueves) | Clase + Práctica       | WSL en Windows                                | Configuración inicial de WSL             | Configurar y usar WSL en Windows     | Bash             |
+| Sm | Fecha               | Actividad                | Tema / Actividad                               | Detalles                                    | Práctica o Evaluación | Lenguaje          |
+|----|---------------------|--------------------------|-----------------------------------------------|---------------------------------------------|-------------------------|------------------|
+| 1  | 21/01/2025 (Martes) | Clase                   | Introducción al curso                        | Presentación del programa y objetivos      | N/A                     | N/A              |
+|    | 23/01/2025 (Jueves) | Clase                   | Introducción a sistemas operativos           | Conceptos básicos y funciones             | N/A                     | N/A              |
+| 2  | 28/01/2025 (Martes) | Clase + Práctica       | Instalación de máquinas virtuales           | Configuración de VirtualBox y VM         | Configurar VM con Debian 12 | N/A              |
+|    | 30/01/2025 (Jueves) | Clase + Práctica       | Instalación de Linux                         | Instalación de Debian y navegación      | Practicar comandos en terminal Linux | Bash             |
+| 3  | 04/02/2025 (Martes) | Clase + Práctica       | Comandos básicos de Linux                   | Introducción a terminal y estructura     | Crear y eliminar archivos/directorios | Bash             |
+|    | 06/02/2025 (Jueves) | Clase + Práctica       | WSL en Windows                                | Configuración inicial de WSL             | Configurar y usar WSL en Windows     | Bash             |
+| 4  | 11/02/2025 (Martes) | Clase + Práctica       | Manejo de archivos en Linux                  | Copiar, mover, permisos                    | Administrar archivos y permisos      | Bash             |
+|    | 13/02/2025 (Jueves) | Evaluación            | Primer parcial                                | Examen teórico y práctico               | Configuración inicial de Linux       | Bash             |
+| 5  | 18/02/2025 (Martes) | Clase                   | Introducción a sistemas de archivos          | FAT, NTFS, EXT                            | N/A                     | N/A              |
+|    | 20/02/2025 (Jueves) | Clase                   | Introducción a sistemas de archivos          | FAT, NTFS, EXT                            | N/A                     | N/A              |
+| 6  | 25/02/2025 (Martes) | Clase + Práctica       | Particiones y montaje                        | Creación y gestión de particiones        | Crear particiones y sistemas de archivos. | Bash             |
+|    | 27/02/2025 (Jueves) | Clase + Práctica       | Almacenamiento y caché                      | Introducción a jerarquías y tipos        | Analizar almacenamiento con comandos | Bash             |
+| 7  | 04/03/2025 (Martes) | Clase + Práctica       | RAID básico y distribuidos                  | Configuración de RAID                    | Crear y administrar RAID              | Bash             |
+|    | 06/03/2025 (Jueves) | Clase + Práctica       | RAID básico y distribuidos                  | Configuración de RAID                    | Crear y administrar RAID              | Bash             |
+| 8  | 11/03/2025 (Martes) | Evaluación            | Segundo parcial                              | Examen teórico y práctico               | Montaje y sistemas de archivos       | Bash             |
+|    | 13/03/2025 (Jueves) | Clase                   | Gestión de memoria: conceptos básicos       | Introducción a paginación y segmentación | Analizar uso de memoria con herramientas | C, C++, Rust     |
+| 9  | 18/03/2025 (Martes) | Clase + Práctica       | Práctica de memoria virtual                 | Configuración de memoria swap            | Configurar y verificar uso de swap    | C, C++, Rust     |
+|    | 20/03/2025 (Jueves) | Clase + Práctica       | Gestión avanzada de memoria                 | Soluciones a fragmentación               | Implementar y analizar soluciones     | C, C++, Rust     |
+| 10 | 25/03/2025 (Martes) | Clase + Práctica       | Gestión avanzada de memoria                 | Soluciones a fragmentación               | Implementar y analizar soluciones     | C, C++, Rust     |
+|    | 27/03/2025 (Jueves) | Clase + Práctica       | Introducción a concurrencia                 | Conceptos básicos de procesos            | Crear programa con hilos simples      | C, C++, Rust     |
+| 11 | 01/04/2025 (Martes) | Clase + Práctica       | Sincronización de procesos                  | Problemas de sincronización              | Implementar semáforos en C++           | C, C++, Rust     |
+|    | 03/04/2025 (Jueves) | Clase + Práctica       | Planificación de procesos                   | Algoritmos: FIFO, Round Robin             | Simular planificador Round Robin      | C, C++, Rust     |
+| 12 | 08/04/2025 (Martes) | Clase + Práctica       | Planificación de procesos                   | Algoritmos: FIFO, Round Robin             | Simular planificador Round Robin      | C, C++, Rust     |
+|    | 10/04/2025 (Jueves) | Evaluación            | Tercer parcial                               | Examen teórico y práctico               | Implementar algoritmos de concurrencia | C, C++, Rust     |
+|    | 15/04/2025 (Martes) | Clase                   | Semana Santa                                 | No hay clase                              | N/A                     | N/A              |
+|    | 17/04/2025 (Jueves) | Clase                   | Semana Santa                                 | No hay clase                              | N/A                     | N/A              |
+| 13 | 22/04/2025 (Martes) | Planificación          | Planificación del proyecto final             | Asignación de roles y diseño inicial    | Crear documento de planificación       | N/A              |
+|    | 24/04/2025 (Jueves) | Clase                   | Desarrollo inicial                           | Implementar módulos básicos             | N/A                     | N/A              |
+| 14 | 29/04/2025 (Martes) | Clase                   | Desarrollo avanzado                          | Integración de gestión de memoria y procesos | N/A                     | N/A              |
+|    | 01/05/2025 (Jueves) | Clase                   | Festivo (Día del Trabajo)                   | No hay clase                              | N/A                     | N/A              |
+| 15 | 06/05/2025 (Martes) | Trabajo Final           | Ajustes finales                              | Integración de gestión de memoria y procesos | N/A                     | N/A              |
+|    | 08/05/2025 (Jueves) | Trabajo Final           | Ajustes finales                              | Integración de gestión de memoria y procesos | N/A                     | Libre            |
+| 17 | 13/05/2025 (Martes) | Defensa Final           | Preparación y defensa del proyecto          | Documentación y defensa del proyecto      | N/A                     | Libre            |
+|    | 15/05/2025 (Jueves) | Defensa Final           | Exposición final                            | Exposición formal y entrega final         | N/A                     | Libre            |
+| 18 | 20/05/2025 (Martes) | Cierre                  | Retroalimentación                           | Feedback del curso y cierre formal         | N/A                     | N/A              |
+|    | 22/05/2025 (Jueves) | Cierre                  | Resultados finales                           | Revisión y entrega de calificaciones      | N/A                     | N/A              |
 
-(El resto del calendario sigue en el archivo completo)
+
 
 ## Detalle del Proyecto Final
 
