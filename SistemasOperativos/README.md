@@ -12,7 +12,6 @@ Un sistema operativo es el software que actúa como intermediario entre los usua
 Para complementar esta introducción, te invitamos a explorar los siguientes videos que explican conceptos clave de los sistemas operativos:
 
 - [¿Qué es un Sistema Operativo?](https://youtu.be/3plPtVRf0Os?si=xq8tII3JMFXLdg6Q)  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3plPtVRf0Os" title="¿Qué es un Sistema Operativo?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Historia de los Sistemas Operativos](https://youtu.be/666Pc5Yp5hM?si=d_rMQDO1Ye0v3068)  
 
