@@ -15,16 +15,12 @@ Para complementar esta introducción, te invitamos a explorar los siguientes vid
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3plPtVRf0Os" title="¿Qué es un Sistema Operativo?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Historia de los Sistemas Operativos](https://youtu.be/666Pc5Yp5hM?si=d_rMQDO1Ye0v3068)  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/666Pc5Yp5hM" title="Historia de los Sistemas Operativos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Gestor de Procesos](https://youtu.be/W6lq8wlfk_s?si=xDIuKeMX7fypO3M1)  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W6lq8wlfk_s" title="Gestor de Procesos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Gestor de Memoria](https://youtu.be/kYSOAqS5OdY?si=BXuMd3C-He7yrtnu)  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kYSOAqS5OdY" title="Gestor de Memoria" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Sistemas de Archivos](https://youtu.be/3AL0gJYZcFA?si=Agj0RdippAx9WyOx)  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3AL0gJYZcFA" title="Sistemas de Archivos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Contenidos del Curso
 El curso cubrirá los siguientes temas principales:
