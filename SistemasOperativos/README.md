@@ -19,8 +19,11 @@ Para complementar esta introducción, te invitamos a explorar los siguientes vid
 
 - [Gestor de Memoria](https://youtu.be/kYSOAqS5OdY?si=BXuMd3C-He7yrtnu)  
 
-- [Sistemas de Archivos](https://youtu.be/3AL0gJYZcFA?si=Agj0RdippAx9WyOx)  
+- [Sistemas de Archivos](https://youtu.be/3AL0gJYZcFA?si=Agj0RdippAx9WyOx)   
+  
+- [Tipos de sistemas Operativos](https://youtu.be/LFMPDnAQ5J0?si=bCyh51q_LxEqqk33)
 
+  
 ## Contenidos del Curso
 El curso cubrirá los siguientes temas principales:
 
