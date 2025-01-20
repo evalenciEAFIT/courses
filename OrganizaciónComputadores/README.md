@@ -4,18 +4,52 @@ La **Organización de Computadores**, también conocida como **Arquitectura del 
 
 La arquitectura de un computador es un concepto fundamental en la informática, ya que proporciona la base sobre la cual se construyen los sistemas de hardware y software. En ella, se incluyen aspectos como la estructura del procesador, el diseño de la memoria, la entrada y salida de datos, y cómo estos componentes interactúan para realizar operaciones complejas.
 
-El conocimiento de la organización de los computadores permite entender cómo funciona una computadora desde el nivel más bajo, es decir, cómo los transistores y circuitos logicos se combinan para ejecutar programas, hasta el nivel más alto, donde los sistemas operativos y aplicaciones facilitan la interacción con los usuarios.
+El conocimiento de la organización de los computadores permite entender cómo funciona una computadora desde el nivel más bajo, es decir, cómo los transistores y circuitos lógicos se combinan para ejecutar programas, hasta el nivel más alto, donde los sistemas operativos y aplicaciones facilitan la interacción con los usuarios.
+
+---
+
+## Curso de Organización de Computadores – Primer Semestre de 2025
+
+Este curso es impartido en la **Universidad EAFIT** durante el primer semestre del 2025. Los estudiantes interesados pueden consultar los siguientes documentos fundamentales para el desarrollo del curso:
+
+- **Plan del Curso:**  
+  [Consulta aquí el plan del curso](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/2025A/plancurso.md)
+
+- **Pacto Pedagógico:**  
+  [Consulta aquí el pacto pedagógico](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/2025A/pecto_pedagogico.md)
+
+El curso se basa en el proyecto **Nand2Tetris**, un enfoque revolucionario que permite a los estudiantes construir una computadora funcional desde cero, comenzando con puertas lógicas básicas y terminando con un sistema operativo y programas de alto nivel.
+
+---
+
+## ¿Qué es Nand2Tetris?
+
+**Nand2Tetris** es un curso y proyecto educativo diseñado para enseñar cómo construir un sistema computacional completo desde las bases más fundamentales. A través de este curso, los estudiantes adquieren conocimientos prácticos y teóricos que abarcan:
+
+- **Construcción de Hardware:** Diseñar y simular puertas lógicas como NAND, XOR y multiplexores.
+- **Arquitectura de Computadores:** Construir una ALU, memoria y una CPU funcional.
+- **Lenguajes de Programación:** Diseñar un conjunto de instrucciones y programar en ensamblador.
+- **Sistemas Operativos y Aplicaciones:** Implementar un sistema operativo básico y escribir programas de alto nivel que corran sobre la computadora diseñada.
+
+Este enfoque único no solo enseña cómo funcionan los computadores modernos, sino que también ofrece una experiencia práctica para comprender cómo interactúan hardware y software.
+
+Para más detalles, visita el sitio oficial de **Nand2Tetris**:  
+[https://www.nand2tetris.org/](https://www.nand2tetris.org/)
+
+---
 
 ## Menú de Temas Relacionados
 
-- [Microcontroladores y cómo hacer un computador](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/Microcontroladores_Computador.md)
-  
+- [Microcontroladores y cómo hacer un computador](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/Microcontroladores_Computador.md)  
   En este tema, se explora el concepto de **microcontroladores**, dispositivos integrados esenciales en el diseño de computadoras y sistemas electrónicos. Se cubre cómo funcionan estos pequeños chips, su estructura y cómo se pueden utilizar para crear una computadora o sistemas embebidos.
 
-- [Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/Microcontroladores_Computador.md)
-  
+- [Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/Microcontroladores_Computador.md)  
   Este tema se centra en los **transistores**, componentes fundamentales en la electrónica moderna. Los transistores son el bloque básico de los circuitos electrónicos que componen las computadoras. Se analiza su funcionamiento, tipos y su papel crucial en la construcción de los microprocesadores y otros dispositivos electrónicos.
+
+---
 
 ## Conclusión
 
-La organización de computadoras es un campo fascinante que abarca una variedad de componentes y principios de diseño. A través de los temas mencionados en el menú, puedes profundizar en el funcionamiento de los microcontroladores y los transistores, los cuales son esenciales para la construcción de cualquier sistema computacional moderno. La comprensión de estos conceptos es clave para entender cómo los computadores ejecutan tareas complejas de manera rápida y eficiente.
+La organización de computadoras es un campo fascinante que abarca una variedad de componentes y principios de diseño. Este curso brinda una experiencia única y práctica para entender cómo funcionan las computadoras desde sus cimientos hasta niveles avanzados. A través del proyecto **Nand2Tetris**, los estudiantes desarrollarán no solo una computadora funcional, sino también una comprensión profunda de los principios que impulsan la informática moderna.
+
+¡Prepárate para construir, aprender y transformar tus conocimientos en ingeniería de sistemas!  
