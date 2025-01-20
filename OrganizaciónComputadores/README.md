@@ -50,6 +50,4 @@ Para más detalles, visita el sitio oficial de **Nand2Tetris**:
 
 ## Conclusión
 
-La organización de computadoras es un campo fascinante que abarca una variedad de componentes y principios de diseño. Este curso brinda una experiencia única y práctica para entender cómo funcionan las computadoras desde sus cimientos hasta niveles avanzados. A través del proyecto **Nand2Tetris**, los estudiantes desarrollarán no solo una computadora funcional, sino también una comprensión profunda de los principios que impulsan la informática moderna.
-
-¡Prepárate para construir, aprender y transformar tus conocimientos en ingeniería de sistemas!  
+La organización de computadoras es un campo fascinante que abarca una variedad de componentes y principios de diseño. Este curso brinda una experiencia única y práctica para entender cómo funcionan las computadoras desde sus cimientos. A través del proyecto **Nand2Tetris**, los estudiantes desarrollarán no solo una computadora funcional, sino también una comprensión profunda de los principios que impulsan la informática moderna.
