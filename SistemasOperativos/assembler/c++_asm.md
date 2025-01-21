@@ -141,7 +141,3 @@ int main() {
 
 - **Seguridad**: Usa ensamblador en línea solo si es absolutamente necesario, ya que puede reducir la portabilidad del código.
 - **Optimización**: Los compiladores modernos suelen generar código optimizado, lo que puede hacer innecesario el uso de ensamblador manual en muchos casos.
-
----
-
-¡Con estos ejemplos, puedes comenzar a combinar C++ con ensamblador para realizar operaciones de bajo nivel y optimizar tu código! Si necesitas más ejemplos, ¡no dudes en pedirlo! 😊
