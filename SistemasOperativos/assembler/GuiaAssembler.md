@@ -55,6 +55,47 @@ Las instrucciones son comandos que indican al procesador qué hacer. Ejemplos:
 
 ---
 
+## Instalación de las Herramientas
+
+### En Linux
+1. **Instalar NASM**:
+   ```bash
+   sudo apt update && sudo apt install nasm -y  # Para distribuciones Debian/Ubuntu
+   sudo dnf install nasm -y                    # Para Fedora
+   sudo pacman -S nasm                         # Para Arch Linux
+   ```
+
+2. **Instalar Binutils (Enlazador)**:
+   ```bash
+   sudo apt install binutils -y               # Para Debian/Ubuntu
+   sudo dnf install binutils -y               # Para Fedora
+   sudo pacman -S binutils                    # Para Arch Linux
+   ```
+
+3. **Instalar GDB (Opcional)**:
+   ```bash
+   sudo apt install gdb -y                    # Depurador para analizar programas
+   ```
+
+### En Windows
+1. **Descargar e Instalar NASM**:
+   - Ve al sitio oficial: [https://www.nasm.us/](https://www.nasm.us/).
+   - Descarga la versión para Windows.
+   - Durante la instalación, agrega NASM al **PATH**.
+
+2. **Instalar GoLink**:
+   - Descárgalo desde: [https://www.godevtool.com/](https://www.godevtool.com/).
+   - Asegúrate de que el ejecutable esté en el **PATH** para facilitar su uso.
+
+3. **Instalar MinGW (Alternativa a GoLink)**:
+   - Descarga MinGW desde: [https://www.mingw-w64.org/](https://www.mingw-w64.org/).
+   - Configura las herramientas GNU para ensamblar y enlazar.
+
+4. **Instalar OllyDbg (Opcional)**:
+   - Descarga este depurador desde: [http://www.ollydbg.de/](http://www.ollydbg.de/).
+
+---
+
 ## Crear, Compilar y Ejecutar un Programa en Ensamblador
 
 ### 1. Crear el Archivo Fuente
@@ -217,6 +258,4 @@ Las macros son atajos para escribir código repetitivo. Ejemplo:
 - [Guía de instrucciones x86](https://c9x.me/x86/)
 - [Tutorial interactivo en Linux](https://asmtutor.com/)
 
----
 
-¡Este manual te ayudará a comenzar con el lenguaje ensamblador y a escribir programas eficientes en Linux y Windows! Si necesitas ejemplos adicionales o profundizar en algún tema, no dudes en pedirlo. 😊
