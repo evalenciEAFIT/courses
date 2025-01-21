@@ -172,6 +172,4 @@ Hexadecimal: 00000001
 ...
 ```
 
----
 
-¡Listo! Ahora tienes un programa funcional en ensamblador que muestra el contenido de los registros en binario y hexadecimal. Si necesitas asistencia adicional, no dudes en pedirla. 😊
