@@ -36,11 +36,14 @@ La fabricación de una computadora moderna es un proceso complejo que implica el
 
 Para entender mejor cómo se desarrollan los microcontroladores y los componentes esenciales de las computadoras, te invitamos a ver los siguientes videos:
 
-- [Microchips](https://youtu.be/2VxdciZsA80?si=hPYENJ46VH-kKkks): Este video te introduce al mundo de los microchips, los pequeños circuitos integrados que forman la base de los microcontroladores y otros dispositivos electrónicos.
+- [Microchips](https://youtu.be/2VxdciZsA80?si=hPYENJ46VH-kKkks): Este video te introduce al mundo de los microchips, los pequeños circuitos integrados que forman la base de los microcontroladores y otros dispositivos electrónicos   
+  [![Ver en YouTube](https://img.youtube.com/vi/2VxdciZsA80/0.jpg)](https://youtu.be/2VxdciZsA80?si=hPYENJ46VH-kKkks)
+  
+- [ASML](https://youtu.be/zAYCfw_syFc?si=PAS35npz_pNOJnrv): ASML es una de las compañías clave en la fabricación de equipos para la producción de chips a través de la litografía extrema ultravioleta (EUV). Este video explica su importancia en la industria de los semiconductores.   
+  [![Ver en YouTube](https://img.youtube.com/vi/zAYCfw_syFc/0.jpg)](https://youtu.be/zAYCfw_syFc?si=PAS35npz_pNOJnrv)
 
-- [ASML](https://youtu.be/zAYCfw_syFc?si=PAS35npz_pNOJnrv): ASML es una de las compañías clave en la fabricación de equipos para la producción de chips a través de la litografía extrema ultravioleta (EUV). Este video explica su importancia en la industria de los semiconductores.
-
-- [TSMC](https://youtu.be/aT9LBd0GH5Q?si=HPGNXWsD9_bNlyh7): TSMC es uno de los fabricantes de semiconductores más grandes del mundo, y en este video se explora cómo fabrican los chips que alimentan la mayoría de las computadoras y dispositivos electrónicos.
+- [TSMC](https://youtu.be/aT9LBd0GH5Q?si=HPGNXWsD9_bNlyh7): TSMC es uno de los fabricantes de semiconductores más grandes del mundo, y en este video se explora cómo fabrican los chips que alimentan la mayoría de las computadoras y dispositivos electrónicos.   
+  [![Ver en YouTube](https://img.youtube.com/vi/aT9LBd0GH5Q/0.jpg)](https://youtu.be/aT9LBd0GH5Q?si=HPGNXWsD9_bNlyh7)
 
 ## Conclusión
 La creación de un computador moderno es un proceso que implica la integración de componentes electrónicos sofisticados, cada uno de los cuales desempeña un papel crucial en el funcionamiento del sistema. Los microcontroladores, por ejemplo, son esenciales en la automatización y control de dispositivos. A medida que la tecnología avanza, se siguen desarrollando métodos más eficientes y precisos para la fabricación de los componentes, lo que nos lleva a computadoras más potentes y rápidas. Los videos proporcionados ofrecen una visión más profunda sobre la historia y los procesos involucrados en la fabricación de estos dispositivos esenciales.
