@@ -80,22 +80,91 @@ _start:
     int 0x80
 ```
 
-### 2. Compilar y Enlazar
+### 2. Operaciones Matemáticas
+Un programa que realiza una suma de dos números:
+
+```asm
+section .data
+    num1 db 10
+    num2 db 20
+    resultado db 0
+
+section .text
+    global _start
+
+_start:
+    mov al, [num1]   ; Cargar num1 en AL
+    add al, [num2]   ; Sumar num2 a AL
+    mov [resultado], al ; Guardar el resultado
+
+    ; Terminar el programa
+    mov eax, 1       ; sys_exit
+    xor ebx, ebx
+    int 0x80
+```
+
+### 3. Leer y Escribir Archivos
+Un programa que lee un archivo y escribe su contenido en la salida estándar:
+
+```asm
+section .data
+    filename db 'archivo.txt', 0  ; Nombre del archivo
+    buffer db 256 dup(0)          ; Buffer para leer datos
+
+section .bss
+    fd resb 1                     ; Descriptor de archivo
+
+section .text
+    global _start
+
+_start:
+    ; Abrir el archivo
+    mov eax, 5         ; sys_open
+    mov ebx, filename  ; Nombre del archivo
+    mov ecx, 0         ; Modo de solo lectura
+    int 0x80           ; Interrupción
+    mov [fd], eax      ; Guardar descriptor
+
+    ; Leer el archivo
+    mov eax, 3         ; sys_read
+    mov ebx, [fd]      ; Descriptor de archivo
+    mov ecx, buffer    ; Buffer de destino
+    mov edx, 256       ; Tamaño máximo a leer
+    int 0x80           ; Interrupción
+
+    ; Escribir el contenido leído
+    mov eax, 4         ; sys_write
+    mov ebx, 1         ; Salida estándar
+    mov ecx, buffer    ; Buffer de datos
+    int 0x80           ; Interrupción
+
+    ; Cerrar el archivo
+    mov eax, 6         ; sys_close
+    mov ebx, [fd]      ; Descriptor de archivo
+    int 0x80           ; Interrupción
+
+    ; Terminar el programa
+    mov eax, 1         ; sys_exit
+    xor ebx, ebx
+    int 0x80
+```
+
+### 4. Compilar y Enlazar
 #### En Linux
 ```bash
-nasm -f elf32 hola_mundo.asm -o hola_mundo.o
-ld -m elf_i386 hola_mundo.o -o hola_mundo
+nasm -f elf32 ejemplo.asm -o ejemplo.o
+ld -m elf_i386 ejemplo.o -o ejemplo
 ```
 
 #### En Windows
 ```cmd
-nasm -f win32 hola_mundo.asm -o hola_mundo.obj
-golink /entry:_start /console hola_mundo.obj
+nasm -f win32 ejemplo.asm -o ejemplo.obj
+golink /entry:_start /console ejemplo.obj
 ```
 
-### 3. Ejecutar el Programa
-- **En Linux**: `./hola_mundo`
-- **En Windows**: `hola_mundo.exe`
+### 5. Ejecutar el Programa
+- **En Linux**: `./ejemplo`
+- **En Windows**: `ejemplo.exe`
 
 ---
 
