@@ -131,6 +131,4 @@ Una **máquina virtual (VM)** es un entorno de software que emula un sistema inf
 - **Rendimiento**: Pueden ser más lentas que los sistemas ejecutados en hardware real debido a la sobrecarga del hipervisor.
 - **Requisitos de recursos**: Consumen más memoria y CPU que un sistema físico único.
 
----
 
-¡Este documento proporciona una visión completa sobre sistemas operativos y máquinas virtuales! Si necesitas más detalles o ejemplos específicos, no dudes en preguntar.
