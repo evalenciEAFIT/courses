@@ -115,4 +115,63 @@ int main() {
 
 ---
 
-Este documento proporciona una introducción clara sobre el kernel, el microkernel y cómo implementar un ejemplo básico en C++. Si necesitas más detalles o adaptaciones, ¡házmelo saber! 😊
+## Ejemplo de Microkernel en Ensamblador Intel
+
+El siguiente ejemplo básico implementa un microkernel en ensamblador Intel que realiza una simple gestión de interrupciones y comunicación entre procesos simulados:
+
+```asm
+section .data
+msg db "Mensaje recibido", 0
+
+section .bss
+buffer resb 256
+
+section .text
+
+; Punto de entrada
+extern _start
+_start:
+    ; Inicializar el IDT (Tabla de Descriptores de Interrupción)
+    call setup_idt
+
+    ; Hacer un bucle infinito para esperar interrupciones
+.wait:
+    hlt
+    jmp .wait
+
+; Configuración de la tabla de interrupciones
+setup_idt:
+    ; Código para configurar las interrupciones
+    ret
+
+; Rutina de manejo de interrupciones
+isr_handler:
+    ; Guardar el estado del procesador
+    pusha
+
+    ; Procesar interrupción (por ejemplo, manejar mensajes)
+    mov edx, msg
+    mov ecx, buffer
+    call process_message
+
+    ; Restaurar el estado del procesador
+    popa
+    iret
+
+process_message:
+    ; Procesar y mostrar un mensaje
+    ret
+```
+
+### Explicación del código:
+1. **Sección `.data` y `.bss`**:
+   - Se definen los datos estáticos y el espacio reservado para buffers.
+2. **Tabla de interrupciones**:
+   - Simula la configuración básica de un microkernel para manejar interrupciones.
+3. **Rutina `isr_handler`**:
+   - Muestra cómo se procesa una interrupción y simula la transferencia de mensajes.
+4. **Bucle de espera (`hlt`)**:
+   - Simula un sistema operativo que espera eventos o interrupciones.
+
+
+
