@@ -184,8 +184,8 @@ Hola, mundo!
 
 ## Menú de Ejemplos
 
-1. **Uso de Pantalla:**
-   - Revisa el archivo [ejemploPantalla.md](ejemploPantalla.md) para aprender a manipular texto en pantalla.
+1. **Uso de Pantalla: Reloj**
+   - [ejemploPantalla.md](ejemploPantalla.md) para aprender a manipular texto en pantalla, con un rejo en dos colores.
 
-2. **Mostrar Registros de Memoria:**
-   - Consulta el archivo [MostrarRegistrosMemoria.md](MostrarRegistrosMemoria.md) para un ejemplo de cómo leer y mostrar el contenido de registros en binario y hexadecimal.
+2. **Mostrar Registros de Memoria: Explorar memoria**
+   - [MostrarRegistrosMemoria.md](MostrarRegistrosMemoria.md) ejemplo de cómo leer y mostrar el contenido de registros en binario y hexadecimal.
