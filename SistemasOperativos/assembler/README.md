@@ -183,7 +183,7 @@ Hola, mundo!
 ---
 
 ## Menú de Ejemplos
-[guia.md](guia.md) guia corta con ejemplos para usar Asseble.  
+[GuiaAssembler.md](Guiaassembler.md) guia corta con ejemplos para usar Asseble.  
 1. **Uso de Pantalla: Reloj**
    - [ejemploPantalla.md](ejemploPantalla.md) para aprender a manipular texto en pantalla, con un rejo en dos colores.
 
