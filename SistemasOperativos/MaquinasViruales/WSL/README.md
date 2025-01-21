@@ -101,7 +101,9 @@ wsl --shutdown
 1. [Instalar WSL 2 en Windows 11 - Paso a Paso](https://youtu.be/uJg5HVzNUN0?si=8otIUlJGsBu8BOyY)   
    [![Ver en YouTube](https://img.youtube.com/vi/uJg5HVzNUN0/0.jpg)](https://www.youtube.com/watch?v=uJg5HVzNUN0)   
    Video detallado que explica cómo habilitar y configurar WSL 2.
-
+2. [Linux en Windows y Windows en Linux](https://youtu.be/Qy44XLpiChc?si=cup54IbBmQYU073k)   
+   [![Ver en YouTube](https://img.youtube.com/vi/Qy44XLpiChc/0.jpg)](https://www.youtube.com/watch?v=Qy44XLpiChc) 
+   
 
 ### Documentación Oficial
 
