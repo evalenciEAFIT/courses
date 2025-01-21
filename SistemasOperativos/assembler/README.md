@@ -1,3 +1,4 @@
+
 # Crear, Compilar y Ejecutar un Programa en Ensamblador en Linux y Windows 11
 
 Este documento describe cómo crear, compilar y ejecutar un programa en ensamblador utilizando el ensamblador **NASM** (Netwide Assembler) en Linux y Windows 11.
@@ -179,3 +180,12 @@ Hola, mundo!
 2. **Depurar con herramientas**:
    - Usa herramientas como **OllyDbg** o **gdb** en MinGW para depuración.
 
+---
+
+## Menú de Ejemplos
+
+1. **Uso de Pantalla:**
+   - Revisa el archivo [ejemploPantalla.md](ejemploPantalla.md) para aprender a manipular texto en pantalla.
+
+2. **Mostrar Registros de Memoria:**
+   - Consulta el archivo [MostrarRegistrosMemoria.md](MostrarRegistrosMemoria.md) para un ejemplo de cómo leer y mostrar el contenido de registros en binario y hexadecimal.
