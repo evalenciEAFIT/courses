@@ -131,4 +131,24 @@ Una **máquina virtual (VM)** es un entorno de software que emula un sistema inf
 - **Rendimiento**: Pueden ser más lentas que los sistemas ejecutados en hardware real debido a la sobrecarga del hipervisor.
 - **Requisitos de recursos**: Consumen más memoria y CPU que un sistema físico único.
 
+---
+
+## ¿Qué es WSL?
+
+**WSL (Windows Subsystem for Linux)** es una capa de compatibilidad desarrollada por Microsoft que permite ejecutar distribuciones de Linux directamente sobre Windows, sin necesidad de máquinas virtuales o arranque dual.
+
+### Características principales de WSL
+- **Integración con Windows**: Permite acceder a archivos y recursos de Windows desde el entorno de Linux y viceversa.
+- **Distribuciones compatibles**: Admite varias distribuciones de Linux como Ubuntu, Debian, Fedora, entre otras.
+- **Ejecución eficiente**: WSL 2 utiliza un kernel Linux real dentro de un entorno virtualizado, ofreciendo mejor rendimiento que WSL 1.
+- **Soporte de herramientas de desarrollo**: Ideal para desarrolladores que necesitan herramientas y entornos de Linux mientras trabajan en Windows.
+
+### Ventajas de WSL
+- Elimina la necesidad de software adicional como máquinas virtuales o arranque dual.
+- Bajo consumo de recursos comparado con una máquina virtual.
+- Fácil instalación desde la Microsoft Store.
+
+### Limitaciones
+- Algunas aplicaciones que dependen de hardware específico pueden no ser compatibles.
+- Requiere la versión adecuada de Windows (Windows 10 o superior).
 
