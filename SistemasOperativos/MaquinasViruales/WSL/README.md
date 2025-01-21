@@ -98,7 +98,7 @@ wsl --shutdown
 ## Recursos Adicionales
 
 ### Videos para Instalar WSL
-1. [Instalar WSL 2 en Windows 11 - Paso a Paso](https://www.youtube.com/watch?v=abcd1234) - Video detallado que explica cómo habilitar y configurar WSL 2.
+1. [Instalar WSL 2 en Windows 11 - Paso a Paso](https://youtu.be/uJg5HVzNUN0?si=8otIUlJGsBu8BOyY) - Video detallado que explica cómo habilitar y configurar WSL 2.
 2. [Configura Ubuntu en WSL para Desarrolladores](https://www.youtube.com/watch?v=efgh5678) - Guía para instalar y configurar Ubuntu en WSL.
 3. [WSL 2 para Principiantes](https://www.youtube.com/watch?v=ijkl9101) - Explicación simple para usuarios nuevos.
 
