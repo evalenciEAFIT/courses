@@ -46,7 +46,8 @@ Las máquinas virtuales generalmente constan de los siguientes componentes:
 - **Máquina virtual huésped:** El sistema operativo y las aplicaciones que se ejecutan en la VM.
 - **Hardware virtualizado:** Emula dispositivos como CPU, memoria, almacenamiento y redes.
 
-![Arquitectura de una Máquina Virtual](https://upload.wikimedia.org/wikipedia/commons/4/45/Hypervisor.png)
+![Descripción de la imagen](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUNIhADfmvdI66KjDrnEuydoPQyAWcjWEA0GxCZFpfj-639bwX2eXB2DvcPCMwhpdPfbjVOG0TMZByZevxddEWPaNcMNzFK9RVvwDed9Lmz-vsF0nA7p1Q132-HOLVUsM8mJyKPsQmrCqH/s1600/VMware_hypervisor_architecture.jpg "Título de la imagen")
+
 
 ## Recursos adicionales
 - [Wikipedia: Máquina Virtual](https://es.wikipedia.org/wiki/M%C3%A1quina_virtual)
