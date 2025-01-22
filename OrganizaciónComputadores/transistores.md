@@ -18,8 +18,16 @@ Los transistores funcionan como **interruptores electrónicos** o **amplificador
 
 ## **¿Cómo funciona un transistor?**
 El principio básico del transistor es que una señal pequeña aplicada a uno de sus terminales (base o puerta) puede controlar una señal mucho mayor que fluye entre otros dos terminales (colector-emisor o drenaje-fuente). Esto lo hace ideal para amplificar señales y conmutar corrientes en circuitos electrónicos.
+
+# Primeros transistores de tubo de vacío
+
+![Primeros transistores de tubo de vacío](https://i0.wp.com/architecnologia.es/wp-content/uploads/2022/12/valvula-vacio.jpg?resize=768%2C512&ssl=1)
+
+**Descripción:**
+Primeros transistores de tubo de vacío.
+
  
-# Primer transistor de la historia
+# Primer transistor de la historia de estado solido
 
 ![Primer transistor de la historia (transistor de puntas). Fabricado con oro, germanio y otros metales sobre un soporte de vidrio. Era difícil de construir en grandes cantidades y a veces fallaba porque no hacía contacto en la base (cosa que se resolvía moviéndolo un poco para que volviese a hacer unión, debido a que las puntas de pruebas se suspendían sobre el cristal semiconductor mediante un muelle).](https://i0.wp.com/architecnologia.es/wp-content/uploads/2022/12/transistor.jpg?w=500&ssl=1)
 
