@@ -46,17 +46,11 @@ Las máquinas virtuales generalmente constan de los siguientes componentes:
 - **Máquina virtual huésped:** El sistema operativo y las aplicaciones que se ejecutan en la VM.
 - **Hardware virtualizado:** Emula dispositivos como CPU, memoria, almacenamiento y redes.
 
-![Descripción de la imagen](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUNIhADfmvdI66KjDrnEuydoPQyAWcjWEA0GxCZFpfj-639bwX2eXB2DvcPCMwhpdPfbjVOG0TMZByZevxddEWPaNcMNzFK9RVvwDed9Lmz-vsF0nA7p1Q132-HOLVUsM8mJyKPsQmrCqH/s1600/VMware_hypervisor_architecture.jpg "Título de la imagen")
+![Descripción de la imagen](https://unpocodejava.com/wp-content/uploads/2012/08/image00123.png "Maquina Virtual")
 
-
-## Recursos adicionales
-- [Wikipedia: Máquina Virtual](https://es.wikipedia.org/wiki/M%C3%A1quina_virtual)
-- [Video explicativo: ¿Qué es una Máquina Virtual? (YouTube)](https://www.youtube.com/watch?v=lXRoChZfIXY)
-- [Introducción a arquitecturas CISC y RISC (Intel vs ARM)](https://www.intel.com/content/www/us/en/architecture-and-technology/risc-vs-cisc.html)
-- [Ventajas de las arquitecturas RISC en dispositivos móviles (ARM)](https://developer.arm.com/)
 
 ## Videos recomendados
-- [Virtualización explicada para principiantes](https://www.youtube.com/watch?v=MzHkGW0y9NQ)
-- [RISC vs CISC explicado con ejemplos](https://www.youtube.com/watch?v=7wRTccY8KNg)
+- [![Vista previa del video](https://img.youtube.com/vi/F-sM9zbk76A/hqdefault.jpg)](https://www.youtube.com/watch?v=F-sM9zbk76A)
+- [![Vista previa del video](https://img.youtube.com/vi/wWHSMWauyuU/hqdefault.jpg)](https://www.youtube.com/watch?v=wWHSMWauyuU)
 
 Este documento proporciona una introducción a las máquinas virtuales en el contexto de arquitecturas RISC y CISC, destacando sus diferencias, ventajas y desventajas. Para explorar más, revisa los enlaces y videos recomendados.
