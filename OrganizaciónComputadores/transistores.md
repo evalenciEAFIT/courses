@@ -19,6 +19,12 @@ Los transistores funcionan como **interruptores electrónicos** o **amplificador
 ## **¿Cómo funciona un transistor?**
 El principio básico del transistor es que una señal pequeña aplicada a uno de sus terminales (base o puerta) puede controlar una señal mucho mayor que fluye entre otros dos terminales (colector-emisor o drenaje-fuente). Esto lo hace ideal para amplificar señales y conmutar corrientes en circuitos electrónicos.
 
+![Texto alternativo](https://i0.wp.com/architecnologia.es/wp-content/uploads/2022/12/transistorb.jpg?resize=768%2C500&ssl=1)   
+![Transistor](https://i0.wp.com/architecnologia.es/wp-content/uploads/2022/12/transistorb.jpg?resize=768%2C500&ssl=1)   
+
+
+
+
 Para comprender mejor este concepto, revisa los siguientes videos:
 
 ---
