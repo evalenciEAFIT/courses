@@ -43,7 +43,7 @@ Para más detalles, visita el sitio oficial de **Nand2Tetris**:
 - [Microcontroladores y cómo hacer un computador](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/Microcontroladores_Computador.md)  
   En este tema, se explora el concepto de **microcontroladores**, dispositivos integrados esenciales en el diseño de computadoras y sistemas electrónicos. Se cubre cómo funcionan estos pequeños chips, su estructura y cómo se pueden utilizar para crear una computadora o sistemas embebidos.
 
-- [Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/Microcontroladores_Computador.md)  
+- [Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/transistores.md)  
   Este tema se centra en los **transistores**, componentes fundamentales en la electrónica moderna. Los transistores son el bloque básico de los circuitos electrónicos que componen las computadoras. Se analiza su funcionamiento, tipos y su papel crucial en la construcción de los microprocesadores y otros dispositivos electrónicos.
 
 ---
