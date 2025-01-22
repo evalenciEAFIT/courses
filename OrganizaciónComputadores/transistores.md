@@ -26,6 +26,12 @@ El principio básico del transistor es que una señal pequeña aplicada a uno de
 **Descripción:**
 Primer transistor de la historia (transistor de puntas). Fabricado con oro, germanio y otros metales sobre un soporte de vidrio. Era difícil de construir en grandes cantidades y a veces fallaba porque no hacía contacto en la base (cosa que se resolvía moviéndolo un poco para que volviese a hacer unión, debido a que las puntas de pruebas se suspendían sobre el cristal semiconductor mediante un muelle).
 
+# Esquema y fotografía del primer prototipo de transistor
+
+![Esquema del primer prototipo de transistor junto a fotografía real. El triángulo que vemos es de plástico y sobre sus laterales se le colocó una lámina muy fina de oro que se encuentra partida por la punta del triángulo y separada por fracciones de milímetro (cortado por una cuchilla de afeitar). El cristal de germanio está situado sobre un “plato” metálico de cobre. El cristal era de tipo N y con una capa tipo P. El triángulo de plástico como vemos estaba sujetado, para hacer presión sobre el cristal, con un clip “modificado”. Sobre los bordes del triángulo hay una lámina de oro para el contacto, dicha lámina se encuentra partida justo en la punta del triángulo.](https://i0.wp.com/architecnologia.es/wp-content/uploads/2022/12/transistorb.jpg?resize=768%2C500&ssl=1)
+
+**Descripción:**
+Esquema del primer prototipo de transistor junto a fotografía real. El triángulo que vemos es de plástico y sobre sus laterales se le colocó una lámina muy fina de oro que se encuentra partida por la punta del triángulo y separada por fracciones de milímetro (cortado por una cuchilla de afeitar). El cristal de germanio está situado sobre un “plato” metálico de cobre. El cristal era de tipo N y con una capa tipo P. El triángulo de plástico como vemos estaba sujetado, para hacer presión sobre el cristal, con un clip “modificado”. Sobre los bordes del triángulo hay una lámina de oro para el contacto, dicha lámina se encuentra partida justo en la punta del triángulo.
 
 
 
