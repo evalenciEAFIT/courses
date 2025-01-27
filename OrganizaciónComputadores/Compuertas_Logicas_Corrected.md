@@ -41,7 +41,7 @@ CHIP Not {
 ### Circuito en Transistores
 La compuerta NAND utiliza cuatro transistores:
 
-![Circuito NAND](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/imgdig/nand.gif)
+![Circuito NAND](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/ietron/nand4.gif))
 
 ### Tabla de Verdad
 | A | B | Salida (A NAND B) |
