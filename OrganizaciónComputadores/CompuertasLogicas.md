@@ -58,7 +58,7 @@ Salida = \neg (A \land B)
 $$
 
 ### Código en HDL
-![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
+[Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Nand {
     IN a, b;
