@@ -24,6 +24,7 @@ Salida = \neg A
 $$
 
 ### Código en HDL
+![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Not {
     IN in;
@@ -57,6 +58,7 @@ Salida = \neg (A \land B)
 $$
 
 ### Código en HDL
+![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Nand {
     IN a, b;
@@ -90,6 +92,7 @@ Salida = A \land B
 $$
 
 ### Código en HDL
+![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP And {
     IN a, b;
@@ -124,6 +127,7 @@ Salida = A \lor B
 $$
 
 ### Código en HDL
+![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Or {
     IN a, b;
@@ -157,6 +161,7 @@ Salida = (A \land \neg B) \lor (\neg A \land B)
 $$
 
 ### Código en HDL
+![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Xor {
     IN a, b;
@@ -168,6 +173,11 @@ CHIP Xor {
     And(a=nota, b=b, out=and2);
     Or(a=and1, b=and2, out=out);
 }
+
+
+## Retos a desarrollar
+![Reto de Puertas logicas](https://drive.google.com/file/d/17Rt3z7_OvpoQNlM6xtmC67Rn3blgM4W5/view)   
+
 ```
 ## Recursos relacionados
 
