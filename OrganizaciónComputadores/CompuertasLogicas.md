@@ -169,3 +169,14 @@ CHIP Xor {
     Or(a=and1, b=and2, out=out);
 }
 ```
+## Recursos relacionados
+
+1. [Diseño de compuertas lógicas con transistores - HyperPhysics](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/trangate.html#c1)
+   - Una guía detallada sobre cómo funcionan las compuertas lógicas a nivel de transistores.
+
+2. [Nand2Tetris: Proyecto 1 - Lógica Booleana (PDF)](https://www.nand2tetris.org/_files/ugd/44046b_f2c9e41f0b204a34ab78be0ae4953128.pdf)
+   - Documento oficial del proyecto Nand2Tetris para la implementación de lógica booleana.
+
+3. [Nand2Tetris: Curso Completo (Google Drive)](https://drive.google.com/file/d/1MY1buFHo_Wx5DPrKhCNSA2cm5ltwFJzM/view)
+   - Material adicional para el curso completo de Nand2Tetris.
+
