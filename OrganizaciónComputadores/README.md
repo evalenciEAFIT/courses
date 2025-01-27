@@ -1,3 +1,4 @@
+
 # Introducción a la Organización de Computadores o Arquitectura del Computador
 
 La **Organización de Computadores**, también conocida como **Arquitectura del Computador**, se refiere al diseño y la estructura de los componentes internos de una computadora. Esta área de estudio se enfoca en cómo se organizan y se interconectan los elementos dentro de una computadora para que puedan trabajar de manera eficiente y coordinarse para ejecutar tareas específicas.
@@ -45,6 +46,15 @@ Para más detalles, visita el sitio oficial de **Nand2Tetris**:
 
 - [Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/transistores.md)  
   Este tema se centra en los **transistores**, componentes fundamentales en la electrónica moderna. Los transistores son el bloque básico de los circuitos electrónicos que componen las computadoras. Se analiza su funcionamiento, tipos y su papel crucial en la construcción de los microprocesadores y otros dispositivos electrónicos.
+
+- [Diseño de Compuertas Lógicas con Transistores](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/trangate.html#c1)  
+  Un recurso esencial para entender cómo se implementan las compuertas lógicas desde la perspectiva de hardware con transistores.
+
+- [Documento Nand2Tetris: Proyecto 1 - Lógica Booleana (PDF)](https://www.nand2tetris.org/_files/ugd/44046b_f2c9e41f0b204a34ab78be0ae4953128.pdf)  
+  Este documento detalla las instrucciones para completar el Proyecto 1 de Nand2Tetris, que se enfoca en la implementación de lógica booleana.
+
+- [Nand2Tetris: Curso Completo (Google Drive)](https://drive.google.com/file/d/1MY1buFHo_Wx5DPrKhCNSA2cm5ltwFJzM/view)  
+  Un repositorio completo con materiales relacionados al curso de Nand2Tetris.
 
 ---
 
