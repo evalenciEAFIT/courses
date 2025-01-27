@@ -24,7 +24,7 @@ Salida = \neg A
 $$
 
 ### Código en HDL
-![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
+[Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Not {
     IN in;
@@ -92,7 +92,7 @@ Salida = A \land B
 $$
 
 ### Código en HDL
-![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
+[Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP And {
     IN a, b;
@@ -127,7 +127,7 @@ Salida = A \lor B
 $$
 
 ### Código en HDL
-![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
+[Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Or {
     IN a, b;
@@ -161,7 +161,7 @@ Salida = (A \land \neg B) \lor (\neg A \land B)
 $$
 
 ### Código en HDL
-![Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
+[Cargar el similador](https://nand2tetris.github.io/web-ide/chip/)   
 ```hdl
 CHIP Xor {
     IN a, b;
