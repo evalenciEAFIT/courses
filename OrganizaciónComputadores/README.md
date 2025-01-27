@@ -47,7 +47,7 @@ Para más detalles, visita el sitio oficial de **Nand2Tetris**:
 - [Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/transistores.md)  
   Este tema se centra en los **transistores**, componentes fundamentales en la electrónica moderna. Los transistores son el bloque básico de los circuitos electrónicos que componen las computadoras. Se analiza su funcionamiento, tipos y su papel crucial en la construcción de los microprocesadores y otros dispositivos electrónicos.
 
-- [Diseño de Compuertas Lógicas con Transistores](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/CompuertasLogicas.md)  
+- [Diseño de Compuertas Lógicas](https://github.com/evalenciEAFIT/courses/blob/main/Organizaci%C3%B3nComputadores/CompuertasLogicas.md)  
   Un recurso esencial para entender cómo se implementan las compuertas lógicas desde la perspectiva de hardware con transistores.
 
 - [Documento Nand2Tetris: Proyecto 1 - Lógica Booleana (PDF)](https://www.nand2tetris.org/_files/ugd/44046b_f2c9e41f0b204a34ab78be0ae4953128.pdf)  
