@@ -41,7 +41,7 @@ CHIP Not {
 ### Circuito en Transistores
 La compuerta NAND utiliza cuatro transistores:
 
-![Circuito NAND](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/ietron/nand4.gif))
+![Circuito NAND](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/ietron/nand4.gif)   
 
 ### Tabla de Verdad
 | A | B | Salida (A NAND B) |
@@ -72,6 +72,8 @@ CHIP Nand {
 ## 3. AND
 
 ### Circuito en Transistores
+La construcción con trasistores es:
+![Compuerta NAND](http://hyperphysics.phy-astr.gsu.edu/hbasees/Electronic/ietron/and4.gif)   
 La compuerta AND se construye utilizando la compuerta NAND y un inversor:
 
 ### Tabla de Verdad
