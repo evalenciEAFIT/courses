@@ -147,7 +147,7 @@ El código en C++ utiliza las bibliotecas estándar `ctime` y `iomanip` para obt
 4. **Salida Formateada**:
    - Se utiliza `std::setw` y `std::setfill('0')` para imprimir los valores en formato `HH:MM:SS`.
 
-### Código
+### Código (`hora.cpp`)
 
 ```cpp
 #include <iostream>
@@ -181,13 +181,71 @@ int main() {
 }
 ```
 
+Para compilar este archivo, usa el siguiente comando:
+
+```bash
+g++ hora.cpp -o horaC
+```
+
 ---
 
-## 3. Instalación de Compiladores
+## 3. Código en C++ con Llamada al Sistema
+
+### Descripción
+
+Este código utiliza la llamada al sistema `syscall` para obtener el tiempo actual directamente, de manera similar al código en NASM. Además, ajusta el tiempo a una zona horaria específica y muestra el resultado en formato `HH:MM:SS`.
+
+### Código (`hora_syscall.cpp`)
+
+```cpp
+#include <iostream>
+#include <unistd.h>
+#include <sys/syscall.h>
+#include <ctime>
+#include <iomanip>
+
+int main() {
+    // Obtener el tiempo actual usando una llamada al sistema
+    time_t tiempoActual;
+    syscall(SYS_time, &tiempoActual);
+
+    // Ajustar el tiempo a UTC-5
+    int timezone_offset = -5 * 3600; // UTC-5 en segundos
+    tiempoActual += timezone_offset;
+
+    // Convertir el tiempo ajustado a estructura de tiempo local
+    std::tm* horaLocal = std::gmtime(&tiempoActual);
+
+    // Mostrar la hora en formato HH:MM:SS
+    if (horaLocal != nullptr) {
+        std::cout << "Hora actual: "
+                  << std::setw(2) << std::setfill('0') << horaLocal->tm_hour << ":"
+                  << std::setw(2) << std::setfill('0') << horaLocal->tm_min << ":"
+                  << std::setw(2) << std::setfill('0') << horaLocal->tm_sec
+                  << std::endl;
+    } else {
+        std::cerr << "Error al obtener la hora local." << std::endl;
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+Para compilar este archivo, usa el siguiente comando:
+
+```bash
+g++ hora_syscall.cpp -o hora_syscall
+```
+
+---
+
+## 4. Instalación de Compiladores
 
 ### Fedora, Kali y Ubuntu
 
 #### Instalación de NASM
+
 NASM es el ensamblador necesario para compilar el código en NASM.
 
 ```bash
@@ -198,6 +256,7 @@ sudo dnf install nasm    # Para Fedora
 ```
 
 #### Instalación de GCC (Compilador para C++)
+
 GCC es el compilador necesario para compilar el código en C++.
 
 ```bash
@@ -209,7 +268,7 @@ sudo dnf install gcc-c++ # Para Fedora
 
 ---
 
-## 4. Cómo Compilar y Ejecutar los Programas
+## 5. Cómo Compilar y Ejecutar los Programas
 
 ### Compilación y Ejecución del Código NASM
 
@@ -224,17 +283,23 @@ ld hora.o -o hora
 
 ### Compilación y Ejecución del Código C++
 
-1. Guarda el código en un archivo llamado `hora.cpp`.
-2. Usa los siguientes comandos para compilar y ejecutar:
+1. Para el archivo `hora.cpp`, compílalo y ejecútalo con:
 
 ```bash
-g++ -o horaCPP hora.cpp
-./horaCPP
+g++ hora.cpp -o horaC
+./horaC
+```
+
+2. Para el archivo `hora_syscall.cpp`, compílalo y ejecútalo con:
+
+```bash
+g++ hora_syscall.cpp -o hora_syscall
+./hora_syscall
 ```
 
 ---
 
-## 5. Ejemplo de Salida
+## 6. Ejemplo de Salida
 
 ### Salida Esperada del Código NASM y C++
 
@@ -246,12 +311,4 @@ Hora actual: 09:30:00
 
 ---
 
-## 6. Notas Adicionales
-
-- Asegúrate de que tu sistema esté configurado correctamente para interpretar cadenas UTF-8, ya que algunos caracteres pueden no mostrarse correctamente en terminales mal configuradas.
-- Usa los ejemplos como base para ajustar otras zonas horarias o formatos de salida.
-
----
-
-¡Espero que este archivo te sea útil! 😊
 
