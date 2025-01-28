@@ -167,7 +167,7 @@ int main() {
 
     // Mostrar la hora en formato HH:MM:SS
     if (horaLocal != nullptr) {
-        std::cout << "Hora actual (UTC-5): "
+        std::cout << "Hora actual: "
                   << std::setw(2) << std::setfill('0') << horaLocal->tm_hour << ":"
                   << std::setw(2) << std::setfill('0') << horaLocal->tm_min << ":"
                   << std::setw(2) << std::setfill('0') << horaLocal->tm_sec
@@ -228,8 +228,8 @@ ld hora.o -o hora
 2. Usa los siguientes comandos para compilar y ejecutar:
 
 ```bash
-g++ -o hora hora.cpp
-./hora
+g++ -o horaCPP hora.cpp
+./horaCPP
 ```
 
 ---
