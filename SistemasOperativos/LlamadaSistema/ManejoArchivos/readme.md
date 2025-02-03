@@ -1,11 +1,13 @@
-
 # Llamadas al Sistema en C++ y Comparación con Funciones del Sistema Operativo
 
 ## Introducción
+
 Las llamadas al sistema (system calls) son interfaces proporcionadas por el sistema operativo para permitir que los programas de usuario interactúen con los recursos del sistema. A diferencia de las funciones de biblioteca estándar, las llamadas al sistema involucran una transición del modo usuario al modo kernel, lo que implica un mayor costo computacional.
 
 ## Clasificación de las Llamadas al Sistema
+
 Las llamadas al sistema pueden clasificarse en diferentes categorías:
+
 1. **Manejo de Archivos**: `open()`, `read()`, `write()`, `close()`
 2. **Manejo de Procesos**: `fork()`, `exec()`, `wait()`, `exit()`
 3. **Manejo de Memoria**: `mmap()`, `brk()`
@@ -13,9 +15,11 @@ Las llamadas al sistema pueden clasificarse en diferentes categorías:
 5. **Manejo de Redes**: `socket()`, `connect()`, `bind()`, `listen()`, `accept()`
 
 ## Explicación de los Parámetros de `open()` y `fopen()`
+
 Las funciones `open()` y `fopen()` permiten la manipulación de archivos en C/C++ con diferentes configuraciones.
 
 ### Parámetros de `open()`
+
 - `O_RDONLY`: Solo lectura.
 - `O_WRONLY`: Solo escritura.
 - `O_RDWR`: Lectura y escritura.
@@ -24,6 +28,7 @@ Las funciones `open()` y `fopen()` permiten la manipulación de archivos en C/C+
 - `O_APPEND`: Escribe datos al final del archivo.
 
 ### Parámetros de `fopen()`
+
 - `"r"`: Modo solo lectura.
 - `"w"`: Modo escritura (sobrescribe si existe).
 - `"a"`: Modo anexar.
@@ -31,13 +36,67 @@ Las funciones `open()` y `fopen()` permiten la manipulación de archivos en C/C+
 - `"w+"`: Modo lectura y escritura (sobrescribe si existe).
 - `"a+"`: Modo lectura y escritura, escribiendo al final.
 
-## Ejemplo de Escritura y Lectura de Archivos Binarios
+Cada modo puede ser combinado con `"b"` (modo binario) para leer/escribir archivos en formato binario, por ejemplo `"rb"`, `"wb"`, `"ab"`.
 
-### Escritura con llamadas al sistema
+## Ejemplos de Código
+
+### 1. Uso de llamadas al sistema
+
+#### 1.1 Archivos Planos
+
+##### 1.1.1 Escribir
+
 ```cpp
 #include <fcntl.h>
 #include <unistd.h>
-#include <cstdio>
+#include <iostream>
+#include <string>
+
+int main() {
+    int fd = open("archivo.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd == -1) {
+        perror("Error creando el archivo");
+        return 1;
+    }
+
+    std::string entrada;
+    std::cout << "Ingrese el texto a guardar: ";
+    std::getline(std::cin, entrada);
+    write(fd, entrada.c_str(), entrada.size());
+    close(fd);
+    return 0;
+}
+```
+
+##### 1.1.2 Leer
+
+```cpp
+#include <fcntl.h>
+#include <unistd.h>
+#include <iostream>
+
+int main() {
+    int fd = open("archivo.txt", O_RDONLY);
+    if (fd == -1) {
+        perror("Error abriendo el archivo");
+        return 1;
+    }
+
+    char buffer[128];
+    ssize_t bytes_leidos = read(fd, buffer, sizeof(buffer));
+    write(STDOUT_FILENO, buffer, bytes_leidos);
+    close(fd);
+    return 0;
+}
+```
+
+#### 1.2 Archivos Binarios
+
+##### 1.2.1 Escribir
+
+```cpp
+#include <fcntl.h>
+#include <unistd.h>
 #include <iostream>
 #include <vector>
 
@@ -47,7 +106,7 @@ int main() {
         perror("Error creando el archivo binario");
         return 1;
     }
-    
+
     std::vector<uint8_t> datos = {0x41, 0x42, 0x43, 0x44};
     write(fd, datos.data(), datos.size());
     close(fd);
@@ -55,7 +114,8 @@ int main() {
 }
 ```
 
-### Lectura con llamadas al sistema
+##### 1.2.2 Leer
+
 ```cpp
 #include <fcntl.h>
 #include <unistd.h>
@@ -68,7 +128,7 @@ int main() {
         perror("Error abriendo el archivo binario");
         return 1;
     }
-    
+
     std::vector<uint8_t> buffer(4);
     read(fd, buffer.data(), buffer.size());
     for (auto byte : buffer) {
@@ -81,5 +141,52 @@ int main() {
 }
 ```
 
+### 2. Uso de Librerías del Sistema Operativo
+
+#### 2.1 Archivos Planos
+
+##### 2.1.1 Escribir
+
+```cpp
+#include <cstdio>
+#include <iostream>
+#include <string>
+
+int main() {
+    FILE *archivo = fopen("archivo.txt", "w");
+    if (!archivo) {
+        perror("Error creando el archivo");
+        return 1;
+    }
+
+    std::string entrada;
+    std::cout << "Ingrese el texto a guardar: ";
+    std::getline(std::cin, entrada);
+    fwrite(entrada.c_str(), 1, entrada.size(), archivo);
+    fclose(archivo);
+    return 0;
+}
+```
+
+##### 2.1.2 Leer
+
+```cpp
+#include <cstdio>
+
+int main() {
+    FILE *archivo = fopen("archivo.txt", "r");
+    if (!archivo) {
+        perror("Error abriendo el archivo");
+        return 1;
+    }
+    char buffer[128];
+    fread(buffer, 1, sizeof(buffer), archivo);
+    printf("%s", buffer);
+    fclose(archivo);
+    return 0;
+}
+```
+
 ## Conclusión
-Las llamadas al sistema permiten un control más detallado del sistema operativo y son útiles en situaciones críticas. Sin embargo, las funciones de biblioteca pueden optimizar el rendimiento al manejar operaciones de archivos de forma eficiente mediante buffers internos. La elección entre ambas depende de las necesidades de la aplicación y el contexto de uso.
+
+La diferencia principal entre llamadas al sistema y funciones de biblioteca radica en el nivel de abstracción y optimización. Las llamadas al sistema permiten un control más detallado, mientras que las funciones de biblioteca optimizan el rendimiento utilizando buffers internos.
