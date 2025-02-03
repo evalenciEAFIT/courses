@@ -157,5 +157,130 @@ La ALU recibe instrucciones de la **Unidad de Control** del procesador, que le i
 
 La **Unidad de Punto Flotante (FPU)** es un componente especializado del procesador diseñado para manejar operaciones aritméticas con números en formato de punto flotante, que son números con
 ::contentReference[oaicite:1]{index=1}
- 
+
+
+ --------------------------
+ # Computación y Cálculo: Historia y Funcionamiento
+
+## 1. Aritmética Booleana
+
+La **aritmética booleana** es la base del cálculo computacional y los circuitos digitales. Fue desarrollada por **George Boole** en el siglo XIX y se fundamenta en dos estados lógicos: `0` (falso) y `1` (verdadero).
+
+### Video Explicativo:
+[![Aritmética Booleana](https://img.youtube.com/vi/mg5MmC-2DuA/0.jpg)](https://www.youtube.com/watch?v=mg5MmC-2DuA)
+
+---
+
+## 2. Suma, Negativo, Resta
+
+### Suma Binaria:
+La suma en binario sigue reglas similares a la aritmética decimal, pero con solo dos valores (`0` y `1`).
+
+Ejemplo:
+```
+  101
++ 011
+------
+ 1000
+```
+
+### Números Negativos y Resta:
+Se usa el **Complemento a 2** para representar números negativos y realizar restas de manera eficiente.
+
+Ejemplo de `5 - 3` en complemento a 2:
+1. Representación de 5 en binario: `00000101`
+2. Representación de 3 en binario: `00000011`
+3. Complemento a 2 de `3`: `11111101`
+4. Suma: `00000101 + 11111101 = 00000010` (resultado = `2`)
+
+### Video Explicativo:
+[![Suma y Resta en Binario](https://img.youtube.com/vi/tC3-3Xh5ZXc/0.jpg)](https://www.youtube.com/watch?v=tC3-3Xh5ZXc)
+
+---
+
+## 3. Calculadora por Dentro
+
+Las **calculadoras modernas** utilizan circuitos electrónicos basados en transistores, puertas lógicas y registros para realizar operaciones matemáticas.
+
+### Partes Claves:
+- **Unidad de Control**: Maneja la entrada de datos.
+- **ALU (Unidad Aritmético-Lógica)**: Ejecuta operaciones matemáticas.
+- **Memoria**: Guarda valores intermedios.
+- **Pantalla y Teclado**: Interfaz con el usuario.
+
+### Video Explicativo:
+[![Cómo funciona una calculadora](https://img.youtube.com/vi/HNFlPO80Zzw/0.jpg)](https://www.youtube.com/watch?v=HNFlPO80Zzw)
+
+---
+
+## 4. Calculadora de Canicas
+
+La **calculadora mecánica de canicas** es un modelo físico que demuestra cómo funcionan las operaciones matemáticas con mecanismos sencillos.
+
+### Video Demostración:
+[![Calculadora de Canicas](https://img.youtube.com/vi/qK3yUdxr8lc/0.jpg)](https://www.youtube.com/watch?v=qK3yUdxr8lc)
+
+---
+
+## 5. Historia de la Calculadora
+
+Desde el **ábaco** hasta las modernas calculadoras electrónicas, el desarrollo de estos dispositivos ha evolucionado enormemente.
+
+### Hitos Importantes:
+- **Siglo XVII**: Pascal inventa la Pascalina.
+- **Siglo XIX**: Leibniz mejora la calculadora mecánica.
+- **Siglo XX**: Aparece la calculadora electrónica.
+- **1971**: Texas Instruments lanza la primera calculadora de bolsillo.
+
+### Video Histórico:
+[![Historia de la Calculadora](https://img.youtube.com/vi/VIVaJj8G2lM/0.jpg)](https://www.youtube.com/watch?v=VIVaJj8G2lM)
+
+---
+
+## 6. Intel 4004: Primer Microprocesador
+
+El **Intel 4004** (1971) fue el primer microprocesador comercial de 4 bits y sentó las bases de la computación moderna.
+
+**Características:**
+- **Arquitectura de 4 bits**.
+- **Frecuencia de 740 kHz**.
+- **2300 transistores**.
+- **Soportaba 16 instrucciones**.
+
+### Video Explicativo:
+[![Intel 4004](https://img.youtube.com/vi/ZdOcy3LUV98/0.jpg)](https://www.youtube.com/watch?v=ZdOcy3LUV98)
+
+---
+
+## 7. ALU (Unidad Aritmético-Lógica)
+
+La **ALU** es el componente dentro de una CPU responsable de ejecutar operaciones matemáticas y lógicas.
+
+**Funciones:**
+- Suma, resta, multiplicación, división.
+- Operaciones lógicas (AND, OR, NOT, XOR).
+- Comparaciones (mayor, menor, igual).
+
+### Video Explicativo:
+[![Cómo funciona la ALU](https://img.youtube.com/vi/O0lFMZr4Q3w/0.jpg)](https://www.youtube.com/watch?v=O0lFMZr4Q3w)
+
+---
+
+## 8. FPU (Unidad de Punto Flotante)
+
+La **FPU (Floating Point Unit)** se encarga de realizar operaciones matemáticas con números decimales de alta precisión.
+
+**Ejemplo:**
+- La suma `3.14 + 2.71` requiere una FPU, ya que no puede representarse fácilmente en números enteros.
+
+### Video Explicativo:
+[![Cómo funciona la FPU](https://img.youtube.com/vi/uEXxIlpVUXs/0.jpg)](https://www.youtube.com/watch?v=uEXxIlpVUXs)
+
+---
+
+## Conclusión
+
+La computación y la historia de las calculadoras han evolucionado desde dispositivos mecánicos hasta poderosos procesadores modernos. Comprender estos conceptos es fundamental para explorar el funcionamiento de las computadoras actuales y futuras.
+
+
 
