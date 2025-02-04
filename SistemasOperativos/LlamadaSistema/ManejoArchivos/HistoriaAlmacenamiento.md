@@ -7,7 +7,7 @@ El almacenamiento digital de datos ha evolucionado de manera significativa desde
 #### **Tarjetas Perforadas (1890 - 1960)**
 Las tarjetas perforadas fueron utilizadas inicialmente por Herman Hollerith para el censo de EE.UU. en 1890. Consistían en tarjetas con perforaciones que representaban datos, permitiendo su procesamiento mecánico. Estas tarjetas se usaron ampliamente hasta la llegada de los discos magnéticos.
 
-**Video recomendado:** [Historia de las tarjetas perforadas](https://www.youtube.com/watch?v=XXXXXXX)
+**Video recomendado:** [Historia de las tarjetas perforadas](https://youtu.be/IVg3-X8PkY4?si=mebt673l4-oR9aO0)
 
 #### **Cintas Magnéticas (1950 - actualidad)**
 Las cintas magnéticas comenzaron a utilizarse en la década de 1950 con la llegada de las primeras computadoras comerciales. IBM lanzó su primera unidad de cinta magnética en 1952, permitiendo almacenar grandes volúmenes de datos de forma secuencial.
