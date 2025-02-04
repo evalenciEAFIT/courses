@@ -52,11 +52,11 @@ Las investigaciones actuales exploran el almacenamiento en moléculas de ADN y c
 
 **Imagen:**    
    
-![Almacenamiento en ADN](https://youtu.be/KRHfRnytQp0)   
+[Almacenamiento en ADN](https://youtu.be/KRHfRnytQp0)   
 [![Ver en YouTube](https://img.youtube.com/vi/KRHfRnytQp0/0.jpg)](https://www.youtube.com/watch?v=KRHfRnytQp0)   
 
    
-![¿Se pueden almacenar datos en ADN?](https://youtu.be/reYLgtJXYu8?si=mebt673l4-oR9aO0)   
+[¿Se pueden almacenar datos en ADN?](https://youtu.be/reYLgtJXYu8?si=mebt673l4-oR9aO0)   
 [![Ver en YouTube](https://img.youtube.com/vi/reYLgtJXYu8/0.jpg)](https://www.youtube.com/watch?v=reYLgtJXYu8)   
 
 ### **Conclusión**
