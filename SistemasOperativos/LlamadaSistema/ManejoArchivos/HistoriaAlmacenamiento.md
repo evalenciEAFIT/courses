@@ -24,7 +24,9 @@ Las cintas magnéticas comenzaron a utilizarse en la década de 1950 con la lleg
 #### **Discos Duros (1956 - actualidad)**
 IBM introdujo el primer disco duro en 1956 con su modelo IBM 305 RAMAC. Este dispositivo tenía una capacidad de 5 MB y requería un gabinete del tamaño de un refrigerador. Con el tiempo, la miniaturización permitió aumentar la capacidad y reducir costos.
 
-**Video recomendado:** [Evolución del disco duro](https://www.youtube.com/watch?v=XXXXXXX)
+**Video recomendado:**    
+[Discos duros mecánicos](https://youtu.be/oD9sfQQj5zM?si=mebt673l4-oR9aO0)   
+[![Ver en YouTube](https://img.youtube.com/vi/oD9sfQQj5zM/0.jpg)](https://www.youtube.com/watch?v=oD9sfQQj5zM)    
 
 #### **Disquetes (1971 - 2000s)**
 Los disquetes fueron desarrollados por IBM en los años 70 y se popularizaron en la década de los 80 y 90. Permitieron el almacenamiento portátil de información en formatos de 8, 5.25 y 3.5 pulgadas.
