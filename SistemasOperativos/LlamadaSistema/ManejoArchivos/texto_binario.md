@@ -139,15 +139,71 @@ int main() {
 }
 ```
 
-## 4. Permisos de Archivos en Linux
+## 4. Explicación de los parámetros de las llamadas al sistema
 
-Explicación sobre cómo funcionan los permisos de archivo en Linux, los valores octales y binarios.
+En Linux, la manipulación de archivos se realiza a través de **llamadas al sistema** como `open()`, `write()`, `read()` y `close()`, que permiten la interacción entre programas y el sistema operativo.
 
-## 5. Explicación de los parámetros de las llamadas al sistema
+### `open()`
+```cpp
+int fd = open("archivo.txt", O_WRONLY | O_CREAT, 0644);
+```
+- **"archivo.txt"** → Nombre del archivo a abrir o crear.
+- **O_WRONLY** → Abre el archivo en modo solo escritura.
+- **O_CREAT** → Crea el archivo si no existe.
+- **0644** → Permisos de archivo (propietario puede leer/escribir, otros solo leer).
 
-Se detalla cómo funcionan `open()`, `write()`, `read()` y `close()`, explicando sus parámetros y su impacto en el manejo de archivos.
+### `write()`
+```cpp
+write(fd, entrada.c_str(), entrada.size());
+```
+- **fd** → Descriptor del archivo abierto.
+- **entrada.c_str()** → Datos a escribir (convertido a cadena de caracteres).
+- **entrada.size()** → Cantidad de bytes a escribir.
+
+### `read()`
+```cpp
+read(fd, &buffer, 1);
+```
+- **fd** → Descriptor del archivo abierto.
+- **&buffer** → Dirección donde almacenar el byte leído.
+- **1** → Cantidad de bytes a leer.
+
+### `close()`
+```cpp
+close(fd);
+```
+- **fd** → Descriptor del archivo que se desea cerrar.
+
+## 5. Permisos de Archivos en Linux
+
+En Linux, los permisos de archivos se representan mediante valores octales y definen los niveles de acceso para el **propietario**, el **grupo** y **otros usuarios**.
+
+### Representación en formato octal y binario
+
+| Octal | Binario  | Significado |
+|-------|---------|-------------|
+| 0     | 000     | Sin permisos |
+| 1     | 001     | Solo ejecución |
+| 2     | 010     | Solo escritura |
+| 3     | 011     | Escritura y ejecución |
+| 4     | 100     | Solo lectura |
+| 5     | 101     | Lectura y ejecución |
+| 6     | 110     | Lectura y escritura |
+| 7     | 111     | Lectura, escritura y ejecución |
+
+### Ejemplos de permisos en archivos
+
+- **0644** → Propietario con lectura y escritura, grupo y otros solo lectura.
+- **0755** → Propietario con todos los permisos, grupo y otros solo lectura y ejecución.
+- **0777** → Todos los usuarios con todos los permisos (**riesgo de seguridad**).
+
+Se pueden cambiar los permisos usando el comando:
+```sh
+chmod 644 archivo.txt  # Cambia permisos del archivo
+```
 
 ## 6. Conclusiones
 
-El uso de archivos planos y binarios en **Linux** es fundamental en la programación de sistemas. Comprender los permisos y el uso de llamadas al sistema permite una manipulación segura y eficiente de los archivos. ¡Practica estos comandos y sigue explorando!
+El uso de archivos planos y binarios en **Linux** es fundamental en la programación de sistemas. Comprender los permisos y el uso de llamadas al sistema permite una manipulación segura y eficiente de los archivos. También es importante conocer los permisos y cómo asignarlos para proteger los datos. ¡Practica estos comandos y sigue explorando!
+
 
