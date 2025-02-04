@@ -1,4 +1,5 @@
-# Llamadas al Sistema en Linux
+# Llamadas al Sistema Operativo 
+(Linux)
 
 ## 1. Introducción a las llamadas al sistema
 
