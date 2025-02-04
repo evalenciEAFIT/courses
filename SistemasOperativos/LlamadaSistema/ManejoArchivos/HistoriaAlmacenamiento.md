@@ -51,11 +51,12 @@ Servicios como Google Drive, Dropbox y Amazon S3 permiten almacenar datos en ser
 Las investigaciones actuales exploran el almacenamiento en moléculas de ADN y computación cuántica para una capacidad de almacenamiento inmensa y con menor consumo energético.
 
 **Imagen:**    
+[Almacenamiento Cuántico](https://youtu.be/D6YydYF48OY)   
+[![Ver en YouTube](https://img.youtube.com/vi/D6YydYF48OY/0.jpg)](https://www.youtube.com/watch?v=D6YydYF48OY)   
    
 [Almacenamiento en ADN](https://youtu.be/KRHfRnytQp0)   
 [![Ver en YouTube](https://img.youtube.com/vi/KRHfRnytQp0/0.jpg)](https://www.youtube.com/watch?v=KRHfRnytQp0)   
 
-   
 [¿Se pueden almacenar datos en ADN?](https://youtu.be/reYLgtJXYu8?si=mebt673l4-oR9aO0)   
 [![Ver en YouTube](https://img.youtube.com/vi/reYLgtJXYu8/0.jpg)](https://www.youtube.com/watch?v=reYLgtJXYu8)   
 
