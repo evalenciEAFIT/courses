@@ -2,6 +2,9 @@
 
 El almacenamiento digital de datos ha evolucionado de manera significativa desde sus primeras formas hasta las tecnologías avanzadas de la actualidad. A lo largo del tiempo, se han desarrollado distintos medios físicos y lógicos que han permitido guardar información de manera más eficiente, rápida y segura.
 
+[Evolución de los dispositivos de Almacenamiento](https://youtu.be/V7qg1WGSdvc?si=7Coo6vX7iJg8aICJ)   
+[![Ver en YouTube](https://img.youtube.com/vi/V7qg1WGSdvc/0.jpg)](https://www.youtube.com/watch?v=V7qg1WGSdvc)  
+
 ### **1. Primeros Métodos de Almacenamiento**
 
 #### **Tarjetas Perforadas (1890 - 1960)**
