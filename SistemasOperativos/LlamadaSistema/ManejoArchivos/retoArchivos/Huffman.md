@@ -24,7 +24,36 @@ El algoritmo se basa en la construcción de un **árbol binario de Huffman**, en
 
 ---
 
-## 3. Implementación en C++
+## 3. Ejemplo Paso a Paso
+### **Ejemplo:**
+Supongamos que tenemos el siguiente texto: **"BEEEP"**.
+
+1. **Cálculo de frecuencias:**
+   ```
+   B: 1
+   E: 3
+   P: 1
+   ```
+2. **Construcción del Árbol de Huffman:**
+   - Se crean nodos hoja para cada carácter.
+   - Se combinan los nodos de menor frecuencia.
+   - Se genera el árbol con la raíz que suma todas las frecuencias.
+
+3. **Generación de Códigos:**
+   - `E` → `0`
+   - `B` → `10`
+   - `P` → `11`
+
+4. **Texto comprimido:**
+   ```
+   BEEEP → 10 0 0 0 11
+   ```
+   
+Este código comprimido ocupa menos espacio que la representación original.
+
+---
+
+## 4. Implementación en C++
 ```cpp
 #include <iostream>
 #include <queue>
@@ -84,52 +113,19 @@ void generarCodigos(Nodo* raiz, std::string codigo, std::unordered_map<char, std
     // Recorrer la derecha con un "1"
     generarCodigos(raiz->derecha, codigo + "1", codigos);
 }
-
-// Función para comprimir un texto utilizando los códigos de Huffman
-std::string comprimirTexto(const std::string& texto, std::unordered_map<char, std::string>& codigos) {
-    std::string resultado;
-    for (char c : texto) {
-        resultado += codigos[c]; // Sustitución de caracteres por sus códigos de Huffman
-    }
-    return resultado;
-}
-
-int main() {
-    // Texto de entrada
-    std::string texto = "ejemplo de compresión con Huffman";
-    std::unordered_map<char, int> frecuencias;
-
-    // Calcular frecuencias de cada carácter en el texto
-    for (char c : texto) 
-        frecuencias[c]++;
-
-    // Construcción del árbol de Huffman
-    Nodo* raiz = construirArbolHuffman(frecuencias);
-    std::unordered_map<char, std::string> codigos;
-    generarCodigos(raiz, "", codigos);
-
-    // Compresión del texto
-    std::string textoComprimido = comprimirTexto(texto, codigos);
-    
-    // Mostrar resultados
-    std::cout << "Texto original: " << texto << "\n";
-    std::cout << "Texto comprimido: " << textoComprimido << "\n";
-    
-    return 0;
-}
 ```
 
 ---
 
-## 4. Explicación Paso a Paso del Algoritmo
-1. **Análisis de frecuencias:** Se cuenta cuántas veces aparece cada carácter en el texto de entrada.
-2. **Construcción del árbol de Huffman:** Se usa una cola de prioridad para construir el árbol, combinando los nodos con menor frecuencia hasta obtener un árbol completo.
-3. **Generación de códigos binarios:** Se recorre el árbol de Huffman, asignando `0` a la rama izquierda y `1` a la derecha, generando así códigos únicos para cada carácter.
-4. **Compresión del texto:** Se reemplazan los caracteres originales por sus códigos binarios generados.
-5. **Salida comprimida:** Se muestra la versión comprimida del texto, que es más corta que la original.
+## 5. Fuente de Consulta
+Este documento se basa en el libro:
+- **A Concise Introduction to Data Compression**
+  [Enlace](https://link-springer-com.ezproxy.eafit.edu.co/book/10.1007/978-1-84800-072-8)
+
+Esta fuente ofrece una explicación detallada sobre los métodos de compresión de datos y su implementación en sistemas computacionales.
 
 ---
 
-## 5. Conclusión
+## 6. Conclusión
 El algoritmo de Huffman es una técnica eficiente para la compresión de datos sin pérdida. Se usa ampliamente en formatos de compresión como **ZIP, PNG y MP3** debido a su capacidad de reducir el tamaño de los archivos sin perder información. Además, su implementación en C++ permite su integración en sistemas de almacenamiento y transmisión de datos eficientes.
 
