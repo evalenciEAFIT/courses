@@ -98,7 +98,7 @@ std::vector<std::vector<int>> ManejadorArchivo::matrizBits() {
     for (uint8_t byte : datos) {
         std::vector<int> filaBits(8);
         for (int i = 7; i >= 0; --i) {
-            filaBits[i] = (byte >> i) & 1; // Extrae cada bit del byte
+            filaBits[7-i] = (byte >> i) & 1; // Extrae cada bit del byte
         }
         matriz.push_back(filaBits);
     }
