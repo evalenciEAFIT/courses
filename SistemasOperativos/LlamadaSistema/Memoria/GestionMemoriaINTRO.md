@@ -1,4 +1,4 @@
-# Cómo el Sistema Operativo Gestiona el Crecimiento y la Reducción de la Pila y el Montón
+# Cómo el Sistema Operativo Gestiona el Crecimiento y la Reducción de la Pila (Stack) y el Montón (Heap)
 
 La gestión de la memoria es crucial para el funcionamiento de un sistema operativo. Dos áreas clave que administra son la pila (stack) y el montón (heap). Ambas residen en la RAM, pero sirven para propósitos distintos y se gestionan de manera diferente.
 
