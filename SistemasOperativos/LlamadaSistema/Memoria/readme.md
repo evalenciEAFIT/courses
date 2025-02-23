@@ -100,4 +100,4 @@ La gestión de la memoria ha evolucionado significativamente a lo largo de la hi
 * Mejora el rendimiento del sistema al optimizar el uso de la RAM.
 * Garantiza la estabilidad y la seguridad del sistema operativo.
 
-Este documento proporciona una visión general de las características de la memoria en los sistemas operativos.
+Este documento proporciona una visión general de las características de la memoria en los sistemas operativos. Para sistemas Linux, puesdes ver más infomración en: [Memoria en linux](https://github.com/evalenciEAFIT/courses/tree/main/SistemasOperativos/LlamadaSistema/Memoria)
