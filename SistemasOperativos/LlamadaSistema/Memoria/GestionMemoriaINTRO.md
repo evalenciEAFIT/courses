@@ -53,3 +53,5 @@ Una gestión eficiente de la pila y el montón es esencial para el rendimiento y
 
 ## Explorando el Mapa de Memoria en Linux: Comandos Esenciales
 
+Visita el enlace [Comandos para ver el mapa de memoria en Linux] (https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/MapaMemoriaLinux.md)
+Visita el enlace [Comandos para ver el mapa de memoria en Linux] (/MapaMemoriaLinux.md)
