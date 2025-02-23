@@ -10,16 +10,7 @@ Los sistemas operativos y las aplicaciones pueden organizarse de diversas manera
 * Esto significa que no hay separación clara entre las diferentes funciones del sistema.
 * Si un componente falla, todo el sistema puede verse afectado.
 
-### Ilustración
-
-+-------------------------------------------------+   
-|            Núcleo Monolítico                    |   
-| - - - - - - - - - - - - - - - - - - - - - - - - |   
-|   (Gestión de Memoria, Sistema de Archivos,     |   
-|    Controladores de Dispositivos, etc.)         |   
-+-------------------------------------------------+   
-
-
+![Estructura de un sistema operativo monolítico](https://somebooks.es/wp-content/uploads/2022/SOM/estructura%20monolitica.png)
 ### Características
 
 * **Ventajas**:
