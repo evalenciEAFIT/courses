@@ -51,4 +51,5 @@ Aunque la pila y el montón son áreas de memoria separadas, pueden interactuar.
 
 Una gestión eficiente de la pila y el montón es esencial para el rendimiento y la estabilidad del sistema. Las fugas de memoria o los desbordamientos de pila pueden provocar fallos en las aplicaciones o incluso en todo el sistema.
 
-## Visualización
+## Explorando el Mapa de Memoria en Linux: Comandos Esenciales
+
