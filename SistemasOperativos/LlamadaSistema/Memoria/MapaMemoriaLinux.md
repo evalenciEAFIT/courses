@@ -1,5 +1,5 @@
 
-# Explorando el Mapa de Memoria en Linux: Comandos Esenciales (Con Ejemplos)
+# Explorando el Mapa de Memoria en Linux: Comandos Esenciales
 
 Entender cómo se organiza la memoria es fundamental para cualquier estudiante de sistemas operativos. Linux proporciona herramientas poderosas para inspeccionar el mapa de memoria de los procesos. Aquí te presentamos algunos comandos clave, explicados de forma sencilla y con ejemplos prácticos.
 
@@ -114,12 +114,3 @@ El mapa de memoria de un proceso muestra cómo se organizan las diferentes regio
     * Actividad de paginación.
 * **¿Por qué usarlo?** Para entender cómo el sistema gestiona la memoria virtual en general.
 
-## Consejos para Estudiantes
-
-* Practica con diferentes procesos para ver cómo cambian los mapas de memoria.
-* Presta atención a las regiones de la pila (stack) y el montón (heap).
-* Investiga sobre las paginaciones, y la memoria swap, y verifica como los parametros de vmstat cambian cuando utilizas aplicaciones que consumen mucha memoria.
-* Usa `pmap` para obtener una visión general rápida, y `/proc/[pid]/maps` para detalles más profundos.
-* Utilizar las opciones de `top` o `htop` para ordenar los procesos por el mayor uso de memoria puede ser de gran utilidad.
-
-¡Explora y experimenta para dominar la gestión de la memoria en Linux!
