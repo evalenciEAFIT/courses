@@ -1,6 +1,7 @@
-# Explorando el Mapa de Memoria en Linux: Comandos Esenciales
 
-Entender cómo se organiza la memoria es fundamental para cualquier estudiante de sistemas operativos. Linux proporciona herramientas poderosas para inspeccionar el mapa de memoria de los procesos. Aquí te presentamos algunos comandos clave, explicados de forma sencilla.
+# Explorando el Mapa de Memoria en Linux: Comandos Esenciales (Con Ejemplos)
+
+Entender cómo se organiza la memoria es fundamental para cualquier estudiante de sistemas operativos. Linux proporciona herramientas poderosas para inspeccionar el mapa de memoria de los procesos. Aquí te presentamos algunos comandos clave, explicados de forma sencilla y con ejemplos prácticos.
 
 ## ¿Qué es el Mapa de Memoria?
 
@@ -18,7 +19,20 @@ El mapa de memoria de un proceso muestra cómo se organizan las diferentes regio
 * **¿Cómo usarlo?**
     * Reemplaza `[pid]` con el ID del proceso.
     * Para el proceso actual, usa `/proc/self/maps`.
-    * Ejemplo: `cat /proc/self/maps`
+    * **Ejemplo:**
+        * Primero, obtén el PID de un proceso. Por ejemplo, vamos a obtener el PID del proceso bash actual. Puedes usar el comando `echo $$`
+            ```bash
+            echo $$
+            1234 #Ejemplo: este número será el PID del proceso bash.
+            ```
+        * Ahora, para ver el mapa de memoria del proceso bash.
+            ```bash
+            cat /proc/1234/maps
+            ```
+        * O, para ver el mapa de memoria del proceso actual.
+            ```bash
+            cat /proc/self/maps
+            ```
 * **¿Qué muestra?**
     * Direcciones de inicio y fin.
     * Permisos (r: lectura, w: escritura, x: ejecución, p: privado, s: compartido).
@@ -40,12 +54,24 @@ El mapa de memoria de un proceso muestra cómo se organizan las diferentes regio
 * **¿Cómo usarlo?**
     * `pmap [pid]` (Muestra la información básica).
     * `pmap -x [pid]` (Muestra información extendida).
-    * Ejemplo para el proceso actual: `pmap -x $$`
+    * **Ejemplo:**
+        * Usando el PID del ejemplo anterior.
+            ```bash
+            pmap 1234
+            ```
+        * Para informacion detallada del mismo proceso.
+            ```bash
+            pmap -x 1234
+            ```
+        * Para ver el mapa de memoria del proceso actual:
+            ```bash
+            pmap -x $$
+            ```
 * **¿Qué muestra?**
     * Dirección de memoria.
     * Tamaño.
     * Permisos.
-    * Nombre del archivo que mapea a la region, en caso que lo haya.
+    * Nombre del archivo que mapea a la región, en caso que lo haya.
 * **¿Por qué usarlo?** Es más fácil de leer que `/proc/[pid]/maps`, especialmente para estudiantes que están comenzando.
 
 ### 3. `htop` o `top`
@@ -54,6 +80,15 @@ El mapa de memoria de un proceso muestra cómo se organizan las diferentes regio
 * **¿Cómo usarlo?**
     * `top` o `htop` (ejecútalo en la terminal).
     *Dentro de cada uno de ellos, podrás observar el uso de memoria de todos los procesos en tiempo real.
+* **Ejemplo:**
+    * Simplemente escribe `top` o `htop` en tu terminal y presiona Enter.
+    ```bash
+    top
+    ```
+    o
+    ```bash
+    htop
+    ```
 * **¿Qué muestran?**
     * Uso de la RAM.
     * Uso de la memoria virtual.
@@ -64,6 +99,14 @@ El mapa de memoria de un proceso muestra cómo se organizan las diferentes regio
 
 * **¿Qué hace?** Muestra estadísticas de la memoria virtual.
 * **¿Cómo usarlo?** `vmstat` (ejecútalo en la terminal).
+* **Ejemplo:**
+    ```bash
+    vmstat
+    ```
+    O para datos actualizados cada 5 segundos.
+    ```bash
+    vmstat 5
+    ```
 * **¿Qué muestra?**
     * Memoria utilizada.
     * Memoria libre.
@@ -71,4 +114,12 @@ El mapa de memoria de un proceso muestra cómo se organizan las diferentes regio
     * Actividad de paginación.
 * **¿Por qué usarlo?** Para entender cómo el sistema gestiona la memoria virtual en general.
 
+## Consejos para Estudiantes
 
+* Practica con diferentes procesos para ver cómo cambian los mapas de memoria.
+* Presta atención a las regiones de la pila (stack) y el montón (heap).
+* Investiga sobre las paginaciones, y la memoria swap, y verifica como los parametros de vmstat cambian cuando utilizas aplicaciones que consumen mucha memoria.
+* Usa `pmap` para obtener una visión general rápida, y `/proc/[pid]/maps` para detalles más profundos.
+* Utilizar las opciones de `top` o `htop` para ordenar los procesos por el mayor uso de memoria puede ser de gran utilidad.
+
+¡Explora y experimenta para dominar la gestión de la memoria en Linux!
