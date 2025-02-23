@@ -2,6 +2,8 @@
 
 La gestión de la memoria es crucial para el funcionamiento de un sistema operativo. Dos áreas clave que administra son la pila (stack) y el montón (heap). Ambas residen en la RAM, pero sirven para propósitos distintos y se gestionan de manera diferente.
 
+![Mapa de memoria](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Linux_Virtual_Memory_Layout_64bit.svg/800px-Linux_Virtual_Memory_Layout_64bit.svg.png)
+
 ## La Pila (Stack)
 
 Imagina la pila como una pila de platos en una cafetería. Los platos se apilan uno encima del otro, y solo se puede acceder al plato superior. De manera similar, la pila almacena datos en un orden LIFO (último en entrar, primero en salir).
