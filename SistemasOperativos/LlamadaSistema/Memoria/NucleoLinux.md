@@ -12,11 +12,11 @@ Los sistemas operativos y las aplicaciones pueden organizarse de diversas manera
 
 ### Ilustración
 
-+-------------------------------------------------+
-|                        Núcleo Monolítico                        |
-|   (Gestión de Memoria, Sistema de Archivos,      |
-|    Controladores de Dispositivos, etc.)           |
-+-------------------------------------------------+
++-------------------------------------------------+   
+|            Núcleo Monolítico                    |   
+|   (Gestión de Memoria, Sistema de Archivos,     |   
+|    Controladores de Dispositivos, etc.)         |   
++-------------------------------------------------+   
 
 
 ### Características
