@@ -14,6 +14,7 @@ Los sistemas operativos y las aplicaciones pueden organizarse de diversas manera
 
 +-------------------------------------------------+   
 |            Núcleo Monolítico                    |   
+| - - - - - - - - - - - - - - - - - - - - - - - - |   
 |   (Gestión de Memoria, Sistema de Archivos,     |   
 |    Controladores de Dispositivos, etc.)         |   
 +-------------------------------------------------+   
