@@ -8,6 +8,8 @@ La gestión de la memoria es una función crítica de cualquier sistema operativ
 * **Memoria Virtual**: Utiliza el espacio en disco como una extensión de la RAM, permitiendo que se ejecuten más aplicaciones de las que cabrían en la memoria física.
 * **Gestión de Páginas**: Divide la memoria en páginas y las intercambia entre la RAM y el disco según sea necesario.
 * **Protección de la Memoria**: Evita que las aplicaciones interfieran con la memoria de otras aplicaciones o del sistema operativo.
+* **Swap (Memoria de Intercambio)**: Usa espacio en el disco duro cuando la RAM esta llena.
+
 
 ## Comparación: Linux 6.6 vs. Windows 11
 
@@ -22,8 +24,8 @@ La gestión de la memoria es una función crítica de cualquier sistema operativ
 |   Núcleo | Monolítico (con modularidad) | Híbrido |
 |   Gestión de Memoria Virtual | Muy Eficiente | Mejorado, pero puede ser menos eficiente en ciertas cargas de trabajo. |
 | Aislamiento de Procesos | Muy robusto (cgroups, namespaces) | Menos robusto en comparación |
+| Swap (memoria de intercambio) | Muy eficiente, y muy configurable. | Funciona, pero puede ser mas ineficiente en comparación a linux, y es menos configurable. |
 
-## Conclusión
 
 Tanto Linux 6.6 como Windows 11 tienen sus propias fortalezas y debilidades en lo que respecta a la gestión de la memoria. Linux tiende a ser más eficiente y flexible, mientras que Windows 11 se centra en la facilidad de uso y la compatibilidad. La elección del sistema operativo adecuado depende de las necesidades y preferencias individuales.
 
