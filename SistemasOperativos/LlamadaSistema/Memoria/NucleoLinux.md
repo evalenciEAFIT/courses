@@ -10,7 +10,7 @@ Los sistemas operativos y las aplicaciones pueden organizarse de diversas manera
 * Esto significa que no hay separación clara entre las diferentes funciones del sistema.
 * Si un componente falla, todo el sistema puede verse afectado.
 
-![Estructura de un sistema operativo monolítico](https://somebooks.es/wp-content/uploads/2022/SOM/estructura%20monolitica.png?width=100&height=100)
+![Estructura de un sistema operativo monolítico](https://somebooks.es/wp-content/uploads/2022/SOM/estructura%20monolitica.png)
 ### Características
 
 * **Ventajas**:
@@ -34,17 +34,7 @@ Los sistemas operativos y las aplicaciones pueden organizarse de diversas manera
 * Cada módulo realiza una tarea específica y se comunica con otros módulos a través de interfaces bien definidas.
 * Proporciona una forma mucho más eficiente de desarrollo y mantenimiento de los sistemas.
 
-### Ilustración
-
-+----------+   +----------+   +-----------------+
-| Módulo A |---| Interfaz |---| Módulo B        |
-+----------+   +----------+   +-----------------+
-|                                   |
-v                                   v
-+-------------------------------------------------+
-|                    Núcleo Principal                   |
-+-------------------------------------------------+
-
+![Estructura de un sistema Modular - Hibrdo](http://somebooks.es/wp-content/uploads/2022/SOM/estructura%20nucleo%20hibrido.png)
 
 ### Características
 
