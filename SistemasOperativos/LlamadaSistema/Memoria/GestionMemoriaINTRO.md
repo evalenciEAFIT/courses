@@ -55,3 +55,7 @@ Una gestión eficiente de la pila y el montón es esencial para el rendimiento y
 
 Visita el enlace:
 [Comandos para ver el mapa de memoria en Linux] (https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/MapaMemoriaLinux.md)
+
+## Código ejemplo   
+Visita el enlace:
+[Ejemplo del código de memoria] (https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/MapaMemoriaLinux.md)
