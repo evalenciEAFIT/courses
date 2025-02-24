@@ -189,6 +189,7 @@ heapVariable está en la pila: false
 staticLocalVariable está en la pila: false
 ```
 
+![Ejemplo salida](https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/memoria_salida.png)
 ---
 
 ## 4. Explicación del Uso de Memoria
