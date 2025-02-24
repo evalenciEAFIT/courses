@@ -2,7 +2,7 @@
 
 Este documento explica el código proporcionado, el procedimiento para compilarlo y ejecutarlo en Linux, así como el uso de la memoria en el programa.
 
-´´ć++
+```c++
 #include <iostream>
 #include <unistd.h> // Para sbrk
 #include <cstdint>  // Para uintptr_t
@@ -113,7 +113,7 @@ int main(int argc, char** argv) {
 
     return 0;
 }
-´´
+```
 
 ---
 
@@ -216,6 +216,5 @@ El programa verifica si las variables pertenecen al heap o a la pila y muestra l
 
 ---
 
-**Autor:**
-Este documento fue generado para documentar el programa de administración y verificación de memoria en Linux.
+
 
