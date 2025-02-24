@@ -168,27 +168,6 @@ Para modificar el valor de la variable global:
 ```
 
 **Ejemplo de Salida:**
-```
-DIRECCION MEMORIA [0x555555756004]   STATIC :         33 variable global
-DIRECCION MEMORIA [0x7fffffffd53c] STACK  :          0 variable local
-DIRECCION MEMORIA [0x5555557772a0]   HEAP  :          0 variable en el heap
-DIRECCION MEMORIA [0x555555756008]   STATIC :          0 variable statica
-
------------------------------------------------------------------------------
-
-VERIFICACIONES
-
-globalVariable está en el heap: false
-localVariable está en el heap: false
-heapVariable está en el heap: true
-staticLocalVariable está en el heap: false
-
-globalVariable está en la pila: false
-localVariable está en la pila: true
-heapVariable está en la pila: false
-staticLocalVariable está en la pila: false
-```
-
 ![Ejemplo salida](https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/memoria_salida.png)
 ---
 
