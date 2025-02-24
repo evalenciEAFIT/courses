@@ -167,8 +167,9 @@ Para modificar el valor de la variable global:
  ./memoria 100
 ```
 
-**Ejemplo de Salida:**
+**Ejemplo de Salida:**   
 ![Ejemplo salida](https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/memoria_salida.png)   
+   
 ---
 
 ## 4. Explicación del Uso de Memoria
