@@ -58,4 +58,4 @@ Visita el enlace:
 
 ## Código ejemplo   
 Visita el enlace:
-[Ejemplo del código de memoria] (https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/MapaMemoriaLinux.md)
+[Ejemplo del código de memoria] (https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Memoria/codigoEjemploUsoMemoria_1.md)
