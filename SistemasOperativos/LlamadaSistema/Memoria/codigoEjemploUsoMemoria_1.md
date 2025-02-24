@@ -2,6 +2,7 @@
 
 Este documento explica el código proporcionado, el procedimiento para compilarlo y ejecutarlo en Linux, así como el uso de la memoria en el programa.
 
+memoria.cpp   
 ```c++
 #include <iostream>
 #include <unistd.h> // Para sbrk
