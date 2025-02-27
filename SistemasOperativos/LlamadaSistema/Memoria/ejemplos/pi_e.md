@@ -14,9 +14,9 @@ El presente documento describe un programa en C++ que evalúa la precisión de l
   
 - **Serie de Taylor para e**: Se calcula con la siguiente expresión:
   
-  \[
+  $$
   e \approx \sum_{i=0}^{n} \frac{1}{i!}
-  \]
+  $$
 
 Ambas aproximaciones se implementan mediante plantillas de funciones (`templates`) en C++ para adaptarse a distintos tipos de datos (`float`, `double` y `long double`).
 
