@@ -50,7 +50,7 @@ El uso de `mmap` en la gestión de archivos grandes permite mejorar el rendimien
 
 
 ## Código
-'''C++
+```cpp
 #include <iostream>
 #include <fstream>
 #include <sys/mman.h>
@@ -122,4 +122,4 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
-'''
+```
