@@ -8,15 +8,11 @@ El presente documento describe un programa en C++ que evalúa la precisión de l
 ### **1. Cálculo de π y e**
 - **Serie de Leibniz**: Se usa para aproximar el valor de π mediante la siguiente fórmula:
   
-  $$   
-  π \approx 4 \sum_{i=0}^{n} \frac{(-1)^i}{2i+1}
-  $$   
+  $$π \approx 4 \sum_{i=0}^{n} \frac{(-1)^i}{2i+1}$$   
   
 - **Serie de Taylor para e**: Se calcula con la siguiente expresión:
   
-  $$   
-  e \approx \sum_{i=0}^{n} \frac{1}{i!}
-  $$   
+  $$e \approx \sum_{i=0}^{n} \frac{1}{i!}$$   
 
 Ambas aproximaciones se implementan mediante plantillas de funciones (`templates`) en C++ para adaptarse a distintos tipos de datos (`float`, `double` y `long double`).
 
