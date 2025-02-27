@@ -44,7 +44,7 @@ g++ -o gestion_memoria gestion_memoria_system.cpp
 El uso de `system()` y `mmap()` en C++ permite gestionar archivos de manera eficiente, combinando automatización de operaciones en el sistema y acceso optimizado a archivos grandes. Sin embargo, se deben tomar precauciones con la seguridad en la ejecución de comandos y la gestión de memoria para garantizar un uso eficiente y seguro de los recursos del sistema.
 
 ## Código
-´´´cpp
+```cpp
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -111,4 +111,4 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
-´´
+```
