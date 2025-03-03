@@ -96,5 +96,5 @@
 **Archivos sin pérdida de calidad → BMP o PNG**.  
 **Optimización web → WEBP** (mayor compresión y calidad).  
 
-Si necesitas más detalles o ejemplos en C++ para trabajar con estos formatos, dime y lo programamos juntos. 🚀
+
 
