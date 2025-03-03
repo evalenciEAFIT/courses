@@ -1,0 +1,7 @@
+sudo dnf install opencv opencv-devel
+
+pkg-config --cflags opencv4
+
+wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
