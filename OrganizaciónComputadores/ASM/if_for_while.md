@@ -1,7 +1,7 @@
 # Uso de `if`,`while`  y `for` en ensamblador de Nand2Tetris
 
 ## Introducción
-Este documento explica cómo implementar estructuras de control condicional (`if`), repetitiva (`for`) y (`while`) en el lenguaje ensamblador de la arquitectura Hack, usada en Nand2Tetris. A continuación, se presenta el código, su explicación y ejemplos adicionales.
+Este documento explica cómo implementar estructuras de control condicional (`if`), repetitiva (`for`) y (`while`) en el lenguaje ensamblador de la arquitectura Hack, usada en Nand2Tetris.
 
 ---
 
