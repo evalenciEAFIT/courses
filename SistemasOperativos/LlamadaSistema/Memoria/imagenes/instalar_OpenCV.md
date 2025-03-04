@@ -7,27 +7,51 @@ Este documento describe los pasos para instalar **OpenCV** y las librerías **ST
 
 ## 🔧 Instalación en Fedora
 ```bash
-sudo dnf install -y opencv opencv-devel gcc-c++ make wget
+sudo dnf install -y opencv opencv-devel gcc-c++ make wget curl
+```
+**Descargar STB Image con `wget` o `curl`**
+```bash
+# Opción 1: Usando wget
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
+
+# Opción 2: Usando curl
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 ```
 
 ---
 
 ## 🔧 Instalación en Ubuntu (22.04 o superior)
 ```bash
-sudo apt update && sudo apt install -y libopencv-dev g++ make wget
+sudo apt update && sudo apt install -y libopencv-dev g++ make wget curl
+```
+**Descargar STB Image con `wget` o `curl`**
+```bash
+# Opción 1: Usando wget
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
+
+# Opción 2: Usando curl
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 ```
 
 ---
 
 ## 🔧 Instalación en Kali Linux
 ```bash
-sudo apt update && sudo apt install -y libopencv-dev g++ make wget
+sudo apt update && sudo apt install -y libopencv-dev g++ make wget curl
+```
+**Descargar STB Image con `wget` o `curl`**
+```bash
+# Opción 1: Usando wget
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
+
+# Opción 2: Usando curl
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 ```
 
 ---
@@ -35,16 +59,32 @@ wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 ## 🔧 Instalación en Windows Subsystem for Linux (WSL)
 **Para WSL con Ubuntu (Recomendado)**
 ```bash
-sudo apt update && sudo apt install -y libopencv-dev g++ make wget
+sudo apt update && sudo apt install -y libopencv-dev g++ make wget curl
+```
+**Descargar STB Image con `wget` o `curl`**
+```bash
+# Opción 1: Usando wget
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
+
+# Opción 2: Usando curl
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 ```
 
 **Para WSL con Fedora**
 ```bash
-sudo dnf install -y opencv opencv-devel gcc-c++ make wget
+sudo dnf install -y opencv opencv-devel gcc-c++ make wget curl
+```
+**Descargar STB Image con `wget` o `curl`**
+```bash
+# Opción 1: Usando wget
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
+
+# Opción 2: Usando curl
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+curl -O https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 ```
 
 ---
@@ -63,3 +103,4 @@ ls -l stb_image.h stb_image_write.h
 Si los archivos existen en el directorio, la instalación fue exitosa.
 
 ---
+
