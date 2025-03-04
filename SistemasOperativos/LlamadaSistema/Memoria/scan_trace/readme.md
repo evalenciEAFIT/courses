@@ -15,11 +15,13 @@ El programa **Memory Trace** permite rastrear la asignación y liberación de me
 - Utiliza `std::unique_ptr` para una gestión segura de memoria.
 - Permite liberar la memoria y medir su impacto en el sistema.
 - Mide el tiempo de ejecución de la operación de asignación y liberación de memoria.
+- Indica si la memoria asignada pertenece al **heap**, **stack** u otro segmento de memoria.
 
-### **📌 Aplicación en Sistemas Operativos**
-- Analizar cómo los procesos gestionan la memoria.
-- Comparar el impacto de distintas estructuras de datos en el consumo de RAM.
-- Explorar la **fragmentación de memoria** y la eficiencia del uso dinámico de memoria en C++.
+### **📌 Ubicación de la Memoria en el Programa**
+- **Heap:** La memoria asignada dinámicamente con `new`, `malloc` o `std::unique_ptr` reside en el **heap**.
+- **Stack:** Variables locales y direcciones de retorno de funciones se almacenan en el **stack**.
+
+En este caso, el bloque de memoria asignado con `std::unique_ptr<int[]>` se encuentra en el **heap**, lo que significa que el espacio de memoria reservado existirá hasta que el puntero deje de estar en uso y libere los recursos asignados.
 
 ### **🚀 Ejecución**
 ```bash
