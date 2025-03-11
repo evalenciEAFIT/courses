@@ -50,7 +50,7 @@ perf --version
 
 Salida esperada:
 ```bash
-perf version 5.2
+perf version 6.13
 ```
 
 ---
