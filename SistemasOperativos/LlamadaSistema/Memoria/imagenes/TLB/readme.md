@@ -22,7 +22,7 @@ El **Translation Lookaside Buffer (TLB)** es una caché especializada en hardwar
 
 ---
 
-## 🎯 **¿Para qué sirve el TLB?**
+##  **¿Para qué sirve el TLB?**
 El TLB mejora el rendimiento del sistema mediante:
 - Cachear las traducciones de direcciones virtuales a físicas.
 - Reducir la cantidad de accesos a la tabla de páginas (que es más lenta).
@@ -151,13 +151,13 @@ sudo perf stat -e dTLB-loads,dTLB-load-misses ./tlb_demo
 
 ---
 
-## 📊 **Interpretación de la salida**
+## **Interpretación de la salida**
 Salida típica de `perf`:
 
 ```bash
  Performance counter stats for './tlb_demo':
 
-        1,234,567      dTLB-loads
+         1,234,567      dTLB-loads
             12,345      dTLB-load-misses           # 1.00% of all dTLB loads
 ```
 
@@ -181,9 +181,9 @@ Salida típica de `perf`:
 ---
 
 ## **Consejos para mejorar el rendimiento del TLB**
-✅ **Usar estructuras de datos contiguas**  
-✅ **Reducir el tamaño del dataset**  
-✅ **Acceso secuencial**  
+ **Usar estructuras de datos contiguas**  
+ **Reducir el tamaño del dataset**  
+ **Acceso secuencial**  
 
 ---
 
