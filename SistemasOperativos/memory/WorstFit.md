@@ -12,7 +12,7 @@ x Puede desaprovechar bloques grandes.
 
 ---
 
-## 🖥️ Código en C++ (para Linux)
+##  Código en C++ (para Linux)
 ```cpp
 #include <iostream>
 #include <vector>
