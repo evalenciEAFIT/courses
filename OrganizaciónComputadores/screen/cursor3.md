@@ -1,5 +1,5 @@
 
-'''ASM
+´´´ASM
 //posiciones iniciales
 @20496     //punto medio de la pantalla
 D=M
@@ -56,4 +56,4 @@ M=M-1   //reduce la altura
 D=A 
 @alturaActual
 M=D 
-'''
+´´´
