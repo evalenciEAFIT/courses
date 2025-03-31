@@ -1,5 +1,5 @@
 cat <<EOF > concurrencia_cpp_linux.md
-# **Concurrencia en Sistemas Operativos: Programación Eficiente en C++ para Linux**
+# **Concurrencia en Sistemas Operativos: Programación Eficiente en C++**
 
 ## **Tabla de Contenidos**
 1. [¿Qué es la Concurrencia?](#qué-es-la-concurrencia)
@@ -80,7 +80,7 @@ En Linux, la comunicación entre procesos se puede lograr mediante:
 
 El siguiente ejemplo muestra cómo crear y ejecutar dos hilos en paralelo:
 
-\`\`\`cpp
+```cpp
 #include <iostream>
 #include <thread>
 
@@ -102,23 +102,23 @@ int main() {
     std::cout << "Ambos hilos han terminado." << std::endl;
     return 0;
 }
-\`\`\`
+```
 
 **Salida esperada**:
-\`\`\`
+```
 Hilo 1: Iteración 0
 Hilo 2: Iteración 0
 Hilo 1: Iteración 1
 Hilo 2: Iteración 1
 ...
 Ambos hilos han terminado.
-\`\`\`
+```
 
 ### **Uso de Mutex para Sincronización**
 
 Este ejemplo muestra cómo usar un \`std::mutex\` para evitar condiciones de carrera:
 
-\`\`\`cpp
+```cpp
 #include <iostream>
 #include <thread>
 #include <mutex>
@@ -143,7 +143,7 @@ int main() {
     std::cout << "Valor final del contador: " << contador << std::endl;
     return 0;
 }
-\`\`\`
+```
 
 **Nota**: Sin el mutex, el valor final del contador podría ser incorrecto debido a una condición de carrera.
 
@@ -151,7 +151,7 @@ int main() {
 
 Este ejemplo muestra cómo compartir memoria entre procesos usando \`shm_open\` y \`mmap\`:
 
-\`\`\`cpp
+```cpp
 #include <iostream>
 #include <sys/mman.h>
 #include <fcntl.h>
@@ -179,7 +179,7 @@ int main() {
 
     return 0;
 }
-\`\`\`
+```
 
 ---
 
@@ -199,4 +199,4 @@ int main() {
 - Libro: "Concurrency in Action" por Anthony Williams
 - Manual de Linux: \`man shm_open\`, \`man pthread\`
 
-EOF
+
