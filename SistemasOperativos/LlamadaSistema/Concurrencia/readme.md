@@ -188,7 +188,6 @@ int main() {
 2. **Divide y vencerás**: Divide grandes tareas en subproblemas más pequeños que puedan ejecutarse en paralelo.
 3. **Evita bloqueos innecesarios**: Usa técnicas como \`std::atomic\` para operaciones atómicas.
 4. **Optimiza el uso de caché**: Asegúrate de que los hilos accedan a datos localizados en memoria para reducir fallos de caché.
-5. **Pruebas y perfiles**: Utiliza herramientas como \`gprof\` o \`perf\` para identificar cuellos de botella.
 
 ---
 
