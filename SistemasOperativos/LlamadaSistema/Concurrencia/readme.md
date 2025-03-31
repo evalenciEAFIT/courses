@@ -1,4 +1,3 @@
-cat <<EOF > concurrencia_cpp_linux.md
 # **Concurrencia en Sistemas Operativos: Programación Eficiente en C++**
 
 ## **Tabla de Contenidos**
