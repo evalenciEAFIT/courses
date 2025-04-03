@@ -1,4 +1,4 @@
-# Problema de los Cinco Filósofos y Concurrencia
+# Problema de los 5 Filósofos y Concurrencia
 
 El problema de los cinco filósofos es un clásico problema de concurrencia que modela la necesidad de sincronización y control de recursos compartidos en sistemas operativos y multihilos.
 
@@ -63,6 +63,107 @@ getchar(); // Espera entrada del usuario
 pausa = !pausa; // Alterna entre pausa y reanudación
 ```
 
-## Conclusión
-El problema de los cinco filósofos ilustra los retos de la sincronización de hilos y acceso a recursos compartidos en concurrencia. Mediante mutexes y mecanismos de detección de interbloqueo y condiciones de carrera, el código ofrece una representación práctica de estos conceptos fundamentales en sistemas operativos y programación concurrente.
+## Código Completo
+El siguiente código implementa la simulación del problema de los cinco filósofos:
+
+```cpp
+#include <iostream>
+#include <pthread.h>
+#include <unistd.h>
+#include <fstream>
+#include <signal.h>
+#include <atomic>
+
+#define NUM_FILOSOFOS 5
+#define IZQUIERDA (id_filosofo + NUM_FILOSOFOS - 1) % NUM_FILOSOFOS
+#define DERECHA (id_filosofo + 1) % NUM_FILOSOFOS
+
+using namespace std;
+
+pthread_mutex_t tenedores[NUM_FILOSOFOS];
+bool tenedor_en_uso[NUM_FILOSOFOS] = {false};
+std::atomic<bool> pausa(false);
+std::atomic<bool> detener(false);
+
+void pensar(int id_filosofo) {
+    usleep(500000 + rand() % 1000000);
+    cout << "Filósofo " << id_filosofo << " está pensando." << endl;
+}
+
+void comer(int id_filosofo) {
+    usleep(200000 + rand() % 500000);
+    cout << "Filósofo " << id_filosofo << " está comiendo." << endl;
+}
+
+bool hay_deadlock() {
+    for (int i = 0; i < NUM_FILOSOFOS; ++i) {
+        if (!tenedor_en_uso[i]) return false;
+    }
+    return true;
+}
+
+void* filosofo(void* arg) {
+    int id_filosofo = *((int*)arg);
+    while (!detener) {
+        if (pausa) {
+            usleep(100000);
+            continue;
+        }
+
+        pensar(id_filosofo);
+        pthread_mutex_lock(&tenedores[IZQUIERDA]);
+        tenedor_en_uso[IZQUIERDA] = true;
+        pthread_mutex_lock(&tenedores[DERECHA]);
+        tenedor_en_uso[DERECHA] = true;
+        if (hay_deadlock()) {
+            cout << "DEADLOCK DETECTADO" << endl;
+            exit(1);
+        }
+        comer(id_filosofo);
+        pthread_mutex_unlock(&tenedores[IZQUIERDA]);
+        tenedor_en_uso[IZQUIERDA] = false;
+        pthread_mutex_unlock(&tenedores[DERECHA]);
+        tenedor_en_uso[DERECHA] = false;
+    }
+    return nullptr;
+}
+
+int main() {
+    pthread_t filosofos[NUM_FILOSOFOS];
+    int ids[NUM_FILOSOFOS];
+    for (int i = 0; i < NUM_FILOSOFOS; ++i) {
+        pthread_mutex_init(&tenedores[i], nullptr);
+    }
+    for (int i = 0; i < NUM_FILOSOFOS; ++i) {
+        ids[i] = i;
+        pthread_create(&filosofos[i], nullptr, filosofo, &ids[i]);
+    }
+    sleep(10);
+    for (int i = 0; i < NUM_FILOSOFOS; ++i) {
+        pthread_mutex_destroy(&tenedores[i]);
+    }
+    return 0;
+}
+```
+
+## Ejemplo de Uso y Compilación
+Para compilar y ejecutar el código, usa los siguientes comandos en una terminal Linux:
+
+```sh
+g++ -o filosofos filosofos.cpp -lpthread
+./filosofos
+```
+
+### Salida Esperada
+```
+Filósofo 0 está pensando.
+Filósofo 1 está pensando.
+Filósofo 2 está pensando.
+Filósofo 3 está pensando.
+Filósofo 4 está pensando.
+Filósofo 0 está comiendo.
+Filósofo 1 está comiendo.
+...
+```
+Esto muestra a los filósofos alternando entre pensar y comer, mientras el programa gestiona los recursos compartidos de manera concurrente.
 
