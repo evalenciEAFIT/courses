@@ -1,8 +1,6 @@
 # Retos del Problema de los Filósofos Comensales
 
-El problema de los filósofos comensales es un clásico en la programación concurrente y ofrece una excelente base para proponer retos educativos o prácticos. A partir de este problema, puedes plantear diversos retos que desafíen a los estudiantes o desarrolladores a profundizar en conceptos como concurrencia, sincronización, manejo de recursos compartidos, y resolución de problemas como deadlocks y condiciones de carrera.
-
-A continuación, se presentan varios retos clasificados por nivel de dificultad:
+El problema de los filósofos comensales es un clásico en la programación concurrente y ofrece una excelente base para plantear diversos retos que desafíen y motiven a profundizar en conceptos como concurrencia, sincronización, manejo de recursos compartidos, y resolución de problemas como deadlocks y condiciones de carrera.
 
 ## **Reto 1: Básico - Resolver Deadlock**
 ### **Descripción**
