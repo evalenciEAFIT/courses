@@ -166,6 +166,8 @@ Filósofo 4 está pensando.
 Filósofo 0 está comiendo.
 Filósofo 1 está comiendo.
 ...
+
+[Accede al reto inspirado en el problema de los filósofos aquí](https://github.com/evalenciEAFIT/courses/blob/main/SistemasOperativos/LlamadaSistema/Concurrencia/filosofos/reto_inspirado_filosofos.md)
 ```
 Esto muestra a los filósofos alternando entre pensar y comer, mientras el programa gestiona los recursos compartidos de manera concurrente.
 
