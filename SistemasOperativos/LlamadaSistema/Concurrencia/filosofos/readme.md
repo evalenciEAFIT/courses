@@ -3,7 +3,11 @@
 El problema de los cinco filósofos es un clásico problema de concurrencia que modela la necesidad de sincronización y control de recursos compartidos en sistemas operativos y multihilos.
 
 ## Descripción del Problema
-Cinco filósofos están sentados alrededor de una mesa, cada uno con un plato de comida. Entre cada par de filósofos hay un tenedor. Para poder comer, cada filósofo necesita tomar los dos tenedores a su izquierda y derecha. Sin embargo, solo hay cinco tenedores disponibles, lo que introduce la posibilidad de interbloqueo si todos intentan tomar los tenedores simultáneamente.
+5 filósofos están sentados alrededor de una mesa, cada uno con un plato de comida. Entre cada par de filósofos hay un tenedor. Para poder comer, cada filósofo necesita tomar los dos tenedores a su izquierda y derecha. Sin embargo, solo hay cinco tenedores disponibles, lo que introduce la posibilidad de interbloqueo si todos intentan tomar los tenedores simultáneamente.
+
+
+![Esquema del problema de los cinco filósofos](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm2cwoIEu8oZSphMiemiTBerItWbLhPqrT2fPO5ksKv0Dya7xT1OCpzZ0l6heCgWey9X-bSjjvEZeggOLolHzK9LiaDmoUDEyZIBM2-bjm_8q0y9Hfcx8ujAmco-tXViTJ0qKEh_66E98/s1600-h/filosofoschinos.png)
+
 
 ## Conceptos Claves de Concurrencia
 A través del código provisto, se pueden observar y estudiar tres problemas principales en concurrencia:
