@@ -53,6 +53,8 @@ Este documento presenta un simulador básico de un planificador de procesos impl
 
 5.  **Tabla de Estado:** En cada ciclo de simulación, se muestra una tabla en la terminal que indica el estado actual de cada proceso, incluyendo su ID (con el color del proceso), el nombre del archivo asociado (como "Proceso"), su estado actual y su progreso de "ejecución".
 
+![salida](PS01.png)
+
 ### Explicación del Código C++
 
 ```cpp
