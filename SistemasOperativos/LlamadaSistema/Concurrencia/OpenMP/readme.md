@@ -172,3 +172,24 @@ int main() {
     return 0;
 }
 ```
+
+# Compilación y Ejecución de un Programa OpenMP en Linux
+
+## Compilación y Ejecución
+
+Para compilar y ejecutar el programa en Linux:
+
+1. Guarda el código en un archivo, por ejemplo, `openmp_demo.cpp`.
+2. Compila con soporte para OpenMP:
+   ```bash
+   g++ -fopenmp openmp_demo.cpp -o openmp_demo
+   ```
+3. Ejecutar programa:
+   ```bash
+   ./openmp_demo
+   ```
+
+ 4. Puedes controlar el número de hilos con la variable de entorno OMP_NUM_THREADS:
+   ```bash
+   export OMP_NUM_THREADS=4  # Usa 4 hilos
+   ```
