@@ -244,6 +244,7 @@ int main() {
     cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
     return 0;  
 }
+```
 
 #### **Paralelo**
 ```cpp
@@ -461,7 +462,7 @@ int main() {
     cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
     return 0;  
 }
-```cpp
+```
 
 ### **Resultado**
 
@@ -504,7 +505,7 @@ int main() {
     cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
     return 0;  
 }
-```cpp
+```
 
 #### **Paralelo**
 ```cpp
@@ -530,7 +531,7 @@ int main() {
     cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
     return 0;  
 }
-```cpp
+```
 
 ### **Resultado**
 
