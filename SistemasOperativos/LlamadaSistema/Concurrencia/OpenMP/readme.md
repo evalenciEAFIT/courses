@@ -241,3 +241,19 @@ Para compilar y ejecutar el programa en Linux:
 - **Funcionamiento**: Ideal para trabajo irregular o dinámico.
 - **Cláusulas comunes**: `depend(tipo:vars)` para dependencias.
 - **Ejemplo**: Genera 6 tareas ejecutadas en paralelo.
+
+
+# Análisis de Rendimiento
+
+- **Medición**: Se usa `<chrono>` para medir tiempos en milisegundos.
+- **Simulación**: `sleep(1)` simula trabajo computacional.
+- **Resultados esperados**:
+  - **parallel**: Tiempo mínimo.
+  - **for**: ~2 segundos (8 iteraciones ÷ 4 hilos).
+  - **sections**: ~1 segundo (2 secciones en paralelo).
+  - **single**: ~1 segundo + *overhead*.
+  - **reduction**: ~3 segundos (10 iteraciones ÷ 4 hilos).
+  - **critical**: ~4 segundos (secuencial).
+  - **barrier**: ~1 segundo (limitado por el más lento).
+  - **task**: ~2 segundos (6 tareas ÷ 4 hilos).
+- **Nota**: Los tiempos reales dependerán del hardware y sistema operativo.
