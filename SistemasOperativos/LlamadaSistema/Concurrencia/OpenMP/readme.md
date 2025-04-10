@@ -1,6 +1,6 @@
 ## Guía de OpenMP: Directivas, Ejemplos y Análisis de Rendimiento
 
-OpenMP (Open Multi-Processing) es una API que facilita la programación paralela en sistemas de memoria compartida. Utiliza directivas de preprocesador (`#pragma`) para indicar al compilador cómo paralelizar el código. A continuación, se explican las directivas principales con ejemplos claros en C++ y se comparan soluciones secuenciales frente a paralelas.
+OpenMP (Open Multi-Processing) es una API que facilita la programación paralela en sistemas de memoria compartida. Utiliza directivas de preprocesador (#pragma`) para indicar al compilador cómo paralelizar el código. A continuación, se explican las directivas principales con ejemplos claros en C++ y se comparan soluciones secuenciales frente a paralelas.
 
 ---
 
@@ -116,27 +116,28 @@ int main() {
     cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
     return 0;  
 }
+```
 
 #### **Paralelo**
 
-cpp  
-CollapseWrapCopy  
-`void parallel_loop() {`  
-    `#pragma omp parallel for num_threads(4)`  
-    `for (int i = 0; i < 8; i++) {`  
-        `this_thread::sleep_for(chrono::milliseconds(250));`  
-        `cout << "Iteración " << i << " completada por hilo " << omp_get_thread_num() << "\n";`  
-    `}`  
-`}`
+```cpp 
+void parallel_loop() {  
+    #pragma omp parallel for num_threads(4)  
+    for (int i = 0; i < 8; i++) {  
+        this_thread::sleep_for(chrono::milliseconds(250));`  
+        cout << "Iteración " << i << " completada por hilo " << omp_get_thread_num() << "\n";  
+    }  
+}
 
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_loop();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_loop();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```cpp
 
 ### **Resultado**
 
@@ -159,52 +160,51 @@ Cada section se asigna a un hilo diferente. Requiere estar dentro de un parallel
 
 #### **Secuencial**
 
-cpp  
-CollapseWrapCopy  
-`void sequential_sections() {`  
-    `this_thread::sleep_for(chrono::seconds(1)); // Sección 1`  
-    `cout << "Sección 1 completada\n";`  
-    `this_thread::sleep_for(chrono::seconds(1)); // Sección 2`  
-    `cout << "Sección 2 completada\n";`  
-`}`
+```cpp  
+void sequential_sections() {  
+    this_thread::sleep_for(chrono::seconds(1)); // Sección 1  
+    cout << "Sección 1 completada\n";  
+    this_thread::sleep_for(chrono::seconds(1)); // Sección 2  
+    cout << "Sección 2 completada\n";  
+}
 
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `sequential_sections();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo secuencial: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    sequential_sections();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```
 
 #### **Paralelo**
+```cpp
+void parallel_sections() {  
+    #pragma omp parallel sections num_threads(2)  
+    {  
+        #pragma omp section  
+        {  
+            this_thread::sleep_for(chrono::seconds(1));  
+            cout << "Sección 1 completada por hilo " << omp_get_thread_num() << "\n";  
+        }  
+        #pragma omp section  
+        {  
+            this_thread::sleep_for(chrono::seconds(1));  
+            cout << "Sección 2 completada por hilo " << omp_get_thread_num() << "\n";  
+        }  
+    }  
+}
 
-cpp  
-CollapseWrapCopy  
-`void parallel_sections() {`  
-    `#pragma omp parallel sections num_threads(2)`  
-    `{`  
-        `#pragma omp section`  
-        `{`  
-            `this_thread::sleep_for(chrono::seconds(1));`  
-            `cout << "Sección 1 completada por hilo " << omp_get_thread_num() << "\n";`  
-        `}`  
-        `#pragma omp section`  
-        `{`  
-            `this_thread::sleep_for(chrono::seconds(1));`  
-            `cout << "Sección 2 completada por hilo " << omp_get_thread_num() << "\n";`  
-        `}`  
-    `}`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_sections();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_sections();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```cpp
 
 ### **Resultado**
 
@@ -230,48 +230,44 @@ Incluye una barrera implícita, a menos que se use nowait.
 ### **Ejemplo**
 
 #### **Secuencial**
+```cpp 
+void sequential_single() {  
+    this_thread::sleep_for(chrono::seconds(1));  
+    cout << "Tarea única completada\n";  
+}
 
-cpp  
-CollapseWrapCopy  
-`void sequential_single() {`  
-    `this_thread::sleep_for(chrono::seconds(1));`  
-    `cout << "Tarea única completada\n";`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `sequential_single();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo secuencial: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    sequential_single();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
+    return 0;  
+}
 
 #### **Paralelo**
+```cpp
+void parallel_single() {  
+    #pragma omp parallel num_threads(4)  
+    {  
+        #pragma omp single nowait  
+        {  
+            this_thread::sleep_for(chrono::seconds(1));  
+            cout << "Tarea única completada por hilo " << omp_get_thread_num() << "\n";  
+        }  
+        cout << "Hilo " << omp_get_thread_num() << " continúa\n";  
+    }  
+}
 
-cpp  
-CollapseWrapCopy  
-`void parallel_single() {`  
-    `#pragma omp parallel num_threads(4)`  
-    `{`  
-        `#pragma omp single nowait`  
-        `{`  
-            `this_thread::sleep_for(chrono::seconds(1));`  
-            `cout << "Tarea única completada por hilo " << omp_get_thread_num() << "\n";`  
-        `}`  
-        `cout << "Hilo " << omp_get_thread_num() << " continúa\n";`  
-    `}`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_single();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
-
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_single();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```
 ### **Resultado**
 
 * **Secuencial**: \~1000 ms.  
@@ -296,50 +292,47 @@ Cada hilo tiene una copia privada de la variable, que se combina al final.
 ### **Ejemplo**
 
 #### **Secuencial**
+```cpp  
+void sequential_reduction() {  
+    int sum = 0;  
+    for (int i = 1; i <= 10; i++) {  
+        this_thread::sleep_for(chrono::milliseconds(300));  
+        sum += i;  
+    }  
+    cout << "Suma secuencial: " << sum << "\n";  
+}
 
-cpp  
-CollapseWrapCopy  
-`void sequential_reduction() {`  
-    `int sum = 0;`  
-    `for (int i = 1; i <= 10; i++) {`  
-        `this_thread::sleep_for(chrono::milliseconds(300));`  
-        `sum += i;`  
-    `}`  
-    `cout << "Suma secuencial: " << sum << "\n";`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `sequential_reduction();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo secuencial: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    sequential_reduction();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```
 
 #### **Paralelo**
+```cpp
+void parallel_reduction() {  
+    int sum = 0;  
+    #pragma omp parallel for reduction(+:sum) num_threads(4)  
+    for (int i = 1; i <= 10; i++) {  
+        this_thread::sleep_for(chrono::milliseconds(300));  
+        sum += i;  
+    }  
+    cout << "Suma paralela: " << sum << "\n";  
+}
 
-cpp  
-CollapseWrapCopy  
-`void parallel_reduction() {`  
-    `int sum = 0;`  
-    `#pragma omp parallel for reduction(+:sum) num_threads(4)`  
-    `for (int i = 1; i <= 10; i++) {`  
-        `this_thread::sleep_for(chrono::milliseconds(300));`  
-        `sum += i;`  
-    `}`  
-    `cout << "Suma paralela: " << sum << "\n";`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_reduction();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
-
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_reduction();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```
 ### **Resultado**
 
 * **Secuencial**: \~3000 ms (10 × 300 ms).  
@@ -365,49 +358,48 @@ Solo un hilo a la vez puede entrar.
 
 #### **Secuencial**
 
-cpp  
-CollapseWrapCopy  
-`void sequential_critical() {`  
-    `int counter = 0;`  
-    `for (int i = 0; i < 4; i++) {`  
-        `this_thread::sleep_for(chrono::seconds(1));`  
-        `counter++;`  
-    `}`  
-    `cout << "Contador secuencial: " << counter << "\n";`  
-`}`
+```cpp  
+void sequential_critical() {  
+    int counter = 0;  
+    for (int i = 0; i < 4; i++) {  
+        this_thread::sleep_for(chrono::seconds(1));  
+        counter++;  
+    }  
+    cout << "Contador secuencial: " << counter << "\n";  
+}
 
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `sequential_critical();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo secuencial: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    sequential_critical();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```
 
 #### **Paralelo**
+```cpp  
+void parallel_critical() {  
+    int counter = 0;`  
+    #pragma omp parallel for num_threads(4)`  
+    for (int i = 0; i < 4; i++) {  
+        this_thread::sleep_for(chrono::seconds(1));  
+        #pragma omp critical  
+        counter++;  
+    }  
+    cout << "Contador paralelo: " << counter << "\n";  
+}
 
-cpp  
-CollapseWrapCopy  
-`void parallel_critical() {`  
-    `int counter = 0;`  
-    `#pragma omp parallel for num_threads(4)`  
-    `for (int i = 0; i < 4; i++) {`  
-        `this_thread::sleep_for(chrono::seconds(1));`  
-        `#pragma omp critical`  
-        `counter++;`  
-    `}`  
-    `cout << "Contador paralelo: " << counter << "\n";`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_critical();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_critical();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```cpp
 
 ### **Resultado**
 
@@ -430,47 +422,46 @@ Ningún hilo avanza hasta que todos llegan.
 
 #### **Secuencial**
 
-cpp  
-CollapseWrapCopy  
-`void sequential_barrier() {`  
-    `this_thread::sleep_for(chrono::seconds(1));`  
-    `cout << "Fase 1 completada\n";`  
-    `this_thread::sleep_for(chrono::seconds(1));`  
-    `cout << "Fase 2 completada\n";`  
-`}`
+```cpp  
+void sequential_barrier() {  
+    this_thread::sleep_for(chrono::seconds(1));  
+    cout << "Fase 1 completada\n";  
+    this_thread::sleep_for(chrono::seconds(1));  
+    cout << "Fase 2 completada\n";  
+}
 
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `sequential_barrier();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo secuencial: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    sequential_barrier();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```
 
 #### **Paralelo**
+```cpp  
+void parallel_barrier() {  
+    #pragma omp parallel num_threads(4)  
+    {  
+        int id = omp_get_thread_num();  
+        this_thread::sleep_for(chrono::milliseconds(500 + id * 100)); // Diferentes tiempos  
+        cout << "Fase 1 completada por hilo " << id << "\n";  
+        #pragma omp barrier  
+        cout << "Fase 2 completada por hilo " << id << "\n";  
+    }  
+}
 
-cpp  
-CollapseWrapCopy  
-`void parallel_barrier() {`  
-    `#pragma omp parallel num_threads(4)`  
-    `{`  
-        `int id = omp_get_thread_num();`  
-        `this_thread::sleep_for(chrono::milliseconds(500 + id * 100)); // Diferentes tiempos`  
-        `cout << "Fase 1 completada por hilo " << id << "\n";`  
-        `#pragma omp barrier`  
-        `cout << "Fase 2 completada por hilo " << id << "\n";`  
-    `}`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_barrier();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_barrier();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```cpp
 
 ### **Resultado**
 
@@ -497,50 +488,49 @@ Ideal para trabajo irregular o dinámico.
 
 #### **Secuencial**
 
-cpp  
-CollapseWrapCopy  
-`void sequential_tasks() {`  
-    `for (int i = 0; i < 6; i++) {`  
-        `this_thread::sleep_for(chrono::milliseconds(500));`  
-        `cout << "Tarea " << i << " completada\n";`  
-    `}`  
-`}`
+```cpp
+void sequential_tasks() {  
+    for (int i = 0; i < 6; i++) {  
+        this_thread::sleep_for(chrono::milliseconds(500));  
+        cout << "Tarea " << i << " completada\n";  
+    }  
+}
 
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `sequential_tasks();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo secuencial: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    sequential_tasks();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo secuencial: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```cpp
 
 #### **Paralelo**
+```cpp
+void parallel_tasks() {  
+    #pragma omp parallel num_threads(4)  
+    {  
+        #pragma omp single  
+        for (int i = 0; i < 6; i++) {  
+            #pragma omp task  
+            {  
+                this_thread::sleep_for(chrono::milliseconds(500));  
+                cout << "Tarea " << i << " completada por hilo " << omp_get_thread_num() << "\n";  
+            }  
+        }  
+    }  
+}
 
-cpp  
-CollapseWrapCopy  
-`void parallel_tasks() {`  
-    `#pragma omp parallel num_threads(4)`  
-    `{`  
-        `#pragma omp single`  
-        `for (int i = 0; i < 6; i++) {`  
-            `#pragma omp task`  
-            `{`  
-                `this_thread::sleep_for(chrono::milliseconds(500));`  
-                `cout << "Tarea " << i << " completada por hilo " << omp_get_thread_num() << "\n";`  
-            `}`  
-        `}`  
-    `}`  
-`}`
-
-`int main() {`  
-    `auto start = chrono::high_resolution_clock::now();`  
-    `parallel_tasks();`  
-    `auto end = chrono::high_resolution_clock::now();`  
-    `auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);`  
-    `cout << "Tiempo paralelo: " << duration.count() << " ms\n";`  
-    `return 0;`  
-`}`
+int main() {  
+    auto start = chrono::high_resolution_clock::now();  
+    parallel_tasks();  
+    auto end = chrono::high_resolution_clock::now();  
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);  
+    cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
+    return 0;  
+}
+```cpp
 
 ### **Resultado**
 
