@@ -130,3 +130,43 @@ int main() {
     return 0;
 }
 ```
+
+## **Explicación del Diseño e Implementación**
+
+### **Directivas Utilizadas**
+
+1. **\#pragma omp parallel**: Define el bloque paralelo principal con 4 hilos. Todo el procesamiento ocurre dentro de este equipo.  
+2. **\#pragma omp single**: Garantiza que solo un hilo realice la inicialización y la generación de tareas dinámicas, evitando duplicación.  
+3. **\#pragma omp for con reduction**: Paraleliza el bucle que suma el arreglo data. La cláusula reduction(+:sum) asegura que cada hilo mantenga una copia privada de sum, combinándolas al final.  
+4. **\#pragma omp sections y \#pragma omp section**: Divide el trabajo en dos secciones independientes (procesamiento y escritura) que se ejecutan en paralelo.  
+5. **\#pragma omp barrier**: Sincroniza todos los hilos tras las secciones, asegurando que todos terminen antes de continuar.  
+6. **\#pragma omp critical**: Protege el acceso al contador critical\_counter, permitiendo incrementos seguros uno a la vez.  
+7. **\#pragma omp task con depend**: Crea tareas dinámicas para generar datos (task\_results) y una tarea dependiente que suma esos resultados, respetando las dependencias.
+
+### **Diseño**
+
+* **Estructura**: El código está encapsulado en un solo bloque parallel para maximizar la reutilización de hilos y minimizar el *overhead* de creación.  
+* **Simulación**: simulate\_work() usa sleep para emular trabajo computacional, permitiendo medir el impacto de la paralelización.  
+* **Sincronización**: Se combinan barrier, critical, y depend para coordinar las tareas y evitar condiciones de carrera.  
+* **Medición**: \<chrono\> mide el tiempo total, mostrando la eficiencia del enfoque paralelo.
+
+### **Implementación**
+
+* **Arreglo data**: Representa un conjunto grande de datos para la reducción.  
+* **Contador crítico**: Simula una variable compartida que requiere protección.  
+* **Tareas dinámicas**: Usa un arreglo task\_results para demostrar dependencias entre generación y procesamiento.  
+* **Salidas**: Cada hilo imprime mensajes para rastrear su progreso, facilitando la depuración y verificación.
+
+---
+
+## **Compilación y Ejecución**
+
+* Compilar: g++ \-fopenmp codigo.cpp \-o codigo  
+* Ejecutar: ./codigo
+
+## **Resultados Esperados**
+
+* **Suma del arreglo**: 1000 (SIZE × 1).  
+* **Contador crítico**: 4 (un incremento por hilo).  
+* **Tiempo**: Depende del hardware, pero será menor que una versión secuencial equivalente (\~5000 ms secuencial vs. \~2000 ms paralelo con 4 hilos).
+
