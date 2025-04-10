@@ -190,6 +190,54 @@ Para compilar y ejecutar el programa en Linux:
    ```
 
  4. Puedes controlar el número de hilos con la variable de entorno OMP_NUM_THREADS:
-   ```bash
-   export OMP_NUM_THREADS=4  # Usa 4 hilos
-   ```
+    ```bash
+    export OMP_NUM_THREADS=4  # Usa 4 hilos
+    ```
+# Explicación de las Directivas OpenMP
+
+## 1. `#pragma omp parallel`
+- **Propósito**: Crea un equipo de hilos que ejecutan el bloque de código en paralelo.
+- **Funcionamiento**: Cada hilo ejecuta una copia idéntica del código.
+- **Cláusulas comunes**: `num_threads(n)` especifica el número de hilos.
+- **Ejemplo**: Muestra un mensaje desde cada hilo.
+
+## 2. `#pragma omp parallel for`
+- **Propósito**: Divide las iteraciones de un bucle entre los hilos disponibles.
+- **Funcionamiento**: Ideal para bucles con iteraciones independientes.
+- **Cláusulas comunes**: `schedule(type)` define la distribución de iteraciones.
+- **Ejemplo**: Procesa 8 iteraciones en paralelo.
+
+## 3. `#pragma omp sections` y `#pragma omp section`
+- **Propósito**: Ejecuta diferentes bloques de código en paralelo.
+- **Funcionamiento**: Cada `section` es asignada a un hilo diferente.
+- **Requisito**: Debe estar dentro de un `parallel`.
+- **Ejemplo**: Ejecuta dos secciones simultáneamente.
+
+## 4. `#pragma omp single`
+- **Propósito**: Solo un hilo ejecuta el bloque de código.
+- **Funcionamiento**: Otros hilos esperan hasta que termina (barrera implícita).
+- **Cláusulas comunes**: `nowait` elimina la barrera.
+- **Ejemplo**: Un hilo ejecuta una tarea, otros continúan después.
+
+## 5. `#pragma omp reduction`
+- **Propósito**: Realiza operaciones de reducción seguras en paralelo.
+- **Funcionamiento**: Cada hilo tiene una copia privada que se combina al final.
+- **Cláusulas comunes**: `reduction(operador:variable)` define la operación.
+- **Ejemplo**: Calcula la suma de 1 a 10.
+
+## 6. `#pragma omp critical`
+- **Propósito**: Protege una sección crítica para acceso exclusivo.
+- **Funcionamiento**: Solo un hilo a la vez puede entrar.
+- **Cláusulas comunes**: `(nombre)` para identificar secciones críticas.
+- **Ejemplo**: Incrementa un contador compartido.
+
+## 7. `#pragma omp barrier`
+- **Propósito**: Sincroniza todos los hilos en un punto específico.
+- **Funcionamiento**: Ningún hilo continúa hasta que todos llegan.
+- **Ejemplo**: Sincroniza hilos con tiempos de ejecución diferentes.
+
+## 8. `#pragma omp task`
+- **Propósito**: Crea tareas que se distribuyen entre los hilos.
+- **Funcionamiento**: Ideal para trabajo irregular o dinámico.
+- **Cláusulas comunes**: `depend(tipo:vars)` para dependencias.
+- **Ejemplo**: Genera 6 tareas ejecutadas en paralelo.
