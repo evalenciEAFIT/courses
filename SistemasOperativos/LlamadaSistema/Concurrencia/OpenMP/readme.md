@@ -1,5 +1,3 @@
-
-
 ## Guía de OpenMP: Directivas, Ejemplos y Análisis de Rendimiento
 
 OpenMP (Open Multi-Processing) es una API que facilita la programación paralela en sistemas de memoria compartida. Utiliza directivas de preprocesador (`#pragma`) para indicar al compilador cómo paralelizar el código. A continuación, se explican las directivas principales con ejemplos claros en C++ y se comparan soluciones secuenciales frente a paralelas.
@@ -17,7 +15,9 @@ Incluye estas cabeceras en todos los ejemplos:
 #include <chrono>
 #include <thread>
 #include <omp.h>
-using namespace std; Demostración de Directivas OpenMP en C++ (Linux)
+using namespace std;
+```
+Demostración de Directivas OpenMP en C++ (Linux)
 
 Este documento presenta un programa en C++ que demuestra el uso de varias directivas de OpenMP para programación paralela en Linux. El código está organizado en una clase `OpenMPDemo` con funciones separadas para cada directiva, incluyendo medición de tiempos de ejecución.
 
