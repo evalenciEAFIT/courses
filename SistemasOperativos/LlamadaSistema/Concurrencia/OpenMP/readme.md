@@ -204,7 +204,7 @@ int main() {
     cout << "Tiempo paralelo: " << duration.count() << " ms\n";  
     return 0;  
 }
-```cpp
+```
 
 ### **Resultado**
 
