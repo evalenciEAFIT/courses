@@ -170,3 +170,8 @@ int main() {
 * **Contador crítico**: 4 (un incremento por hilo).  
 * **Tiempo**: Depende del hardware, pero será menor que una versión secuencial equivalente (\~5000 ms secuencial vs. \~2000 ms paralelo con 4 hilos).
 
+
+
+### Notas Finales
+- **Directivas Incluidas**: Se usan `parallel`, `for`, `sections`, `section`, `single`, `reduction`, `critical`, `barrier`, y `task` con `depend`. Otras como `schedule` o `nowait` podrían añadirse, pero se omitieron para mantener la simplicidad.
+- **Flexibilidad**: Puedes ajustar `SIZE`, el número de hilos (`num_threads`), o los tiempos en `simulate_work()` para experimentar con diferentes cargas de trabajo.
