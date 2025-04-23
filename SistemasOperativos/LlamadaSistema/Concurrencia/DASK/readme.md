@@ -81,7 +81,7 @@ Es importante comprender que Dask es modular. La instalación mínima (pip insta
 
 pip permite instalar estas dependencias opcionales usando "extras" entre corchetes.20 Por ejemplo:
 
-Bash
+```Bash  
 
 \# Instalar dependencias para Dask DataFrame  
 python \-m pip install "dask\[dataframe\]"
@@ -94,6 +94,7 @@ python \-m pip install "dask\[diagnostics\]"
 
 \# Instalar dependencias para el programador distribuido  
 python \-m pip install "dask\[distributed\]"
+```
 
 La razón de esta modularidad es evitar que los usuarios que solo necesitan el programador ligero tengan que descargar e instalar bibliotecas grandes como NumPy o Pandas si no las van a usar.20
 
@@ -105,14 +106,14 @@ Aunque dask\[complete\] o conda install dask suelen incluir dask.distributed, es
 
 Una forma sencilla de verificar que Dask está instalado correctamente es abrir un intérprete de Python o un notebook y ejecutar:
 
-Python
+```Python
 
 import dask  
 import dask.array as da  
 import dask.dataframe as dd
 
 print(dask.\_\_version\_\_)
-
+```
 Si estos comandos se ejecutan sin errores (asumiendo que se instalaron las dependencias para array y dataframe), la instalación básica es funcional. Para una verificación más exhaustiva, especialmente para desarrolladores, se pueden ejecutar los tests internos de Dask usando pytest.20
 
 ## **Sección 3: Los Bloques de Construcción de Dask: Colecciones Centrales**
@@ -139,7 +140,7 @@ La ejecución real de todas las tareas en el grafo solo ocurre cuando se llama a
 Un caso de uso ideal para dask.delayed son los problemas "embarazosamente paralelos", que consisten en muchas tareas completamente independientes que no requieren comunicación entre sí \[Query Point 4\].
 
 * **Ejemplo 1: Aplicación Paralela de Funciones:** Consideremos aplicar una función simple, como incrementar un número, a una lista de valores.  
-  Python  
+```Python  
   import dask  
   import time
 
@@ -211,7 +212,7 @@ Un caso de uso ideal para dask.delayed son los problemas "embarazosamente parale
 
   \# Limpiar archivos de ejemplo  
   \# import shutil; shutil.rmtree('temp\_data')
-
+```
   Aquí, cada llamada a process\_file se convierte en una tarea independiente, permitiendo que la lectura y el procesamiento de los archivos ocurran en paralelo.
 
 dask.delayed es la herramienta fundamental cuando se necesita integrar lógica Python personalizada en un flujo de trabajo Dask o cuando la estructura del problema no se mapea directamente a las operaciones de Array o DataFrame.8
@@ -231,8 +232,7 @@ La **fragmentación (chunking)** es un concepto central. Al crear un Dask Array 
 
 Simulemos operaciones en un array demasiado grande para la memoria RAM \[Query Point 5\].
 
-Python
-
+```Python
 import dask.array as da  
 import numpy as np
 
@@ -269,7 +269,7 @@ print(f"Forma de z (mean(axis=0)): {z\_shape} (Tiempo: {time.time() \- start\_ti
 start\_time \= time.time()  
 w\_computed \= w.compute()  
 print(f"Slice w calculado, forma: {w\_computed.shape} (Tiempo: {time.time() \- start\_time:.2f}s)")
-
+```
 Este ejemplo muestra cómo crear un Dask Array grande y aplicar operaciones familiares de NumPy. Las operaciones son perezosas, construyendo un grafo de tareas. .compute() desencadena la ejecución paralela sobre los chunks. Es importante notar que llamar a .compute() en un resultado que sigue siendo muy grande puede agotar la memoria del cliente; a menudo se calculan resultados agregados más pequeños o se utiliza .persist() (ver Sección 4).
 
 Dask Array se integra estrechamente con otras bibliotecas científicas como Xarray, que lo utiliza como backend para manejar arrays N-dimensionales etiquetados, comunes en ciencias de la tierra y clima.3
@@ -284,8 +284,7 @@ Al igual que Dask Array busca la compatibilidad con NumPy, Dask DataFrame se esf
 
 Veamos cómo usar Dask DataFrame para procesar datos que simulan ser más grandes que la memoria, por ejemplo, leyendo múltiples archivos CSV \[Query Point 6\].
 
-Python
-
+```Python
 import dask.dataframe as dd  
 import pandas as pd  
 import os  
@@ -341,7 +340,7 @@ print(f"(Tiempo: {time.time() \- start\_time:.2f}s)")
 
 \# Limpiar archivos de ejemplo  
 \# import shutil; shutil.rmtree('temp\_csv')
-
+```
 Este ejemplo demuestra la lectura de múltiples archivos, seguida de operaciones comunes de Pandas como filtrado, selección, creación de columnas y groupby. Todas estas operaciones son perezosas hasta que se llama a .compute(). Para conjuntos de datos realmente grandes, dd.read\_parquet() suele ser más eficiente que dd.read\_csv().
 
 Dask DataFrame se utiliza a menudo en pipelines de ETL (Extract, Transform, Load) y como paso previo para el entrenamiento de modelos de Machine Learning con bibliotecas que soportan Dask, como XGBoost 11 o a través de la biblioteca dask-ml que paraleliza partes de Scikit-learn.2
@@ -354,8 +353,7 @@ La API de Dask Bag incluye operaciones funcionales comunes como map, filter, fol
 
 **Breve Ejemplo de Caso de Uso:**
 
-Python
-
+```Python
 import dask.bag as db  
 import json
 
@@ -385,6 +383,7 @@ start\_time \= time.time()
 freq \= name\_frequencies.compute()  
 print(f"\\nFrecuencia de nombres: {freq}")  
 print(f"(Tiempo: {time.time() \- start\_time:.2f}s)")
+```
 
 Este ejemplo muestra cómo crear un Bag y aplicar operaciones funcionales para extraer, filtrar y agregar información de los registros.
 
@@ -448,8 +447,7 @@ Una de las características más valiosas de Dask, especialmente cuando se utili
 
 Normalmente, al crear un objeto dask.distributed.Client, se imprime un enlace al dashboard en la salida. Por defecto, suele estar accesible en http://localhost:8787 si se ejecuta localmente.
 
-Python
-
+```Python
 from dask.distributed import Client, LocalCluster
 
 \# Iniciar un clúster local (scheduler \+ workers en la misma máquina)  
@@ -457,6 +455,7 @@ from dask.distributed import Client, LocalCluster
 cluster \= LocalCluster()  
 client \= Client(cluster)  
 print(client) \# Muestra información del cliente y enlace al dashboard
+```
 
 ### **5.2 Cómo Ayuda a Visualizar y Diagnosticar**
 
