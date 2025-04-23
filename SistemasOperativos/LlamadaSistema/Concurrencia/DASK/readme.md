@@ -1,4 +1,4 @@
-# **Escalando el Análisis en Python: Una Guía Práctica para la Computación Paralela con Dask**
+# **Guía Práctica para la Computación Paralela con Dask**
 
 ## **Sección 1: Introducción a Dask: Escalando sus Cargas de Trabajo en Python**
 
