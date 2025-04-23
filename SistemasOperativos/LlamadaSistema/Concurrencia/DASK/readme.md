@@ -46,24 +46,24 @@ En general, Dask introduce cierta sobrecarga. Por lo tanto, **no se recomienda p
 
 Instalar Dask es generalmente sencillo y se puede realizar utilizando los gestores de paquetes comunes de Python: conda o pip.20
 
-* **Usando conda:** conda es a menudo recomendado, especialmente si ya se utiliza la distribución Anaconda o Miniconda, ya que maneja bien las dependencias complejas, incluyendo las no escritas en Python. Dask suele venir incluido en Anaconda.21 Para instalar o actualizar:  
-  Bash  
+* **Usando conda:** conda es a menudo recomendado, especialmente si ya se utiliza la distribución Anaconda o Miniconda, ya que maneja bien las dependencias complejas, incluyendo las no escritas en Python. Dask suele venir incluido en Anaconda.21 Para instalar o actualizar:
+´´´Bash  
   conda install dask
-
+´´´
   Este comando generalmente instala Dask junto con dependencias comunes como Pandas y NumPy.20 Dask está disponible tanto en el canal defaults como en conda-forge. Para especificar conda-forge (a menudo preferido por tener versiones más actualizadas):  
-  Bash  
+´´´Bash  
   conda install dask \-c conda-forge
-
+´´´
   Para una instalación mínima que solo incluye el núcleo de Dask y sus dependencias esenciales:  
-  Bash  
+'''Bash  
   conda install dask-core \-c conda-forge
-
-  20  
+'''
+  
 * **Usando pip:** Dask también se puede instalar usando pip, el instalador de paquetes de Python. Para una instalación completa que incluye Dask, el programador distribuido y todas las dependencias opcionales comunes (recomendado para empezar):  
-  Bash  
+  '''Bash  
   python \-m pip install "dask\[complete\]"
-
-  20  
+'''
+  
   Para una instalación mínima que solo incluye el núcleo de Dask:  
   Bash  
   python \-m pip install dask
