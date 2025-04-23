@@ -61,12 +61,12 @@ Instalar Dask es generalmente sencillo y se puede realizar utilizando los gestor
   
 * **Usando pip:** Dask también se puede instalar usando pip, el instalador de paquetes de Python. Para una instalación completa que incluye Dask, el programador distribuido y todas las dependencias opcionales comunes (recomendado para empezar):  
 ```Bash    
-  python \-m pip install "dask\[complete\]"
+  python -m pip install "dask[complete]"
 ```
   
   Para una instalación mínima que solo incluye el núcleo de Dask:  
 ```Bash  
-  python \-m pip install dask
+  python -m pip install dask
 ```
 
 ### **2.2 Entendiendo las Opciones de Instalación y Dependencias**
@@ -83,17 +83,17 @@ pip permite instalar estas dependencias opcionales usando "extras" entre corchet
 
 ```Bash  
 
-\# Instalar dependencias para Dask DataFrame  
-python \-m pip install "dask\[dataframe\]"
+# Instalar dependencias para Dask DataFrame  
+python -m pip install "dask[dataframe]"
 
-\# Instalar dependencias para Dask Array  
-python \-m pip install "dask\[array\]"
+# Instalar dependencias para Dask Array  
+python -m pip install "dask[array]"
 
-\# Instalar dependencias para el dashboard  
-python \-m pip install "dask\[diagnostics\]"
+# Instalar dependencias para el dashboard  
+python -m pip install "dask[diagnostics]"
 
-\# Instalar dependencias para el programador distribuido  
-python \-m pip install "dask\[distributed\]"
+# Instalar dependencias para el programador distribuido  
+python -m pip install "dask[distributed]"
 ```
 
 La razón de esta modularidad es evitar que los usuarios que solo necesitan el programador ligero tengan que descargar e instalar bibliotecas grandes como NumPy o Pandas si no las van a usar.20
@@ -112,7 +112,7 @@ import dask
 import dask.array as da  
 import dask.dataframe as dd
 
-print(dask.\_\_version\_\_)
+print(dask.__version__)
 ```
 Si estos comandos se ejecutan sin errores (asumiendo que se instalaron las dependencias para array y dataframe), la instalación básica es funcional. Para una verificación más exhaustiva, especialmente para desarrolladores, se pueden ejecutar los tests internos de Dask usando pytest.20
 
@@ -144,74 +144,74 @@ Un caso de uso ideal para dask.delayed son los problemas "embarazosamente parale
   import dask  
   import time
 
-  \# Funciones simples de ejemplo  
+  # Funciones simples de ejemplo  
   def inc(x):  
-      time.sleep(0.1) \# Simular trabajo  
-      return x \+ 1
+      time.sleep(0.1) # Simular trabajo  
+      return x + 1
 
   def add(x, y):  
-      time.sleep(0.1) \# Simular trabajo  
-      return x \+ y
+      time.sleep(0.1) # Simular trabajo  
+      return x + y
 
-  \# Enfoque secuencial  
-  start\_time \= time.time()  
-  results\_seq \=  
+  # Enfoque secuencial  
+  start_time = time.time()  
+  results_seq =  
   for i in range(10):  
-      y \= inc(i)  
-      results\_seq.append(y)  
-  total\_seq \= sum(results\_seq)  
-  print(f"Secuencial: Resultado={total\_seq}, Tiempo={time.time() \- start\_time:.2f}s")
+      y = inc(i)  
+      results_seq.append(y)  
+  total_seq = sum(results_seq)  
+  print(f"Secuencial: Resultado={total_seq}, Tiempo={time.time() - start_time:.2f}s")
 
-  \# Enfoque paralelo con dask.delayed  
-  delayed \= dask.delayed \# Alias para conveniencia
+  # Enfoque paralelo con dask.delayed  
+  delayed = dask.delayed # Alias para conveniencia
 
-  start\_time \= time.time()  
-  results\_delayed \=  
+  start_time = time.time()  
+  results_delayed =  
   for i in range(10):  
-      y \= delayed(inc)(i) \# Envuelve la llamada a inc  
-      results\_delayed.append(y)  
-  total\_delayed \= delayed(sum)(results\_delayed) \# Envuelve la llamada a sum
+      y = delayed(inc)(i) # Envuelve la llamada a inc  
+      results_delayed.append(y)  
+  total_delayed = delayed(sum)(results_delayed) # Envuelve la llamada a sum
 
-  \# Visualizar el grafo de tareas (opcional, requiere graphviz)  
-  \# total\_delayed.visualize(filename='graph\_inc.png')
+  # Visualizar el grafo de tareas (opcional, requiere graphviz)  
+  # total_delayed.visualize(filename='graph_inc.png')
 
-  \# Ejecutar la computación  
-  result\_parallel \= total\_delayed.compute()  
-  print(f"Paralelo (Delayed): Resultado={result\_parallel}, Tiempo={time.time() \- start\_time:.2f}s")
+  # Ejecutar la computación  
+  result_parallel = total_delayed.compute()  
+  print(f"Paralelo (Delayed): Resultado={result_parallel}, Tiempo={time.time() - start_time:.2f}s")
 
   En este ejemplo, delayed convierte las llamadas a inc y sum en tareas perezosas. El grafo resultante se ejecuta en paralelo al llamar a .compute(), lo que lleva a una ejecución más rápida que el bucle secuencial (asumiendo múltiples núcleos disponibles).  
 * **Ejemplo 2: Procesamiento Paralelo de Archivos:** Simulemos la lectura y procesamiento simple de varios archivos.  
   Python  
   import os  
-  \# Crear archivos de ejemplo (simulado)  
-  if not os.path.exists('temp\_data'): os.makedirs('temp\_data')  
+  # Crear archivos de ejemplo (simulado)  
+  if not os.path.exists('temp_data'): os.makedirs('temp_data')  
   for i in range(5):  
-      with open(f'temp\_data/file\_{i}.txt', 'w') as f:  
-          f.write(f"Data in file {i}\\n" \* (i \+ 1))
+      with open(f'temp_data file_{i}.txt', 'w') as f:  
+          f.write(f"Data in file {i} \n" * (i + 1))
 
-  filenames \= \[f'temp\_data/file\_{i}.txt' for i in range(5)\]
+  filenames = [f'temp_data/file_{i}.txt' for i in range(5)]
 
-  def process\_file(filename):  
-      \# Simular lectura y procesamiento (contar líneas)  
+  def process_file(filename):  
+      # Simular lectura y procesamiento (contar líneas)  
       time.sleep(0.2)  
       with open(filename, 'r') as f:  
           return len(f.readlines())
 
-  \# Enfoque paralelo con dask.delayed  
-  start\_time \= time.time()  
-  results \=  
+  # Enfoque paralelo con dask.delayed  
+  start_time = time.time()  
+  results =  
   for fn in filenames:  
-      count \= delayed(process\_file)(fn)  
+      count = delayed(process_file)(fn)  
       results.append(count)
 
-  total\_lines \= delayed(sum)(results)  
-  \# total\_lines.visualize(filename='graph\_files.png')
+  total_lines = delayed(sum)(results)  
+  # total_lines.visualize(filename='graph_files.png')
 
-  final\_result \= total\_lines.compute()  
-  print(f"Procesamiento Archivos (Delayed): Líneas Totales={final\_result}, Tiempo={time.time() \- start\_time:.2f}s")
+  final_result = total_lines.compute()  
+  print(f"Procesamiento Archivos (Delayed): Líneas Totales={final_result}, Tiempo={time.time() - start_time:.2f}s")
 
-  \# Limpiar archivos de ejemplo  
-  \# import shutil; shutil.rmtree('temp\_data')
+  # Limpiar archivos de ejemplo  
+  # import shutil; shutil.rmtree('temp_data')
 ```
   Aquí, cada llamada a process\_file se convierte en una tarea independiente, permitiendo que la lectura y el procesamiento de los archivos ocurran en paralelo.
 
