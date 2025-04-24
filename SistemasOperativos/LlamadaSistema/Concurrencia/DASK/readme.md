@@ -178,10 +178,11 @@ Un caso de uso ideal para dask.delayed son los problemas "embarazosamente parale
   # Ejecutar la computación  
   result_parallel = total_delayed.compute()  
   print(f"Paralelo (Delayed): Resultado={result_parallel}, Tiempo={time.time() - start_time:.2f}s")
+```
 
   En este ejemplo, delayed convierte las llamadas a inc y sum en tareas perezosas. El grafo resultante se ejecuta en paralelo al llamar a .compute(), lo que lleva a una ejecución más rápida que el bucle secuencial (asumiendo múltiples núcleos disponibles).  
 * **Ejemplo 2: Procesamiento Paralelo de Archivos:** Simulemos la lectura y procesamiento simple de varios archivos.  
-  Python  
+  ```Python  
   import os  
   # Crear archivos de ejemplo (simulado)  
   if not os.path.exists('temp_data'): os.makedirs('temp_data')  
