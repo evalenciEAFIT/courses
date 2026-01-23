@@ -170,5 +170,3 @@ Para gestionar tus archivos de C en Linux:
 | Limpiar pantalla | `clear` |
 | Crear carpeta | `mkdir proyectos` |
 | Entrar en carpeta | `cd proyectos` |
-
-¡Con esto tienes todo lo necesario para escribir, compilar, ejecutar y arreglar errores en tus programas C utilizando el terminal de Linux o WSL
