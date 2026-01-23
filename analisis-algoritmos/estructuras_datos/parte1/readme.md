@@ -1,6 +1,6 @@
 ***
 
-# Guía Completa de Estructuras de Datos en C (Con Código Comentado)
+# Guía Completa de Estructuras de Datos en C
 
 Esta guía proporciona una explicación detallada de las estructuras de datos más utilizadas. Para cada estructura, se incluye la implementación en C con comentarios extensos que explican qué sucede en la memoria durante cada operación.
 
