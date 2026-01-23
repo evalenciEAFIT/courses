@@ -365,6 +365,15 @@ void recorrer() {
 ### Concepto
 Último en entrar, primero en salir. Solo operamos sobre el "tope" de la pila.
 
+En el contexto de estructuras de datos (Pilas / Stacks), los términos en inglés son:
+
+Apilar | Adicionar ➔ Push
+Desapilar | Retirar ➔ Pop
+
+Términos adicionales muy comunes en pilas:
+
+Inspeccionar (ver el elemento del tope sin eliminarlo) ➔ Peek o Top
+
 ### Código en C Comentado
 
 ```c
@@ -439,6 +448,9 @@ void recorrer() {
 
 ### Concepto
 Primero en entrar, primero en salir. Tenemos un puntero `frente` (para sacar) y un puntero `final` (para meter).
+
+Encolar (Add) ➔ Enqueue 
+Desencolar (Remove | poll) ➔ Dequeue
 
 ### Código en C Comentado
 
