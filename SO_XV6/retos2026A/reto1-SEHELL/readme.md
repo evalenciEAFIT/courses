@@ -32,7 +32,7 @@ Desarrollar una shell educativa llamada **EAFITos** en lenguaje C que implemente
 5. **`ayuda`** - Muestra lista de comandos
 6. **`salir`** - Termina la shell
 
-### Comandos de Archivos (7 disponibles)
+### Comandos avanzados de Archivos (7 disponibles)
 7. **`crear <archivo>`** - Crea archivo vacío
 8. **`eliminar <archivo>`** - Elimina archivo con confirmación
 9. **`renombrar <viejo> <nuevo>`** - Renombra archivo
@@ -41,13 +41,13 @@ Desarrollar una shell educativa llamada **EAFITos** en lenguaje C que implemente
 12. **`buscar <texto> <archivo>`** - Busca texto en archivo
 13. **`estadisticas <archivo>`** - Estadísticas del archivo
 
-### Comandos del Sistema (4 disponibles)
+### Comandos avanzados del Sistema (4 disponibles)
 14. **`historial`** - Muestra últimos 10 comandos
 15. **`limpiar`** - Limpia la pantalla
 16. **`usuario`** - Muestra información del usuario
 17. **`directorio`** - Muestra directorio actual
 
-### Comandos Avanzados (3 disponibles)
+### Comandos super-Avanzados (3 disponibles)
 18. **`grep <patron> <archivo>`** - Búsqueda con patrones
 19. **`wc <archivo>`** - Contador de líneas/palabras/caracteres
 20. **`comprimir <archivo>`** - Compresión básica (RLE)
