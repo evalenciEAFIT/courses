@@ -230,13 +230,13 @@ Cada equipo debe entregar un archivo `CONTRIBUTION.md` con:
 ```markdown
 # Contribución de Miembros
 
-| Nombre | Código | Rol | Tareas Asignadas | % Contribución |
-|--------|--------|-----|------------------|----------------|
-| Ana Pérez | 1001 | Líder | Coordinación, shell loop | 20% |
-| Luis Gómez | 1002 | Dev | Comandos archivos, parser | 25% |
-| Carlos Ruiz | 1003 | Dev | Comandos sistema, utils | 25% |
-| María López | 1004 | Tester | Pruebas, depuración | 20% |
-| Pedro Díaz | 1005 | Doc | Documentación, ejemplos | 10% |
+|  Nombre      | Código | Rol     | Tareas Asignadas           | % Contribución |
+|--------------|--------|---------|----------------------------|----------------|
+| Ana Pérez    | 1001   | Líder   | Coordinación, shell loop   | 20%            |
+| Luis Gómez   | 1002   | Dev     | Comandos archivos, parser  | 25%            |
+| Carlos Ruiz  | 1003   | Dev     | Comandos sistema, utils    | 25%            |
+| María López  | 1004   | Tester  | Pruebas, depuración        | 20%            |
+| Pedro Díaz   | 1005   | Doc     | Documentación, ejemplos    | 10%            |
 
 Total: 100%
 ```
