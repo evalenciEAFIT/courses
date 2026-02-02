@@ -56,7 +56,7 @@ Desarrollar una shell educativa llamada **EAFITos** en lenguaje C que implemente
 
 | Tamaño | Comandos Totales | Básicos | Avanzados | Features Extra |
 |--------|------------------|---------|-----------|----------------|
-| Individual | 6 | 6 | 0 | REPL básico |
+| Individual | 6 | 6 | 0 | REPL básico (del inglés Read-Eval-Print Loop) es decir, que interactua|
 | 2 personas | 8 | 6 | 2 | Historial + 1 extra |
 | 3 personas | 10 | 6 | 4 | Makefile + pruebas |
 | 4 personas | 12 | 6 | 6 | Modularidad + documentación |
