@@ -311,6 +311,3 @@ Este es un proyecto educativo. Siéntete libre de:
 
 Material educativo de uso libre para fines académicos.
 
----
-
-**¡Feliz aprendizaje sobre memoria virtual! 🚀**
