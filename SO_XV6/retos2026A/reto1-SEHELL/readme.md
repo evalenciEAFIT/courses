@@ -2,7 +2,7 @@
 
 ## Descripción General
 **Valor:** 25% de la nota final de la materia Sistemas Operativos  
-**Fecha de entrega:** Semana del 23 de febrero de 2025 (23/02/2025)  
+**Fecha de entrega:** Semana del 23 de febrero de 2026 (23/02/2026)  
 **Modalidad:** Individual o en equipos de 2 a 5 personas  
 
 ## Objetivo del Reto
