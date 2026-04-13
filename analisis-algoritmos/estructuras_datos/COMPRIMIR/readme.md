@@ -9,6 +9,7 @@
 
 ```
 COMPRIMIR/
+├── README.md                    ← Este archivo
 ├── Makefile                     ← Compilación inteligente
 ├── src/                         ← Código fuente
 │   ├── main.c                   ← Menú TUI principal
@@ -16,22 +17,13 @@ COMPRIMIR/
 │   ├── rle.h   / rle.c          ← Algoritmo RLE
 │   ├── huffman.h / huffman.c    ← Algoritmo Huffman (Min-Heap + árbol)
 │   └── lz.h    / lz.c           ← Algoritmo LZ77 (ventana deslizante)
-├── bin/                         ← Objetos .o + ejecutable compilado
-│   └── comprimir                ← Binario final
-├── app/
-│   └── comprimir                ← Script lanzador (wrapper bash)
 ├── samples/
 │   ├── fuente/                  ← Archivos de entrada para pruebas
 │   │   ├── 01_rle_ideal.txt     ← Grandes rachas repetidas → ideal RLE
 │   │   ├── 02_adn.txt           ← Secuencia ADN (A,T,C,G)
-│   │   ├── 03_quijote.txt       ← Texto literario → ideal Huffman
-│   │   ├── 04_codigo_c.txt      ← Código fuente → ideal LZ77
-│   │   ├── 05_fibonacci.txt     ← Patrones numéricos
-│   │   └── 06_aleatorio.txt     ← Peor caso (sin compresibilidad)
 │   ├── comprimidos/             ← Salidas binarias de compresión
 │   └── descomprimidos/          ← Salidas restauradas (verificación)
 └── doc/                         ← Documentación de los algoritmos
-    ├── README.md                ← Este archivo
     ├── rle.md                   ← Teoría y ejemplos RLE
     ├── huffman.md               ← Teoría y ejemplos Huffman
     └── lz77.md                  ← Teoría y ejemplos LZ77
