@@ -26,14 +26,26 @@ SRCS    = $(SRC_DIR)/main.c     \
           $(SRC_DIR)/utils.c    \
           $(SRC_DIR)/rle.c      \
           $(SRC_DIR)/huffman.c  \
-          $(SRC_DIR)/lz.c
+          $(SRC_DIR)/lz.c       \
+          $(SRC_DIR)/lz78.c     \
+          $(SRC_DIR)/lzw.c      \
+          $(SRC_DIR)/lz4.c      \
+          $(SRC_DIR)/deflate.c  \
+          $(SRC_DIR)/zstd.c     \
+          $(SRC_DIR)/bwt.c
 
 OBJS    = $(patsubst $(SRC_DIR)/%.c, $(BIN_DIR)/%.o, $(SRCS))
 
 DEPS    = $(SRC_DIR)/utils.h    \
           $(SRC_DIR)/rle.h      \
           $(SRC_DIR)/huffman.h  \
-          $(SRC_DIR)/lz.h
+          $(SRC_DIR)/lz.h       \
+          $(SRC_DIR)/lz78.h     \
+          $(SRC_DIR)/lzw.h      \
+          $(SRC_DIR)/lz4.h      \
+          $(SRC_DIR)/deflate.h  \
+          $(SRC_DIR)/zstd.h     \
+          $(SRC_DIR)/bwt.h
 
 # ── Directorios necesarios ────────────────────────────────────
 DIRS = $(BIN_DIR) $(APP_DIR) \

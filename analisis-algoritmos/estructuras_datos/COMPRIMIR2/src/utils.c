@@ -156,10 +156,11 @@ void print_banner(void) {
     "  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝\n"
     RESET);
     printf(BOLD BCYAN
-    "           Algoritmos de Compresión  ·  EDA Pedagógico\n"
+    "           Laboratorio Pedagógico de Algoritmos de Compresión\n"
     RESET);
     printf(DIM
-    "           RLE  •  Huffman  •  LZ77          (c) 2026\n"
+    "           RLE • Huffman • LZ77 • LZ78 • LZW • LZ4 • Deflate • Zstd • BWT\n"
+    "           Explora, compara y entiende cómo funcionan los compresores modernos\n"
     RESET);
     PRINT_SEPARATOR();
     printf("\n");

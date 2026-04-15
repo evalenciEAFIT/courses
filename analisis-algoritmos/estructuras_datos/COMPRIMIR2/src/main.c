@@ -19,6 +19,12 @@
 #include "rle.h"
 #include "huffman.h"
 #include "lz.h"
+#include "lz78.h"
+#include "lzw.h"
+#include "lz4.h"
+#include "deflate.h"
+#include "zstd.h"
+#include "bwt.h"
 
 /* ───────────────────────────── Estado global ───────────────────────────── */
 typedef struct {
@@ -31,7 +37,7 @@ typedef struct {
 /* ───────────────────────────── Helpers de menú ─────────────────────────── */
 static void print_menu_principal(const AppState *st) {
     PRINT_SEPARATOR();
-    printf(BOLD BBLUE "  MENÚ PRINCIPAL\n" RESET);
+    printf(BOLD BBLUE "  MENÚ PRINCIPAL — LABORATORIO DE COMPRESIÓN\n" RESET);
     PRINT_THIN_SEP();
 
     if (st->data) {
@@ -44,14 +50,37 @@ static void print_menu_principal(const AppState *st) {
     printf("  Modo paso a paso: %s\n\n",
            st->verbose ? BGREEN "ACTIVADO" RESET : BYELLOW "desactivado" RESET);
 
+    /* ── Gestión de Datos ───────────────────────────────────────────────── */
+    printf(BOLD BYELLOW "  GESTIÓN DE DATOS\n" RESET);
     printf("  " BCYAN "[1]" RESET " Seleccionar / cambiar archivo\n");
-    printf("  " BCYAN "[2]" RESET " RLE — Run-Length Encoding\n");
-    printf("  " BCYAN "[3]" RESET " Huffman Coding\n");
-    printf("  " BCYAN "[4]" RESET " LZ77 (ventana deslizante)\n");
-    printf("  " BCYAN "[5]" RESET " " BOLD "Comparar los 3 algoritmos" RESET "\n");
-    printf("  " BCYAN "[6]" RESET " Ver estructura de datos\n");
-    printf("  " BCYAN "[7]" RESET " Crear archivo de prueba\n");
-    printf("  " BCYAN "[8]" RESET " Activar/Desactivar paso a paso\n");
+    printf("  " BCYAN "[14]" RESET " Crear archivo de prueba\n");
+    printf("\n");
+
+    /* ── Algoritmos Individuales ────────────────────────────────────────── */
+    printf(BOLD BGREEN "  ALGORITMOS INDIVIDUALES\n" RESET);
+    printf("  " BCYAN "[2]" RESET " RLE — Run-Length Encoding (rachas repetidas)\n");
+    printf("  " BCYAN "[3]" RESET " Huffman — Codificación de entropía\n");
+    printf("  " BCYAN "[4]" RESET " LZ77 — Ventana deslizante\n");
+    printf("  " BCYAN "[5]" RESET " LZ78 — Diccionario de frases\n");
+    printf("  " BCYAN "[6]" RESET " LZW — Diccionario dinámico\n");
+    printf("  " BCYAN "[7]" RESET " LZ4 — Compresión rápida\n");
+    printf("  " BCYAN "[8]" RESET " Deflate — LZ77 + Huffman (como ZIP)\n");
+    printf("  " BCYAN "[9]" RESET " Zstd — BWT + Huffman (como Zstandard)\n");
+    printf("  " BCYAN "[10]" RESET " BWT — Burrows-Wheeler Transform\n");
+    printf("\n");
+
+    /* ── Comparaciones ──────────────────────────────────────────────────── */
+    printf(BOLD BMAGENTA "  COMPARACIONES\n" RESET);
+    printf("  " BCYAN "[11]" RESET " Comparar todos los algoritmos\n");
+    printf("  " BCYAN "[12]" RESET " Comparar algoritmos LZ\n");
+    printf("\n");
+
+    /* ── Herramientas Pedagógicas ───────────────────────────────────────── */
+    printf(BOLD BCYAN "  HERRAMIENTAS PEDAGÓGICAS\n" RESET);
+    printf("  " BCYAN "[13]" RESET " Ver estructuras de datos\n");
+    printf("  " BCYAN "[15]" RESET " Activar/Desactivar modo paso a paso\n");
+    printf("\n");
+
     printf("  " BCYAN "[0]" RESET " Salir\n");
     PRINT_SEPARATOR();
     printf(BOLD "  Opción: " RESET);
@@ -92,7 +121,10 @@ static void crear_archivo_prueba(AppState *st) {
     printf("  " BCYAN "[1]" RESET " Texto con muchas repeticiones (ideal para RLE)\n");
     printf("  " BCYAN "[2]" RESET " Texto natural (ideal para Huffman)\n");
     printf("  " BCYAN "[3]" RESET " Texto con patrones repetidos (ideal para LZ77)\n");
-    printf("  " BCYAN "[4]" RESET " Combinado\n");
+    printf("  " BCYAN "[4]" RESET " Texto de frases crecientes (ideal para LZ78)\n");
+    printf("  " BCYAN "[5]" RESET " Texto con frases repetidas y extensión (ideal para LZW)\n");
+    printf("  " BCYAN "[6]" RESET " Texto rotacional / repetitivo (ideal para BWT)\n");
+    printf("  " BCYAN "[7]" RESET " Combinado\n");
     printf(BOLD "  Opción: " RESET);
 
     int opt = pedir_opcion();
@@ -137,8 +169,34 @@ static void crear_archivo_prueba(AppState *st) {
                 fprintf(f, "LZ77 busca coincidencias en el historial reciente. ");
             printf(BGREEN "  ✔ Creado: texto con patrones.\n" RESET);
             break;
-        default:
         case 4:
+            /* Frases crecientes → ideal para LZ78 */
+            fprintf(f, "A ");
+            fprintf(f, "AB ");
+            fprintf(f, "ABA ");
+            fprintf(f, "ABABABA ");
+            fprintf(f, "ABABABABABA ");
+            fprintf(f, "ABABABABABABABABA \n");
+            fprintf(f, "ABABABABABABABABABABABA \n");
+            printf(BGREEN "  ✔ Creado: texto de frases crecientes para LZ78.\n" RESET);
+            break;
+        case 5:
+            /* Frases repetidas con extensión → ideal para LZW */
+            fprintf(f, "TOBEORNOTTOBEORNOTTOBEORNOT ");
+            fprintf(f, "TOBEORNOTTOBEORNOTTOBEORNOT ");
+            fprintf(f, "TOBEORNOTTOBEORNOTTOBEORNOT \n");
+            fprintf(f, "TOBEORNOTTOBEORNOTTOBEORNOTTOBEORNOT ");
+            printf(BGREEN "  ✔ Creado: texto con frases repetidas para LZW.\n" RESET);
+            break;
+        case 6:
+            /* Texto rotacional → ideal para BWT */
+            for (int i = 0; i < 5; i++)
+                fprintf(f, "banana_bandana_abacaba_\n");
+            fprintf(f, "abracadabra_abra_cadabra_abracadabra\n");
+            printf(BGREEN "  ✔ Creado: texto rotacional para BWT.\n" RESET);
+            break;
+        default:
+        case 7:
             /* Combinado */
             fprintf(f, "AAAAAABBBBBBBCCCCC ");
             fprintf(f, "La compresion de datos es un tema fascinante ");
@@ -191,6 +249,27 @@ static void ver_estructuras(void) {
     printf("  │  Memoria    : O(window_size + lookahead)\n");
     printf(BOLD BCYAN "  └──────────────────────────────────────────────────────────────\n" RESET);
 
+    printf(BOLD BCYAN "\n  ┌─ LZ78 (Lempel-Ziv 1978) ─────────────────────────────────────\n" RESET);
+    printf("  │  Concepto   : diccionario de frases {índice, símbolo}\n");
+    printf("  │  Token      : { uint16_t index, uint8_t next_byte }\n");
+    printf("  │  Salida     : LZ78Token[]  (%zu bytes/token)\n", sizeof(LZ78Token));
+    printf("  │  Memoria    : O(n) — diccionario de frases dinámico\n");
+    printf(BOLD BCYAN "  └──────────────────────────────────────────────────────────────\n" RESET);
+
+    printf(BOLD BCYAN "\n  ┌─ LZW (Lempel-Ziv-Welch) ────────────────────────────────────\n" RESET);
+    printf("  │  Concepto   : diccionario inicial de 256 símbolos codificados\n");
+    printf("  │  Token      : { uint16_t code }\n");
+    printf("  │  Salida     : LZWToken[]  (%zu bytes/token)\n", sizeof(LZWToken));
+    printf("  │  Memoria    : O(n) — diccionario creciente de frases\n");
+    printf(BOLD BCYAN "  └──────────────────────────────────────────────────────────────\n" RESET);
+
+    printf(BOLD BMAGENTA "\n  ┌─ BWT (Burrows-Wheeler Transform) ───────────────────────────\n" RESET);
+    printf("  │  Concepto   : ordena rotaciones de la cadena\n");
+    printf("  │  Salida     : última columna + índice original\n");
+    printf("  │  Uso        : preprocesamiento antes de RLE/Huffman\n");
+    printf("  │  Memoria    : O(n) — matriz implícita de rotaciones\n");
+    printf(BOLD BMAGENTA "  └──────────────────────────────────────────────────────────────\n" RESET);
+
     printf(BOLD BYELLOW "\n  ┌─ Comparativa de aplicaciones ───────────────────────────────\n" RESET);
     printf("  │  Algoritmo   Mejor para            Ejemplos reales\n");
     printf("  │  ─────────────────────────────────────────────────────────\n");
@@ -214,6 +293,8 @@ static Metrics run_rle(const AppState *st) {
 
     PRINT_SEPARATOR();
     printf(BOLD BGREEN "  ─── Algoritmo: RLE ───\n" RESET);
+    printf(DIM "       Reemplaza rachas de bytes iguales por un contador.\n" RESET);
+    printf(DIM "       Simple y rápido, pero solo efectivo en datos con repeticiones consecutivas.\n" RESET);
 
     /* Comprimir */
     timer_start(&t);
@@ -260,6 +341,8 @@ static Metrics run_huffman(const AppState *st) {
 
     PRINT_SEPARATOR();
     printf(BOLD BMAGENTA "  ─── Algoritmo: Huffman ───\n" RESET);
+    printf(DIM "       Asigna códigos binarios variables basados en frecuencia.\n" RESET);
+    printf(DIM "       Símbolos comunes usan menos bits — óptimo para entropía.\n" RESET);
 
     /* Comprimir */
     timer_start(&t);
@@ -306,6 +389,8 @@ static Metrics run_lz77(const AppState *st) {
 
     PRINT_SEPARATOR();
     printf(BOLD BCYAN "  ─── Algoritmo: LZ77 ───\n" RESET);
+    printf(DIM "       Busca coincidencias en una ventana deslizante del historial.\n" RESET);
+    printf(DIM "       Emite referencias (distancia, longitud) para patrones repetidos.\n" RESET);
 
     /* Comprimir */
     timer_start(&t);
@@ -343,33 +428,355 @@ static Metrics run_lz77(const AppState *st) {
     return m;
 }
 
+static Metrics run_lz78(const AppState *st) {
+    Metrics m = { "LZ78", st->size, 0, 0.0, 0.0 };
+    Timer t;
+    LZ78Mode mode = st->verbose ? LZ78_VERBOSE : LZ78_SILENT;
+
+    PRINT_SEPARATOR();
+    printf(BOLD BCYAN "  ─── Algoritmo: LZ78 ───\n" RESET);
+    printf(DIM "       Construye un diccionario de frases únicas.\n" RESET);
+    printf(DIM "       Emite índices de frases previas, extendiendo dinámicamente.\n" RESET);
+
+    timer_start(&t);
+    LZ78Result comp = lz78_compress(st->data, st->size, mode);
+    timer_stop(&t);
+    m.compress_time_us = timer_elapsed_us(&t);
+
+    if (!comp.tokens) {
+        printf(BRED "  Error en LZ78 compresión.\n" RESET);
+        return m;
+    }
+    m.compressed_bytes = comp.raw_size;
+
+    timer_start(&t);
+    LZ78DecompResult decomp = lz78_decompress(comp.tokens, comp.count,
+                                             st->size, mode);
+    timer_stop(&t);
+    m.decompress_time_us = timer_elapsed_us(&t);
+
+    int ok = (decomp.size == st->size &&
+              memcmp(decomp.data, st->data, st->size) == 0);
+    printf("  Integridad: %s\n", ok ? BGREEN "✔ OK" RESET : BRED "✘ FALLO" RESET);
+
+    print_metrics(&m);
+    write_file("samples/comprimidos/out_lz78.bin", (uint8_t *)comp.tokens, comp.raw_size);
+    write_file("samples/descomprimidos/out_lz78_decomp.bin", decomp.data, decomp.size);
+    printf(DIM "  Archivos: samples/comprimidos/out_lz78.bin\n" RESET);
+    printf(DIM "            samples/descomprimidos/out_lz78_decomp.bin\n" RESET);
+
+    free(comp.tokens);
+    free(decomp.data);
+    return m;
+}
+
+static Metrics run_lzw(const AppState *st) {
+    Metrics m = { "LZW", st->size, 0, 0.0, 0.0 };
+    Timer t;
+    LZWMode mode = st->verbose ? LZW_VERBOSE : LZW_SILENT;
+
+    PRINT_SEPARATOR();
+    printf(BOLD BCYAN "  ─── Algoritmo: LZW ───\n" RESET);
+    printf(DIM "       Diccionario inicial de bytes únicos, crece con frases.\n" RESET);
+    printf(DIM "       Emite códigos de frases, adaptándose al contenido.\n" RESET);
+
+    timer_start(&t);
+    LZWResult comp = lzw_compress(st->data, st->size, mode);
+    timer_stop(&t);
+    m.compress_time_us = timer_elapsed_us(&t);
+
+    if (!comp.tokens) {
+        printf(BRED "  Error en LZW compresión.\n" RESET);
+        return m;
+    }
+    m.compressed_bytes = comp.raw_size;
+
+    timer_start(&t);
+    LZWDecompResult decomp = lzw_decompress(comp.tokens, comp.count,
+                                           st->size, mode);
+    timer_stop(&t);
+    m.decompress_time_us = timer_elapsed_us(&t);
+
+    int ok = (decomp.size == st->size &&
+              memcmp(decomp.data, st->data, st->size) == 0);
+    printf("  Integridad: %s\n", ok ? BGREEN "✔ OK" RESET : BRED "✘ FALLO" RESET);
+
+    print_metrics(&m);
+    write_file("samples/comprimidos/out_lzw.bin", (uint8_t *)comp.tokens, comp.raw_size);
+    write_file("samples/descomprimidos/out_lzw_decomp.bin", decomp.data, decomp.size);
+    printf(DIM "  Archivos: samples/comprimidos/out_lzw.bin\n" RESET);
+    printf(DIM "            samples/descomprimidos/out_lzw_decomp.bin\n" RESET);
+
+    free(comp.tokens);
+    free(decomp.data);
+    return m;
+}
+
+static Metrics run_bwt(const AppState *st) {
+    Metrics m = { "BWT", st->size, 0, 0.0, 0.0 };
+    Timer t;
+    BWTMode mode = st->verbose ? BWT_VERBOSE : BWT_SILENT;
+
+    PRINT_SEPARATOR();
+    printf(BOLD BMAGENTA "  ─── Algoritmo: BWT ───\n" RESET);
+    printf(DIM "       Reordena bytes creando rotaciones y ordenándolas.\n" RESET);
+    printf(DIM "       Agrupa símbolos similares para mejorar compresores posteriores.\n" RESET);
+
+    timer_start(&t);
+    BWTResult comp = bwt_transform(st->data, st->size, mode);
+    timer_stop(&t);
+    m.compress_time_us = timer_elapsed_us(&t);
+
+    if (!comp.data) {
+        printf(BRED "  Error en BWT transformacion.\n" RESET);
+        return m;
+    }
+    m.compressed_bytes = comp.size + sizeof(uint32_t);
+
+    timer_start(&t);
+    BWTDecompResult decomp = bwt_inverse(comp.data, comp.size,
+                                         comp.original_index, mode);
+    timer_stop(&t);
+    m.decompress_time_us = timer_elapsed_us(&t);
+
+    int ok = (decomp.size == st->size &&
+              memcmp(decomp.data, st->data, st->size) == 0);
+    printf("  Integridad: %s\n", ok ? BGREEN "✔ OK" RESET : BRED "✘ FALLO" RESET);
+
+    print_metrics(&m);
+
+    long header_size = 4;
+    long out_size = comp.size + header_size;
+    uint8_t *out_buf = (uint8_t *)malloc(out_size);
+    if (out_buf) {
+        out_buf[0] = (uint8_t)(comp.original_index >> 0);
+        out_buf[1] = (uint8_t)(comp.original_index >> 8);
+        out_buf[2] = (uint8_t)(comp.original_index >> 16);
+        out_buf[3] = (uint8_t)(comp.original_index >> 24);
+        memcpy(out_buf + header_size, comp.data, comp.size);
+        write_file("samples/comprimidos/out_bwt.bin", out_buf, out_size);
+        free(out_buf);
+    }
+    write_file("samples/descomprimidos/out_bwt_decomp.bin", decomp.data, decomp.size);
+    printf(DIM "  Archivos: samples/comprimidos/out_bwt.bin\n" RESET);
+    printf(DIM "            samples/descomprimidos/out_bwt_decomp.bin\n" RESET);
+
+    free(comp.data);
+    free(decomp.data);
+    return m;
+}
+
+static Metrics run_lz4(const AppState *st) {
+    Metrics m = { "LZ4", st->size, 0, 0.0, 0.0 };
+    Timer t;
+    LZ4Mode mode = st->verbose ? LZ4_VERBOSE : LZ4_SILENT;
+
+    PRINT_SEPARATOR();
+    printf(BOLD BCYAN "  ─── Algoritmo: LZ4 ───\n" RESET);
+    printf(DIM "       Compresor rápido sin codificación de entropía.\n" RESET);
+    printf(DIM "       Ideal para datos en tiempo real donde la velocidad importa más que el ratio.\n" RESET);
+
+    timer_start(&t);
+    LZ4Result comp = lz4_compress(st->data, st->size, mode);
+    timer_stop(&t);
+    m.compress_time_us = timer_elapsed_us(&t);
+
+    if (!comp.data) {
+        printf(BRED "  Error en LZ4 compresión.\n" RESET);
+        return m;
+    }
+    m.compressed_bytes = comp.size;
+
+    timer_start(&t);
+    LZ4DecompResult decomp = lz4_decompress(comp.data, comp.size, st->size, mode);
+    timer_stop(&t);
+    m.decompress_time_us = timer_elapsed_us(&t);
+
+    int ok = (decomp.size == st->size &&
+              memcmp(decomp.data, st->data, st->size) == 0);
+    printf("  Integridad: %s\n", ok ? BGREEN "✔ OK" RESET : BRED "✘ FALLO" RESET);
+
+    print_metrics(&m);
+    write_file("samples/comprimidos/out_lz4.bin", comp.data, comp.size);
+    write_file("samples/descomprimidos/out_lz4_decomp.bin", decomp.data, decomp.size);
+    printf(DIM "  Archivos: samples/comprimidos/out_lz4.bin\n" RESET);
+    printf(DIM "            samples/descomprimidos/out_lz4_decomp.bin\n" RESET);
+
+    free(comp.data);
+    free(decomp.data);
+    return m;
+}
+
+static Metrics run_deflate(const AppState *st) {
+    Metrics m = { "Deflate", st->size, 0, 0.0, 0.0 };
+    Timer t;
+    DeflateMode mode = st->verbose ? DEF_VERBOSE : DEF_SILENT;
+
+    PRINT_SEPARATOR();
+    printf(BOLD BMAGENTA "  ─── Algoritmo: Deflate ───\n" RESET);
+    printf(DIM "       Combina LZ77 (búsqueda de patrones) con Huffman (codificación óptima).\n" RESET);
+    printf(DIM "       Usado en ZIP, gzip, PNG — balance perfecto entre ratio y velocidad.\n" RESET);
+
+    timer_start(&t);
+    DeflateResult comp = deflate_compress(st->data, st->size, mode);
+    timer_stop(&t);
+    m.compress_time_us = timer_elapsed_us(&t);
+
+    if (!comp.data) {
+        printf(BRED "  Error en Deflate compresión.\n" RESET);
+        return m;
+    }
+    m.compressed_bytes = comp.size;
+
+    timer_start(&t);
+    DeflateDecompResult decomp = deflate_decompress(comp.data,
+                                                   comp.size,
+                                                   comp.bit_count,
+                                                   comp.tree_root,
+                                                   st->size,
+                                                   mode);
+    timer_stop(&t);
+    m.decompress_time_us = timer_elapsed_us(&t);
+
+    int ok = (decomp.size == st->size &&
+              memcmp(decomp.data, st->data, st->size) == 0);
+    printf("  Integridad: %s\n", ok ? BGREEN "✔ OK" RESET : BRED "✘ FALLO" RESET);
+
+    print_metrics(&m);
+    write_file("samples/comprimidos/out_deflate.bin", comp.data, comp.size);
+    write_file("samples/descomprimidos/out_deflate_decomp.bin", decomp.data, decomp.size);
+    printf(DIM "  Archivos: samples/comprimidos/out_deflate.bin\n" RESET);
+    printf(DIM "            samples/descomprimidos/out_deflate_decomp.bin\n" RESET);
+
+    huff_free_tree(comp.tree_root);
+    free(comp.data);
+    free(decomp.data);
+    return m;
+}
+
+static Metrics run_zstd(const AppState *st) {
+    Metrics m = { "Zstd", st->size, 0, 0.0, 0.0 };
+    Timer t;
+    ZSTDMode mode = st->verbose ? ZSTD_VERBOSE : ZSTD_SILENT;
+
+    PRINT_SEPARATOR();
+    printf(BOLD BGREEN "  ─── Algoritmo: Zstd ───\n" RESET);
+    printf(DIM "       Usa BWT para reordenar datos antes de Huffman.\n" RESET);
+    printf(DIM "       Mejora ratios agrupando símbolos similares — moderno y eficiente.\n" RESET);
+
+    timer_start(&t);
+    ZstdResult comp = zstd_compress(st->data, st->size, mode);
+    timer_stop(&t);
+    m.compress_time_us = timer_elapsed_us(&t);
+
+    if (!comp.data) {
+        printf(BRED "  Error en Zstd compresión.\n" RESET);
+        return m;
+    }
+    m.compressed_bytes = comp.size;
+
+    timer_start(&t);
+    ZstdDecompResult decomp = zstd_decompress(comp.data,
+                                              comp.size,
+                                              comp.bit_count,
+                                              comp.tree_root,
+                                              comp.original_index,
+                                              st->size,
+                                              mode);
+    timer_stop(&t);
+    m.decompress_time_us = timer_elapsed_us(&t);
+
+    int ok = (decomp.size == st->size &&
+              memcmp(decomp.data, st->data, st->size) == 0);
+    printf("  Integridad: %s\n", ok ? BGREEN "✔ OK" RESET : BRED "✘ FALLO" RESET);
+
+    print_metrics(&m);
+    write_file("samples/comprimidos/out_zstd.bin", comp.data, comp.size);
+    write_file("samples/descomprimidos/out_zstd_decomp.bin", decomp.data, decomp.size);
+    printf(DIM "  Archivos: samples/comprimidos/out_zstd.bin\n" RESET);
+    printf(DIM "            samples/descomprimidos/out_zstd_decomp.bin\n" RESET);
+
+    huff_free_tree(comp.tree_root);
+    free(comp.data);
+    free(decomp.data);
+    return m;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
- *  COMPARACIÓN DE LOS TRES ALGORITMOS
+ *  COMPARACIÓN DE TODOS LOS ALGORITMOS
  * ═══════════════════════════════════════════════════════════════════════════ */
 static void comparar_todos(const AppState *st) {
     clear_screen();
     print_banner();
-    printf(BOLD BWHITE "  ▶ COMPARACIÓN DE LOS TRES ALGORITMOS\n\n" RESET);
+    printf(BOLD BWHITE "  ▶ COMPARACIÓN DE TODOS LOS ALGORITMOS\n\n" RESET);
 
-    /* Ejecutar los tres en modo silencioso para no contaminar la tabla */
+    /* Ejecutar todos los algoritmos en modo silencioso para no contaminar la tabla */
     AppState silent = *st;
     silent.verbose = 0;
 
-    Metrics metrics[3];
+    Metrics metrics[9];
     metrics[0] = run_rle(&silent);
     metrics[1] = run_huffman(&silent);
     metrics[2] = run_lz77(&silent);
+    metrics[3] = run_lz78(&silent);
+    metrics[4] = run_lzw(&silent);
+    metrics[5] = run_lz4(&silent);
+    metrics[6] = run_deflate(&silent);
+    metrics[7] = run_zstd(&silent);
+    metrics[8] = run_bwt(&silent);
 
     printf("\n");
     PRINT_SEPARATOR();
     printf(BOLD BWHITE "  TABLA COMPARATIVA\n" RESET);
-    print_comparison_table(metrics, 3);
+    print_comparison_table(metrics, 9);
 
     /* Determinar el ganador en ratio y tiempo */
     int   best_ratio_idx = 0, best_time_idx = 0;
     double best_ratio = -1e9, best_time = 1e18;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 9; i++) {
+        double r = compression_ratio(metrics[i].original_bytes,
+                                     metrics[i].compressed_bytes);
+        if (r > best_ratio) { best_ratio = r; best_ratio_idx = i; }
+        if (metrics[i].compress_time_us < best_time) {
+            best_time = metrics[i].compress_time_us;
+            best_time_idx = i;
+        }
+    }
+
+    printf(BOLD "\n  🏆 Mejor ratio    : " BGREEN "%s" RESET BOLD " (%.2f%%)\n" RESET,
+           metrics[best_ratio_idx].algorithm, best_ratio);
+    printf(BOLD "  ⚡ Más rápido     : " BGREEN "%s" RESET BOLD " (%.2f µs)\n\n" RESET,
+           metrics[best_time_idx].algorithm, best_time);
+
+    printf(DIM "  Presiona ENTER para volver al menú...\n" RESET);
+    while (getchar() != '\n');
+}
+
+static void comparar_lz(const AppState *st) {
+    clear_screen();
+    print_banner();
+    printf(BOLD BWHITE "  ▶ COMPARACIÓN DE LOS LZ\n\n" RESET);
+
+    AppState silent = *st;
+    silent.verbose = 0;
+
+    Metrics metrics[5];
+    metrics[0] = run_lz77(&silent);
+    metrics[1] = run_lz78(&silent);
+    metrics[2] = run_lzw(&silent);
+    metrics[3] = run_lz4(&silent);
+    metrics[4] = run_zstd(&silent);
+
+    printf("\n");
+    PRINT_SEPARATOR();
+    printf(BOLD BWHITE "  TABLA COMPARATIVA LZ\n" RESET);
+    print_comparison_table(metrics, 5);
+
+    int   best_ratio_idx = 0, best_time_idx = 0;
+    double best_ratio = -1e9, best_time = 1e18;
+
+    for (int i = 0; i < 5; i++) {
         double r = compression_ratio(metrics[i].original_bytes,
                                      metrics[i].compressed_bytes);
         if (r > best_ratio) { best_ratio = r; best_ratio_idx = i; }
@@ -468,22 +875,116 @@ int main(void) {
                     printf(DIM "  ENTER...\n" RESET);
                     while (getchar() != '\n');
                 } else {
-                    comparar_todos(&st);
+                    clear_screen(); print_banner();
+                    Metrics m = run_lz78(&st);
+                    (void)m;
+                    printf(DIM "\n  ENTER para volver...\n" RESET);
+                    while (getchar() != '\n');
                 }
                 break;
 
             case 6:
-                ver_estructuras();
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    clear_screen(); print_banner();
+                    Metrics m = run_lzw(&st);
+                    (void)m;
+                    printf(DIM "\n  ENTER para volver...\n" RESET);
+                    while (getchar() != '\n');
+                }
                 break;
 
             case 7:
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    clear_screen(); print_banner();
+                    Metrics m = run_lz4(&st);
+                    (void)m;
+                    printf(DIM "\n  ENTER para volver...\n" RESET);
+                    while (getchar() != '\n');
+                }
+                break;
+
+            case 8:
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    clear_screen(); print_banner();
+                    Metrics m = run_deflate(&st);
+                    (void)m;
+                    printf(DIM "\n  ENTER para volver...\n" RESET);
+                    while (getchar() != '\n');
+                }
+                break;
+
+            case 9:
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    clear_screen(); print_banner();
+                    Metrics m = run_zstd(&st);
+                    (void)m;
+                    printf(DIM "\n  ENTER para volver...\n" RESET);
+                    while (getchar() != '\n');
+                }
+                break;
+
+            case 10:
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    clear_screen(); print_banner();
+                    Metrics m = run_bwt(&st);
+                    (void)m;
+                    printf(DIM "\n  ENTER para volver...\n" RESET);
+                    while (getchar() != '\n');
+                }
+                break;
+
+            case 11:
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    comparar_todos(&st);
+                }
+                break;
+
+            case 12:
+                if (!st.data) {
+                    printf(BRED "  Primero carga un archivo (opción 1).\n" RESET);
+                    printf(DIM "  ENTER...\n" RESET);
+                    while (getchar() != '\n');
+                } else {
+                    comparar_lz(&st);
+                }
+                break;
+
+            case 13:
+                ver_estructuras();
+                break;
+
+            case 14:
                 clear_screen(); print_banner();
                 crear_archivo_prueba(&st);
                 printf(DIM "\n  ENTER para continuar...\n" RESET);
                 while (getchar() != '\n');
                 break;
 
-            case 8:
+            case 15:
                 st.verbose = !st.verbose;
                 printf("\n  Modo paso a paso: %s\n",
                        st.verbose ? BGREEN "ACTIVADO" RESET
