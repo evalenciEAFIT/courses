@@ -2,7 +2,7 @@
 
 Este proyecto en C permite comparar diferentes algoritmos de encriptación de archivos para comprender su funcionamiento, así como sus ventajas y desventajas en términos de **eficiencia**, **consumo de memoria**, **recursos**, y **nivel de seguridad**.
 
-El proyecto soporta el **procesamiento por aportes (streaming/chunks)**, lo que permite que el consumo de memoria RAM sea constante y extremadamente bajo (4 KB) independientemente del tamaño del archivo original.
+El proyecto soporta el **procesamiento por trozos/fragmentos (streaming/chunks)**, lo que permite que el consumo de memoria RAM sea constante y extremadamente bajo (4 KB) independientemente del tamaño del archivo original.
 
 ## Algoritmos Implementados
 
